@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env*.example
+private/
+runtime/
+.venv/
+node_modules/
+dist*/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+apps/api/build/
+*.log

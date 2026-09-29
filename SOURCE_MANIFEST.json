@@ -1,0 +1,4708 @@
+{
+  "source_revision": "04821c9710e800870e499f121dd812be46b57085",
+  "history_included": false,
+  "entries": [
+    {
+      "path": ".dockerignore",
+      "sha256": "ddbabc4cdd8f21ed894ba6811d89b6b8d556eff863521cd65cc377c298550bfc"
+    },
+    {
+      "path": ".env.example",
+      "sha256": "00f0cd4ce4fc841360f134686fbaa992cfcf2c74bec6734d433098f7a2db1a43"
+    },
+    {
+      "path": ".env.local-database-control.example",
+      "sha256": "29edc5c84d11d82d81ed3e2dab921157ccb276fdbb08dd860a61ac6e4bd21640"
+    },
+    {
+      "path": ".env.school-fact-migration.example",
+      "sha256": "d65631023812ca3967bc28064e9ae808d86e6309076d2056b47c3cacafe2d936"
+    },
+    {
+      "path": ".env.school-fact-role-bootstrap.example",
+      "sha256": "1573075aa813b0f7e9b5bf64709da6c0586ddd4cfaae1c0b4ec2c0506d86b8e9"
+    },
+    {
+      "path": ".env.school-fact-writer.example",
+      "sha256": "28f881c51fddd386224c02d54ec5928169bf35ff6fdfcb70b1fdd5684f8cf454"
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "385051b96e447be25b8767d02b1cc5f61fe3e4f1f144feb1dae526beb2996a0d"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "3f1d048edd9206113667832be9c2638997ab61000ce0a9e8caea7667dc9b3d42"
+    },
+    {
+      "path": "apps/api/alembic/env.py",
+      "sha256": "e6cc5e5dd900ca6d62a48abf1d2f46a7355e82c75134e455a3a51fcf80ba2282"
+    },
+    {
+      "path": "apps/api/alembic/script.py.mako",
+      "sha256": "9a5507bcc1a059bdc43463b420539e0c1d6050bdf7d796293cd81b2f70329567"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260728_01_migration_baseline.py",
+      "sha256": "8b6c73aa6e2de2620521e758cb826870042dc20c0f442829ee0251a02c87915d"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260728_02_identity_authorization_audit.py",
+      "sha256": "51b243ed824960c114792d6aa81d5e0b3012696a10eca65ecf8c63bdc2efbb9b"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260729_03_audit_log_hardening.py",
+      "sha256": "515c84a04196263a04af82d8ca3b7ae6a2ff5209611c44a96a92b8598b708080"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260805_04_master_data_identity_organization.py",
+      "sha256": "fb7a658ecae73e700b8a981eeb0c9d2d96ca7b60eca81c743190ec78f16b4345"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260805_05_master_data_student_campus_calendar.py",
+      "sha256": "e8489ebf1f27ebdfae66f40ee836c99b83844132e7f952e80851ca0827119460"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260805_06_master_data_responsibility_transaction.py",
+      "sha256": "61659f0338dc6a43e515d7ffda94878a7691f7c73743175f25d11f0c60ef007e"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260805_07_master_data_rls_and_grants.py",
+      "sha256": "787ae2e2c8e41eb0ea481810628c59aec2cca85022a12f413997ab393d3765fa"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260808_08_staff_duty_binding_outbox_probe.py",
+      "sha256": "766eb8518e6c8b17fdd9f71bd78f0d0259ffabbb4e60c26bb18461cff4092b12"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260808_09_master_data_imports.py",
+      "sha256": "694faebee821c5e7ba97c413d739579fc0e130dad140ace3ca039ec613b7794f"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260809_10_master_data_import_takeover_boundary.py",
+      "sha256": "b950da6b5178d3342564e901a1a25c5febb704fbc3fa253afb5b77f70538354f"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260809_11_master_data_import_takeover_audit_route.py",
+      "sha256": "ede4f02aca79932c54f76262f7c317a65a37c815506dc337df459f4549db4d1f"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260809_12_master_data_import_takeover_lineage.py",
+      "sha256": "d1a1b31739743f6c5709133c445e488c87431c489ae09c176f5fdee7641a6602"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260815_13_repair_submission.py",
+      "sha256": "50159dc798e6c7355bcf5be85a1098b7ee0b4d4102aa178d4c36832a4528023f"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260816_14_repair_phone_optional.py",
+      "sha256": "525678b03852b2ce0beea788e71d9aa23684629f33914f69fe1e893dc973abaa"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260819_15_school_facts_schema.py",
+      "sha256": "6d90f48c0cbac4cf5f0959e563725aff1067059882c5538b7879d308a7f0f6ce"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260820_16_school_fact_change_sets.py",
+      "sha256": "d47ab11a3e86854c200f02369bc4adb16641c4cee5e49d04a0eaf9b1c30e477f"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260820_17_school_fact_import_capacity.py",
+      "sha256": "9d1af1cc1b54861239bd917772db8871fe8a974e7f1cf238d85f115666190ee7"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260821_18_school_fact_semantics.py",
+      "sha256": "aa6f865cb082f11df16b827d03a9044524c7c4d6dafb31420f872b55a954af31"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260823_19_governance_authority.py",
+      "sha256": "bfe8b489df475202561eb2bcadf91b7b682537fec49c64d6edb3b29a1ab29d4e"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260824_20_school_database_boundary.py",
+      "sha256": "43e99ba6cdad6aa8af0d8e25acf1ace143c44083de68b420836ed8ba5d21914e"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260905_21_school_fact_initialization.py",
+      "sha256": "8d43a596ef4ba97ff5f6630fa948f6f016e21055a06998ca72986f4aa48b9438"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260905_22_school_fact_reader_authority.py",
+      "sha256": "e6ef75a79cd3c08348235eaf9849fb3098d3e5b09628c6b0a03171d461b7d67e"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260906_23_school_fact_f2.py",
+      "sha256": "dc7a31c394099473882ad7dbb3f299f5d4ba14da94562d9993b39dfe5769193e"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260906_24_school_fact_person_reader.py",
+      "sha256": "ca0b2033a6f8972494f980919670409c11cf0e9b619bd41fc2132d2f3b080e49"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260906_25_school_policy_revision_period.py",
+      "sha256": "07a90dae5e5ec1c2ee7260c3af23350fd99ce5a409a4443eb7f2b5a3f678f720"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260913_26_school_fact_family.py",
+      "sha256": "b9fa7efa1f3b0816a7b8ba49d095fc5aa2282157cc67b13c5ec767fc5e3f1201"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260913_27_family_fact_corrections.py",
+      "sha256": "e48af15956da84ef17f1f190f9d991f3e1c320d3f511f5a16077b815ec2f8d91"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260913_28_school_education_facts.py",
+      "sha256": "71e1f93c369492eeb17f30d3f09ebe7d94f317a0a46bae9c3870ef0aa1401af3"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260913_29_school_education_read.py",
+      "sha256": "0bcb92aa3282ed8b3d17b5f1285e268104fdc76413740c1aff59459029343f49"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260913_30_family_grade_arrangement.py",
+      "sha256": "06fa9260ec98f976c0bf8a070a9bace1ab8d49a27a3913d146c4e2de8894509b"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260914_31_family_education_quality.py",
+      "sha256": "08a7f77658384a8e50bf3a45dd76c853ea57c823e17fb909e605e8a4344d37a7"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260914_32_f5_teaching_facts.py",
+      "sha256": "9f3a51d6581ace632ccf37b962c6e46076ac4631a6eab93266f5853c283ad3dd"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260914_33_f5_family_leadership.py",
+      "sha256": "67b25e8059a5a8d56c39b136cb8f316330979617dad581e4785b41e7121ae770"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260914_34_f5_family_teaching.py",
+      "sha256": "0edb29664c3cf35f2314cc9c70ed9f61e2d9a2ea924ba6b4edc8e19c5288101e"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260914_35_f5_education_dependencies.py",
+      "sha256": "38eba453a0f43e77fd089f67e42bfd7f8c7fc9e797843e04281b70e23659f24b"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260914_36_f5_channel_sources.py",
+      "sha256": "288266899ca4b3a7f5dfc43d2fe0d9c9e1cee59e007814c482ac34e4547e81e5"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260914_37_f5_calendar_timezone.py",
+      "sha256": "313e9b59e8ad0b7bb3874e26e357b44d0837f5e49a5ab2a87a1c65eaeb8514c9"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260914_38_f5_correction_target_labels.py",
+      "sha256": "47fc3a631bcfe2f20a1e0b586a093b9056bba9926c4d37bf7b97ed15d83f7674"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260914_39_f5_cancellation_proof.py",
+      "sha256": "76d61669baa541cd06bc8c6a605ce6f81c7c8a718d4d0b50592d5884c47c4377"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260914_40_f5_current_school_relationship.py",
+      "sha256": "9133325671c811261290b32e84991ecd585711fecf6562b27d65444bd435d07a"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260914_41_f5_cancellation_intervals.py",
+      "sha256": "c7df2b924d12c57b97146e70e141ab240f30a7adf0aabca9b871ee6a7d2a84eb"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260922_42_f6_residence_facts.py",
+      "sha256": "852c99a43248586a685b3c8abe0669ef0e53930529319e4d0172c5a68aa89117"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260922_43_f6_residence_read.py",
+      "sha256": "2093340bbba5f0e58c4917ae7f1d802fab1b1c29094609dc4c4afd6622d1267b"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260922_44_f6_family_corrections.py",
+      "sha256": "a759cdef6a9a34fd63ec883bd6e797efdf65bdb8165311080dc23bb1307801bf"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260922_45_school_fact_student_number_lookup.py",
+      "sha256": "24729fa8cb6f4866e107844804bacfa281af2579e7df1f9465dba35fde967287"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260924_46_f7_family_quality_targets.py",
+      "sha256": "d8c0541466256a4631b6e1b55facedcb0878a0ca2a53caa73c13f16f73126bc8"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260924_47_f7_package_source_channel.py",
+      "sha256": "cbe0fe2ae2daedc16810083e7efee6607dad398ea52341b2fe5e7388c6c1c8ed"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260924_48_f7_writer_identity_lookup.py",
+      "sha256": "a3c9911788a26d023e85eeb92beb4d813eae0d09a0aace3128a583811aae63f7"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260924_49_f7_quality_coverage_basis.py",
+      "sha256": "717ecef149031c3fc5020122ff61d68156a0b6c2aa9341ca242dbbd7f7f3172e"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260924_50_f7_education_quality_coverage_basis.py",
+      "sha256": "b732adde1d8c8ddebfb1e3643f517c90621503966b6753816480ee709d4bafad"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260924_51_f7_residence_exact_coverage.py",
+      "sha256": "c0f217f3e7834a85fa40949e0f0f456b41d7bf269364027e778a28a15ef08243"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260924_52_f7_residence_reader_owner.py",
+      "sha256": "f90ff40fd4e0ef5ca33ac71518fc00825b7f2f9be747a655562e6cafb6b45a8d"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260924_53_f7_family_education_exact_coverage.py",
+      "sha256": "76cc20ad04caa570166c3149fb8ac893761c5dc0cc47ae3e22682f6cebe0f14a"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260924_54_f7_exact_read_contracts.py",
+      "sha256": "b5ed9c1454f26fa076ff3f98735b9d082fe876049a82d3794aa9b74168f0bb36"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260924_55_f7_family_profile_quality.py",
+      "sha256": "c6be6f24817e67f8605ea1c9f209424594841c5c97686a966ef87e886df9ed01"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260924_56_f7_family_teaching_quality_owner.py",
+      "sha256": "04a59591d5d2575625a09d9a0b9b48534e1dc60438dbe109ad22fff186058096"
+    },
+    {
+      "path": "apps/api/alembic/versions/20260928_57_live_school_fact_scope.py",
+      "sha256": "379dc2d45c80f49fd8b97567f1ffa293dfa2ab7b3a14253c9d31cdb17177c8b7"
+    },
+    {
+      "path": "apps/api/alembic.ini",
+      "sha256": "3c4222b700a271120195c187bc0d4972450e00840ac6570f8093ce08c0e6587a"
+    },
+    {
+      "path": "apps/api/app/__init__.py",
+      "sha256": "ca5a1b85b68c56a69953e40ea4e96af87ca10b78b0ff24945962bb90c0bcfb1e"
+    },
+    {
+      "path": "apps/api/app/composition/__init__.py",
+      "sha256": "9dce186b3078c4e1f480f5179ef3e2a29ea877263c04f8c017442e4df80f8c7d"
+    },
+    {
+      "path": "apps/api/app/composition/assistant_controls.py",
+      "sha256": "5c48710ccbc7316fb1ca2f21a4bcc59abc7218532beaa8432140cefaead29f04"
+    },
+    {
+      "path": "apps/api/app/composition/deepseek_assistant_model.py",
+      "sha256": "ac0a4ac691630134732b2594751aaf52259cc14ba207fada69b61e600bbc99fa"
+    },
+    {
+      "path": "apps/api/app/composition/governance_dependencies.py",
+      "sha256": "adabbd3082b3d3e9582cf3422fc67a8359c56d8a3a8c9da60983787c7856b78e"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_answer_evidence.py",
+      "sha256": "fdfe1ad5c4a3bd79649e593926184a01acb69b669e5f8d35a71772da10cbdc4f"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_assistant_gateway.py",
+      "sha256": "abd51d7ee37c4f0db5493c62357aa949332c157759de8bdbb1ee65a1901c39b9"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_authority_connection.py",
+      "sha256": "1533354863cf08fb1bc2a0ed9a8858c86ad0329d338a40f335fa265637ee03ed"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_candidate_budget.py",
+      "sha256": "13858114b4987dad68d0c0cf50a97e81df25c1c18108bb1cc0aec08808a01193"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_current_model_budget.py",
+      "sha256": "1ef124786f3fa8b7d9e0c695955dcf077f53573c3258d5f32b5468b88cace17b"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_deployment_root.py",
+      "sha256": "e5838ce60ff66bbbe789119f73e739cfd9be51efbc745658767938390f3028ca"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_dingtalk_identity.py",
+      "sha256": "51d217d24357f92468c47a0ea3fd7933537d8548f78d5a7a337693b65a95f230"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_directory_action_material.py",
+      "sha256": "00cc12c1befc53c61918b6f39f51eda99bd17e00fcad65bec4d4e76c8a9c2820"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_directory_adapter.py",
+      "sha256": "ffbe9bf2d33299e4525065874f8d472b1a107cdc0a7f8bd2dcce16222ff4dbb1"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_directory_context.py",
+      "sha256": "97725820c774e198d9be8eca623877a80d7ca47c9bd298a423bf0832707f6634"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_directory_gateway.py",
+      "sha256": "06328db40412f83796125e16763c02e59afe5085376549bbc74c58e492961d31"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_directory_lookup.py",
+      "sha256": "ee7518e97d09f1ca3f7850c2551e7a8f33d857eb847bafbb3764444f115be790"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_directory_product.py",
+      "sha256": "1bf3298e295fa7ab187c9e4e6a8cd1d3afa5b1dbdeb32ebdd45b0f5524ebaddd"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_directory_services.py",
+      "sha256": "d742631d6f24cef5016f68b9c3f765c20d28e11296d7f42946982038fd9e880d"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_directory_settings.py",
+      "sha256": "fef07a86000f6656fa435bec95ff46ceeab14a52720eed15d72e24ee87b4319b"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_authority.py",
+      "sha256": "1c7b0eda7855c5f6fc3c4ff496742aa1aab8c3978a853bcb951d46da462d3385"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_dependencies.py",
+      "sha256": "cd5280a2a72f35feb412d090e88eba74de9ea2ff95620f5f90f2dbd2c665978d"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_execution.py",
+      "sha256": "80a5970c7d442608344d199fc4e6dce92df5e9ddd14f90fadb0a9e31c16192a3"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_external.py",
+      "sha256": "7f60b3c541aa537c489f39956ddbb69b0b5644453c9b28ed12be5f1533dee58e"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_gateway.py",
+      "sha256": "853a4aeb0fc055b1adcfb8021610df1d49060de8b7c43874b9be57fc00b606f3"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_labels.py",
+      "sha256": "dde26bdadce00019aac0fbdfe5ddc775cf753318429533c26418330ad606fadc"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_maintenance.py",
+      "sha256": "9ee083c9641c58a1a6724814a306141830f41c228814a000d257db1efc165c21"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_product.py",
+      "sha256": "cf631b8e6a309aadb59cd9ab6b8ad401362c126a8da38e3e35c58b98420e2a76"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_quality.py",
+      "sha256": "ccf6da587e6ca3954c199c174ebf6b80119e1d315b7366ef329cc72e3c4151ab"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_query.py",
+      "sha256": "761edf852b9535a68be388959737c0d38c19504f84c30c44dfa055fe0b948f84"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_reader.py",
+      "sha256": "434aaac282fb35b466edace1633b801fade252835191d9a7bbfa31c26987cd44"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_regroup.py",
+      "sha256": "40b2ed38e5bffd62aca8d1ad9455aadd533c119e26b765137c60bd58e418b10e"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_services.py",
+      "sha256": "361a9d7d0a69816adf3b282330d34a38357ebfdc97e7bdba8af160be0f0978fa"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_settings.py",
+      "sha256": "a5f7a94ae8b33211707e5b07530fb5a22e5532a0bcc925bb343e8052c8a9d3b5"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_education_views.py",
+      "sha256": "ffca571e8c7842e0987058ca92fc64c7099f9edb3e7cf2e1d04e8f8ab53b9e89"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_engineering_governance.py",
+      "sha256": "7dabae3f2e36217a693896bd118800cdfd4cf61a6894f8a72503308e7583d32c"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_executor_client_settings.py",
+      "sha256": "b332dbd23807815686cce9d1fdef17dc3094e859845657499e3673c6d68e30a8"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_f2_engineering_cli.py",
+      "sha256": "e2d000618cd37d25392d38eeaf21bf9088df3e0e7c590090127f809d2a09f0dc"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_f2_query_repository.py",
+      "sha256": "e744680ad9af75c824ed37a0479ead3e278932ae58aac17a4a921e50bad1d7a6"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_f3_engineering_cli.py",
+      "sha256": "8dbe2bf441cabcc070ecfcd30c3cbba2bffa98708b2ee8e73e25e767fc172bb4"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_f3_engineering_governance.py",
+      "sha256": "08cb15f45783fbd39a623f6261fcfd64b616a39a08ba42ddca2c475a9b36fecf"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_f4_engineering_cli.py",
+      "sha256": "c09f015e57f0a8c2032b85d6d42b07c7c06778ea5f31d5433b60a831f6cb7924"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_f4_engineering_governance.py",
+      "sha256": "22902de3388930caaf98d9043d3468a085eaf413b7bdd9ac6d198db5a13688c8"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_f5_engineering_cli.py",
+      "sha256": "1dc749a5a2e00c7a118184274d665577cbaf542ac3dd0a4aea915e96857df2ac"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_f5_engineering_governance.py",
+      "sha256": "d01294a09f45375dbf47e4bbde5933c13fec53e5e659b5f59d499dc6422ee412"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_f6_engineering_cli.py",
+      "sha256": "c23fef6740bdcf12ab5ae69962060e80daefa3f9ad48a4ec74052f15c5645e63"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_f6_engineering_governance.py",
+      "sha256": "f54b46e86767722e4d68365eded4296f3eaf3ea727bb25d2daaeb7a55fb9a109"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_f7_engineering_cli.py",
+      "sha256": "fcc22604e4007c9289aa738143bfe94ab1595fa98a90e59190c304a5520f5b66"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_f7_engineering_governance.py",
+      "sha256": "311802693be30d357e4b6ece7ca86120afef8f5bd3367b150fe72d0b219c6e1d"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_authority.py",
+      "sha256": "4cad699915bd7d82c3b1bad1ffffe6b56ba0bb0a5dbdd8b48845a0aca9d84016"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_children_gateway.py",
+      "sha256": "77d498bfe088f556d70b76bffb28e046585e6c1caf7161d443efccde87224ca1"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_correction_executor.py",
+      "sha256": "31a93fc55ebb2c365ac2fa6683bb512d9d28b55f39919d9da5e4e929a6964afe"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_correction_gateway.py",
+      "sha256": "ca2431884c5016265db0ebcee1f106eb112842aaf2afc10512d2443b28668197"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_correction_product.py",
+      "sha256": "7b2f4a685a32ad2b8ad24fe5b2fb7bec8ec22301a9b2e24a6f99b9838a681558"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_correction_writer.py",
+      "sha256": "c7bf6e6196a68e98536237ff256ae238752119df466e976139967e416da8becd"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_education_query.py",
+      "sha256": "561446c3dca89c40bba66c828a25501f9a808fae977740ffafa02c4f1e6d96a2"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_execution.py",
+      "sha256": "3dc42d7f766e37f0eb9c97097155f7b0081f605fd8af5c4481594b43bdb7a0dd"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_gateway.py",
+      "sha256": "a8da7b0a3b5e8792712b2b04d9f17e488d827c698f40efd9a30e6f00078843f4"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_leadership_gateway.py",
+      "sha256": "40664c9004f5135280fb366a2905f87c820e9e4a6cea50b0cbf49b77bc3c88c4"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_leadership_query.py",
+      "sha256": "e95d5227f23c77399f652082c7fe3440de0673ef4a1011a456d2b1088f714186"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_product_adapter.py",
+      "sha256": "0635648bb3be53e73900cc24aff46e3f41376f043a59db1380c9d55aa4c35d4b"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_quality.py",
+      "sha256": "c159f4036d287e22060be8c875aa7a2a2086358670949bb485292876faed9212"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_quality_product.py",
+      "sha256": "693bb3e8683f2d7497465590b52570c61ad61eabf58ab2d6d319ce2cced30e03"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_query.py",
+      "sha256": "92c1df17d3a50d36b1b3ad5b64687b474a34755aa1a9b582719305139c91622f"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_services.py",
+      "sha256": "2fbe9eb42a016e1d3f3ab7e2aba8cbddf116d9821060a92e494763ec7e345524"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_settings.py",
+      "sha256": "0d4b89ffedd106030bacf5663c443b77db2a0ad1b129b575d72681763d5043e9"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_staff_gateway.py",
+      "sha256": "948bed678a89d71f9064b36cd67ed061711eeffffb94b43a8d0ac54bb2e7bfc9"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_staff_reader.py",
+      "sha256": "19f22eff6bd1a6db0357420cace44a655735aa0733cffcf1ef13642b05f26b23"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_teaching_gateway.py",
+      "sha256": "c48ff3dd2d9ba3aa8739cd0de935981a8cc3376c5eb99b91c578b564041efd5b"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_family_teaching_query.py",
+      "sha256": "0ad19b96f96e542f80bd1378eee6214b87624488311232369ef6f0491df6cfe0"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_initial_publication.py",
+      "sha256": "e7f20bc83e13de4063e63ec730d8751eeefdf9ab8e424ae27e6d22ee43eea70e"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_initial_publication_recovery.py",
+      "sha256": "cbb72e9bcf7cdc9c9ff9c337264ce5862f51de16ca46a725c61618d0084f181d"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_initialization.py",
+      "sha256": "5e1a49732166488287efe56d7f0f0f523dbac47da837019aef7c28b0120a29ae"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_initialization_readiness.py",
+      "sha256": "b9c28742295d7e6528e531c58059996562ddfb4bf37eb94fc886b2ffbfe341fd"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_initialization_recovery.py",
+      "sha256": "17c7b194057fc37538b837228e14f9810fd1c77e51a04d1f98a30a7e45136a3c"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_initialization_recovery_contracts.py",
+      "sha256": "6925ce3bdf722d6b757dcd010a1cf0abd478490df131a14dc64020eabe4f7e91"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_live_governance.py",
+      "sha256": "67ae5af2debcb0cc7505234ff7f2d6f8ae6a31dbf8f192ffdc236f33f3b8ac70"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_live_governance_cli.py",
+      "sha256": "c0f394ec87d36becd134e14fdd9feee134b9b9b9fd91e67070c4f6af16a77a0a"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_live_initialization.py",
+      "sha256": "3a42c9eaa2604c116ac3f189c3522f23f98f09ba15c31c3ab56b8e4aaa99c7d8"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_live_initialization_contracts.py",
+      "sha256": "cd46bf27a0f11c17df4d8f0a5184f5b3cb2a05e9623bf8f9c011325c3f3a9e74"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_live_initialization_identity.py",
+      "sha256": "23ee872bee1e165003eb57e45b1c33964939583dba51706f7c93e181f818231d"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_live_model_policy.py",
+      "sha256": "65285e52ae0fc5f77cb9e249999cdeb11c45dce6948e2ddb2cfb412596f36db0"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_live_product.py",
+      "sha256": "1aee3c25a7ac14afff4f0bc3bb61e4a8559b55edd2dd65225646177de166c0ae"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_live_session_handoff.py",
+      "sha256": "4a16acc645469d2399ad68359393b68061472b7e753846b856aa333975afb543"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_live_settings.py",
+      "sha256": "de0d89cedc80152f1541cd611b287d55b73c9ce377f323d8c233b80f6fb19b83"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_model_budget.py",
+      "sha256": "19175fc027b4e2303b7934dc83d9ec8a706351821314f4bd1a115fd52a9cb9f3"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_own_result_authorization.py",
+      "sha256": "46d9265e5ffd5b3e81d1da413df81b8f5a148f0fa7eba30574b70e4ed879a2f6"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_package_authorization.py",
+      "sha256": "50f577fa9c358ee9c097557d16a6a9a02d6849c7d0d21f962b73f0880c9ba0ba"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_package_replacement.py",
+      "sha256": "c29faa00151d8472349bef178112d8a3c6c8203160853996e8aa241c572118f5"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_package_sources.py",
+      "sha256": "d80813d2935b0d431d77f3f8313ea7910f98ca782103b8df372d1e83d9534259"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_persistence.py",
+      "sha256": "f6ceb981697b6e9e859d6c85364d71afa5a19b4d027875cb897f3f91b9b9e08e"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_product.py",
+      "sha256": "8bc9a59906cdd12c95eeace23582a4e02f59a768e5c601cf43db288c1b07b01b"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_product_contacts.py",
+      "sha256": "97bbc87a97d2f1426e60c75cc8f62e224afb23cbde2ed0c22cb38d8cc958378c"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_product_identity.py",
+      "sha256": "59fc178b9c7e68bf4350ad451fcd19d90c595f25c109f8d983d9091eaf6d68d7"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_product_services.py",
+      "sha256": "1707c002d3494a806c018ea4b64cee2e1dc5c8840a0ea424c1a69445faea881e"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_product_settings.py",
+      "sha256": "4d7b2648e45806e7b7127289f921d218e4f25b02792c07e34dc55628284cc983"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_product_writer.py",
+      "sha256": "82db0c4c0c9ef828bb006e62814f93a048f84a9886a2ae81936ffbda103db703"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_pydanticai.py",
+      "sha256": "3d206b035b1a02cc8357fffaab18f168cc8537c43efedc56ad57db8f93da008c"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_pydanticai_model.py",
+      "sha256": "e1df2602627f171e3b7ec0ddfa5ea3e503545a0d6c4076aded567742b2d33735"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_query_repository.py",
+      "sha256": "e8084f3dcfd924de1acb33327baae95469e2ae7ee46abb18043c9953b37abec8"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_read_capture.py",
+      "sha256": "18e2f1fd57596acf0de657e69040b130b3da82a7da7e04034e880965fe8425d3"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_read_connection.py",
+      "sha256": "0a84132c1c38863b363d09c497e490fd8a914de37afbdb9f67182bb43ec8141a"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_read_evidence.py",
+      "sha256": "63dbaa9caf49c8bb297ac2227182a8ce8fe5c57bf2d92349f08b7b682be95a2a"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_reader.py",
+      "sha256": "034a9d6f971bce9bab6acc196d57a517ce0d04690966023d03c1b4ca2bc8f2bc"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_receipt_teaching.py",
+      "sha256": "b931e895761e9b64d74dcb392c6eb5d95890e5da3239f7ee8f45ab80cf12d7c5"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_authority.py",
+      "sha256": "ba94f7e0822ccaf042850695870b7c977be6873535d0c9cf580276aff2881791"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_dependencies.py",
+      "sha256": "f870af449b1641d6ad4dc509c9b96615d3685233ce576a763ea70fb141405490"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_execution.py",
+      "sha256": "0af2da62f65e21f2628bedbdf59de9e3ed00ae5ea2ae29542de86b5565b35e49"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_gateway.py",
+      "sha256": "e27ba11e0b6fda7c2cb4faab039fba488d76e99b1aea146f965ba5d822d0dde3"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_maintenance.py",
+      "sha256": "33c2f4842f23e9d99c8395d2035bd182af40033122870ef3f818e9f46e7b9f63"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_preflight.py",
+      "sha256": "3b0e1f4b7d88e5ed242b7004168c962ae8340e1f342362c02ab52d7c754a21e4"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_product.py",
+      "sha256": "f8570823a91dd791a1f89fd4aeaf50153f43e424c3e578c1c9402eb2e492968f"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_quality.py",
+      "sha256": "c79b09a070104a69ada92530809fab7f51d057fefbc94ff80d35f62f42cb2399"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_quality_product.py",
+      "sha256": "846755237aafaf02f2c1310da652e2ea7235da1917c55284d37491e04ede7f01"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_query.py",
+      "sha256": "cc9724122a7f6c39af6192848cdaf004ad2ed566a9ebe7f2589df2c9bd2532c2"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_reader.py",
+      "sha256": "0b6bdfdfafc25d069a6bb452c78abeff9e38008a923ce3df7835ca110f9a027e"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_services.py",
+      "sha256": "1e84cea46974fe8da1a567654444a9056627d512b8f6ae5129550c04a87c46dd"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_settings.py",
+      "sha256": "14600bd9bb886fb179aacbe02aa983918af7da88a8a3146876fcaa6bc99103c0"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_time.py",
+      "sha256": "5e5bd505e831b1a3005a3031d3339071ee6e2c1ff24965a427f79c2c251d939b"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_residence_views.py",
+      "sha256": "63ea132e91be2e6a776317ac230d909f0892b8597d4e7d8571fa1f90bdd69dcb"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_staff_teaching_query.py",
+      "sha256": "44959d0caaaa4eb23e3510ee638015ca836842efc99048406164edd6bc38b1ad"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_teaching_gateway.py",
+      "sha256": "3709bc6b396b5e8e2aed0c76f3a9d0e2a2751a15634cd0ca00e2fe7c715d5f9a"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_teaching_query.py",
+      "sha256": "fcc5ff67f1750110bbd1f97bfa4b8623f6dd62519b38d65e81b63106aae96bad"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_writer_change_boundary.py",
+      "sha256": "3bbee668f5aa633083010f776ce60e4450c6e936807ad372b32c84ea22f91d79"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_writer_client.py",
+      "sha256": "14efec01313dfc18c5777f7e4350d2af67252ad25b3b8a2fbd56c901f5d03115"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_writer_executor.py",
+      "sha256": "f78efa2a2c7a79dd46ac53d6817ca965d5ab42899bc8de07bd0de75c08e136f1"
+    },
+    {
+      "path": "apps/api/app/composition/school_fact_writer_settings.py",
+      "sha256": "f2996bc8b88117a1c2414b7bf952e07ec04ce8febe2e7eb530fc46802d2498cd"
+    },
+    {
+      "path": "apps/api/app/composition/school_facts.py",
+      "sha256": "bfc19d429edaf40c9aeabd7ea23f2f56340aac5ba407130c78af7d9d6f9e6bf8"
+    },
+    {
+      "path": "apps/api/app/core/__init__.py",
+      "sha256": "35df5890d2211c36427014c87a57a9529d3a5cbf9a106ad78181a609f0466b5a"
+    },
+    {
+      "path": "apps/api/app/core/logging.py",
+      "sha256": "a4ffc4ddd03d37b0fb643f55fc91ea132ffc4af0a06162c6a5325fe22081e609"
+    },
+    {
+      "path": "apps/api/app/core/redis.py",
+      "sha256": "cb2a3b1417fbd7db3188eab3ee486b7252397f10f37628c2de27016a1b4d103c"
+    },
+    {
+      "path": "apps/api/app/core/request_id.py",
+      "sha256": "85d60346479b205b1657c156c6d04ec1449d34a6c5257a8e7abc297c20fadf42"
+    },
+    {
+      "path": "apps/api/app/core/settings.py",
+      "sha256": "1c888e4443ab29c5445661392831d21377f70bbae4420f52a4e6d2baba8f5560"
+    },
+    {
+      "path": "apps/api/app/db/__init__.py",
+      "sha256": "87c49ae36266e9b7382fe22206c8eadcc002dcace3c6597e8c96a5809d80c51d"
+    },
+    {
+      "path": "apps/api/app/db/base.py",
+      "sha256": "b39f77f1c8d5856ecda0fb360ea7bb8925cecd0db15656f16eeef0b5cf9a583f"
+    },
+    {
+      "path": "apps/api/app/db/connection.py",
+      "sha256": "f7059fff4af909cf47b9d765d76057cb7fac98b0471038e7080f7a36502e87e5"
+    },
+    {
+      "path": "apps/api/app/db/migration_settings.py",
+      "sha256": "d3d6162e6c18a29ea85083ea26c32401473e36ec8bcdd3db35c75c72d58709ce"
+    },
+    {
+      "path": "apps/api/app/db/rls_context.py",
+      "sha256": "7c6a4a83b43dda0976955ea604df42d05a686b0edb2b02a252b181a8c3f8fc40"
+    },
+    {
+      "path": "apps/api/app/db/schema_contract.py",
+      "sha256": "820cd9d0fc6ed1cbbe167a62f1c18dd880f57700f5512bb532cad31aa723cfa6"
+    },
+    {
+      "path": "apps/api/app/db/uow.py",
+      "sha256": "8a4ed9d128e3ebfb3e288de0c1612dc8255e49b6a097dd809974c194425aaa97"
+    },
+    {
+      "path": "apps/api/app/domains/__init__.py",
+      "sha256": "52f1c64900bafc429db2288a493469877fbd8a02531b7e08a0a91cf63cb7d51b"
+    },
+    {
+      "path": "apps/api/app/domains/campus/__init__.py",
+      "sha256": "363eba6e2b8b5ad51b1565976e55c7a45568ef7c45f5cd58a6df4d9326531d82"
+    },
+    {
+      "path": "apps/api/app/domains/campus/contracts.py",
+      "sha256": "50ce1df4df18e6fdcf5f42811ec0ea81895d03e61cfa73bae5e23a79c5497660"
+    },
+    {
+      "path": "apps/api/app/domains/campus/models.py",
+      "sha256": "9699d2063e325816e99d9dad5a084eeddc5a48592b0dd474dd9e8c3f0311302d"
+    },
+    {
+      "path": "apps/api/app/domains/campus/ports.py",
+      "sha256": "c0572c89ae09c56c01b33d6ab8b7dfcb135c4c2b7df129ade297ef35a139b80f"
+    },
+    {
+      "path": "apps/api/app/domains/campus/repository.py",
+      "sha256": "2256c2b9f62db9d026de8daad020d4b79d6de44b3dbd6ac7282bac18ebd66a60"
+    },
+    {
+      "path": "apps/api/app/domains/repairs/__init__.py",
+      "sha256": "d47607eedb70ba247e69b6ff4f377710786e99dc297aa52e2488cf26696402be"
+    },
+    {
+      "path": "apps/api/app/domains/repairs/contracts.py",
+      "sha256": "b5bd5417b768fc7678552932c4862ac0bebf25199d6b220b1b02f8f8557959ae"
+    },
+    {
+      "path": "apps/api/app/domains/repairs/models.py",
+      "sha256": "c5b911d284acaf9417566995781ff4599fede3e3709f3e1c2dedfb0ead418ea6"
+    },
+    {
+      "path": "apps/api/app/domains/repairs/ports.py",
+      "sha256": "75fc7fd4904faeb71f5b2c1d32be93a5b7a0b95700443c37644a01d6d80574a1"
+    },
+    {
+      "path": "apps/api/app/domains/students/__init__.py",
+      "sha256": "1cf95e03bfa16ae9d2088cb1a938ef80b3f13098e9174e2ebbbfc4b642f3281f"
+    },
+    {
+      "path": "apps/api/app/domains/students/contracts.py",
+      "sha256": "fc4d2e1019941a66715072a6602106c0f6c882e0840a9cef8ec939b47e3cdb12"
+    },
+    {
+      "path": "apps/api/app/domains/students/education_change_planner.py",
+      "sha256": "20e308e9481026d0450b50986380f0ae8506b90c2ec655dcb460dc6aa91a97f0"
+    },
+    {
+      "path": "apps/api/app/domains/students/education_contracts.py",
+      "sha256": "d3a0c82f29f76da2010ca70c0118c72f8fd4f34a9bf58e9e925adf1cf5960609"
+    },
+    {
+      "path": "apps/api/app/domains/students/education_models.py",
+      "sha256": "93e5e0c0531154446223b85e190ab08b726c554c51e82b53ecbff8552649a1e7"
+    },
+    {
+      "path": "apps/api/app/domains/students/education_time.py",
+      "sha256": "1d7281eb946b2092b6b9c5de23ae745415fdf6e35a21fd5a64bf6e0e32429db9"
+    },
+    {
+      "path": "apps/api/app/domains/students/education_validation.py",
+      "sha256": "f2cab1ba2874d01c0d2a256b201c9e884cc491592e2f3c4977289e255dc4babd"
+    },
+    {
+      "path": "apps/api/app/domains/students/education_versions.py",
+      "sha256": "0f0d4cdc58b2996d75c3aafa20649303963b6b00f87a03c6f0bdca02ebf7fff2"
+    },
+    {
+      "path": "apps/api/app/domains/students/family_corrections.py",
+      "sha256": "a852a7fce0bddfaacebbb69170f66da1be6bc6cea07b2f7a9d0d9784da8d3f02"
+    },
+    {
+      "path": "apps/api/app/domains/students/family_read.py",
+      "sha256": "588741aa7ab9c6c16dc8cbec0ff3e7e1288b6020ba1d39b71c3e77168903b820"
+    },
+    {
+      "path": "apps/api/app/domains/students/family_rules.py",
+      "sha256": "41b72bef05b4b1b94a563da0a8280a8ec19e784d2102f596632739da8903e373"
+    },
+    {
+      "path": "apps/api/app/domains/students/models.py",
+      "sha256": "b5e622d4529be5ba3bc59a160f8808a955c0f33ac8b990f08338b78fed0d8e85"
+    },
+    {
+      "path": "apps/api/app/domains/students/ports.py",
+      "sha256": "9bdafeca4a8aa7c26c858f41501399a7eb7dd131aa2c335ef1f0084d3e1a85e2"
+    },
+    {
+      "path": "apps/api/app/domains/students/repository.py",
+      "sha256": "d1c0496a2afb4770b7c9c974f7a66ad205f49929116d10427373d6dc7dac4554"
+    },
+    {
+      "path": "apps/api/app/domains/students/residence_changes.py",
+      "sha256": "c0240f533152da44f5f35ab1b26a47b467a93bf2df55103804dbcf33b240aa2d"
+    },
+    {
+      "path": "apps/api/app/domains/students/residence_read.py",
+      "sha256": "4c1f83ecf31a3f8820add1fe28230e073921b57f48232c8677e8fecfa6423ce6"
+    },
+    {
+      "path": "apps/api/app/domains/students/teaching_change_planner.py",
+      "sha256": "0b26d9aa3ad51937f1949c9f504295f62837fb926a99b33dc5ca645788c058c9"
+    },
+    {
+      "path": "apps/api/app/domains/students/teaching_contracts.py",
+      "sha256": "23d1ec6be487a379ed4ac1d0b3f3448e79bd7c6d2246695f0bf40b65b5b15ba7"
+    },
+    {
+      "path": "apps/api/app/domains/students/teaching_excel.py",
+      "sha256": "7f525e6e7bb330966caf0ef95d0d844be57839e290c657bd123b7c3ff8dbabad"
+    },
+    {
+      "path": "apps/api/app/integrations/__init__.py",
+      "sha256": "b8cbe85a66985b0af33929274bfe5e1bec35a479cfa33f0ea9eaab573826552e"
+    },
+    {
+      "path": "apps/api/app/integrations/deepseek/__init__.py",
+      "sha256": "aa148886043af77f6519d9b2b7c090c1dbc49cfbda5b870ad9c186718c16b224"
+    },
+    {
+      "path": "apps/api/app/integrations/deepseek/client.py",
+      "sha256": "1abb3b48939bc6047f1e333851fd506e8dc29a0116de99e1e52250111d13a0bf"
+    },
+    {
+      "path": "apps/api/app/integrations/dingtalk/__init__.py",
+      "sha256": "e8e6c9c9191408dc9e75263164978a666069d11f1c59e363584d10958ce3c863"
+    },
+    {
+      "path": "apps/api/app/integrations/dingtalk/client.py",
+      "sha256": "09f7a3aa429eaae112b552f5eb1422b2a5bfd3721e036281a7a45d25ec427f29"
+    },
+    {
+      "path": "apps/api/app/integrations/dingtalk/errors.py",
+      "sha256": "a1d50e3d41b97d59f117011454b5a1ffa2da532a78ea01d38dd965ead36c30f9"
+    },
+    {
+      "path": "apps/api/app/integrations/dingtalk/token_provider.py",
+      "sha256": "9b9a963eea1e8e42d5a1ea781b1ed38ec5ef36384020ce967bce03742deedea6"
+    },
+    {
+      "path": "apps/api/app/interfaces/__init__.py",
+      "sha256": "8ee04dbdc77beacabf4fd89d01315a8d0672ea407a7c76951b8cc8ce7926db47"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/__init__.py",
+      "sha256": "429f9cb4e126957e247e7f1abd065fb4dfb3c9e42ec6724b7e114e703c556243"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/assistant.py",
+      "sha256": "a8931cc74955f404874c8a1d8ac3d1f343dde09b1b6cef00e3e5e9bca99fe39c"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/assistant_schemas.py",
+      "sha256": "5103cc0725bf23ae3792ad6b84e33f3dee7f39dd729e62c10e52d58f5d9ecfe0"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/errors.py",
+      "sha256": "27c668b7e96db1cc80cf46d403efdc3bcb7f93846e2a9a7a476eeea88aa97914"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/framework_request.py",
+      "sha256": "7d9a472be268537f783ee52079905b94d4441c656823d8ae2711e324a90ba355"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/school_fact_dingtalk_identity.py",
+      "sha256": "9e4b30adc0abb2e05cbeac25344249fa1dd61f416e89695fdf6287a10661c560"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/school_fact_directory.py",
+      "sha256": "83112261dc23a11fce2106f7cecebb7544b7627d230c9da2c7e99bb920806f41"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/school_fact_education.py",
+      "sha256": "6f97310ff455b3cee7ed9d5d42cf32fe12513b53601b7cfe8208fd101cd0cef6"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/school_fact_family.py",
+      "sha256": "5199ae522bd520d2c20be21f063bd8af5f64858fcbedc3c48c736a35233d36e6"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/school_fact_family_corrections.py",
+      "sha256": "ac811ccfa5d05658fce98e7a81c09c9e0b715c5ed734c0172b3150749778f6c1"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/school_fact_family_staff.py",
+      "sha256": "f29f5cb0d4c4e6c00a96b7bafcd82a5aca75bb2aa9be860b00152af291563b39"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/school_fact_product_contacts.py",
+      "sha256": "d71ccf93540934a414f5a19e301a311dfc77fad025a493c87899c181ab86d0de"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/school_fact_product_identity.py",
+      "sha256": "c8af17f4d09fb3f7f4833a91c3425014aef908792914dd4ee7a74d769f1bcbdf"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/school_fact_residence.py",
+      "sha256": "5b0418f4913dbea12992d0891a57e6a4a61c7a0528eefba312585452a8fb2c21"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/school_fact_schemas.py",
+      "sha256": "27deb77143a31a555c99b8914b2eefc0c7f51b1eb3e9deb4918f297299bafebd"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/school_fact_teaching.py",
+      "sha256": "efbfa8759662a51a422c6129861a3ea2c3f449c43adfca4dfff0e4fa0058233c"
+    },
+    {
+      "path": "apps/api/app/interfaces/http/school_facts.py",
+      "sha256": "4d1fbf24f0231fd1c823f63c50fb8db08a1c8bc1a930717e69a76adef19dca8c"
+    },
+    {
+      "path": "apps/api/app/main.py",
+      "sha256": "a32b71ba1b617247997fe9651fe4480407c7a6b0dfeb6f9fe59e3796b18b947e"
+    },
+    {
+      "path": "apps/api/app/platform/__init__.py",
+      "sha256": "ebd12e06adb2c7d2ea78bea8eff4b4fee50bec23f41127cca29c8d2185b9b506"
+    },
+    {
+      "path": "apps/api/app/platform/assistant/__init__.py",
+      "sha256": "bec8d0eae765bc3024e8dc0f7ab4f05c174ada66e4208642c146652e1da2820f"
+    },
+    {
+      "path": "apps/api/app/platform/assistant/catalog.py",
+      "sha256": "1339c72f0f1c654c74b4517d89faa3ebaa06cdef20174cc977628532ee27f6e2"
+    },
+    {
+      "path": "apps/api/app/platform/assistant/contracts.py",
+      "sha256": "e690f473ad53867dc52140df7617f2700bae2fe95c6d4aeb505518ab5c1e17f8"
+    },
+    {
+      "path": "apps/api/app/platform/assistant/controls.py",
+      "sha256": "5daee1afd67a21ce7666784071a6e3d7e527781c3aae71ae572aac446bed5cb7"
+    },
+    {
+      "path": "apps/api/app/platform/assistant/diagnostics.py",
+      "sha256": "f23de5ab79835968971248dc035b1c39e148eaf772fdc0a3c8a60543258ec2eb"
+    },
+    {
+      "path": "apps/api/app/platform/assistant/orchestrator.py",
+      "sha256": "d58168e1e08387168d358578bc3b4c404dd7cfeab0dc6b86e4defbc17173a131"
+    },
+    {
+      "path": "apps/api/app/platform/assistant/ports.py",
+      "sha256": "0f061f0efa81cf161bffae354ef7d6e1289dfe72a9c1d5c7710b607357b5bf29"
+    },
+    {
+      "path": "apps/api/app/platform/assistant/presentation.py",
+      "sha256": "7d552aad3ec13a57697600b65197fd9909a7dd35b91654738ded6fa269185c1d"
+    },
+    {
+      "path": "apps/api/app/platform/assistant/pydanticai_errors.py",
+      "sha256": "08c6c0c4b934ab0d09b02e68f2649048a783af43382abdb8f8c4a045ae3fb22c"
+    },
+    {
+      "path": "apps/api/app/platform/assistant/pydanticai_history.py",
+      "sha256": "515ef587029e2169c3a36563e6dc450095a5457fcc3e6b73b556042ae963e54d"
+    },
+    {
+      "path": "apps/api/app/platform/assistant/pydanticai_runner.py",
+      "sha256": "d1c158fbd5b2febcc91fa3d7d915c7da312e8d93f837b366bdca09d7489b5f8a"
+    },
+    {
+      "path": "apps/api/app/platform/assistant/runtime.py",
+      "sha256": "05e610578b47dfca923779e77f7fc7a13fbad7f3b88ae8fb1df685651b343d63"
+    },
+    {
+      "path": "apps/api/app/platform/assistant/tool_loop.py",
+      "sha256": "f6da04fe7756851930df2ed501bb31346e28450487918827a746422b5552c0be"
+    },
+    {
+      "path": "apps/api/app/platform/audit/__init__.py",
+      "sha256": "cc4be90584c98ed4628bbdfe0b052b7ce332e011b05166f7347e7bbc8eff77a4"
+    },
+    {
+      "path": "apps/api/app/platform/audit/contracts.py",
+      "sha256": "60103465a8b40046c48567236324a5bb94cb8d6d2597d76e0a8d18ff94a92fd2"
+    },
+    {
+      "path": "apps/api/app/platform/audit/models.py",
+      "sha256": "3f766daeaa8c7b8cee66b96fc988a9ec531a2913d70be2d8e24b317715528409"
+    },
+    {
+      "path": "apps/api/app/platform/audit/service.py",
+      "sha256": "bf9f9df5a48804b2041e67787dafcbe17355c3bc6c4ab81de9c2bdb45d696fb0"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/__init__.py",
+      "sha256": "83c9847053346f230e4d712b38528fda7a069cbc34f152aebeea9faf12e73fb3"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/bootstrap.py",
+      "sha256": "8512179378e6a56f2a2433e504b777ca1355acabdef572aa637f28a6cffd8889"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/dependencies.py",
+      "sha256": "e82d7fb9b46258c864b0f3f7313567505c87f0df76bf89b1f0480246ab4a4820"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/f2_reader_compiler.py",
+      "sha256": "4e93adfbd37549e0ef2ee2f4ffdee1db4e998bf07e13f594b039afc419962e82"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/f2_reader_contracts.py",
+      "sha256": "cdab52f7ea85f10b8bc75fb3493258636f80c4a67d3443db2b998ffee2fff47b"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/models.py",
+      "sha256": "39761a3636c95b0de85af7d9e4df2972348cb1de2fac64a82de4a054c3780973"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/router.py",
+      "sha256": "5e0c0442b0d410b5ff018c8cf7b45736115e59fef415b5728252d76be3896751"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/schemas.py",
+      "sha256": "a4684abae49f515574e15059dcce7f3e68f1ca0b6ba512417a9028eb95b8655a"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/secure_reader_adapters.py",
+      "sha256": "0046c1fc490d17282c9d0f643b2855e19ebb5cb7f2e4ade45d7b143126174cb0"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/secure_reader_compiler.py",
+      "sha256": "908dfdf91ad3923c917cac23997187736eaa55b0a5f478c32498d14060aa6284"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/secure_reader_contracts.py",
+      "sha256": "a678743f7445a51abedc4f7fdd2728e7d24f7c69956f474b9d0358c9508e25e5"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/secure_reader_registry.py",
+      "sha256": "b042f8f71421fa8aedb5b032f6d07cfb0968206a73e12c8d7187c48a7d1db594"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/secure_reader_service.py",
+      "sha256": "8b8ef5236330fefc9119662062cf4563363f703055b9febb45729277871e0807"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/service.py",
+      "sha256": "fdd8f4273fa40209f309759c668954867c5e30cb429d12f329989d0a5dbbd0e5"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/thin_contracts.py",
+      "sha256": "24a676399000b0f391884126732cc4cd8fc35892e6ac3e223395666da6bfe59c"
+    },
+    {
+      "path": "apps/api/app/platform/authorization/thin_service.py",
+      "sha256": "4ff561596337a053289ea5f15754e2ca9f2b51ce1f437f4f48630d47dc88d528"
+    },
+    {
+      "path": "apps/api/app/platform/calendar/__init__.py",
+      "sha256": "23bfe5aa16811de35655d851fa4a0e9a7aaf504025e2da42da24c181bba8e262"
+    },
+    {
+      "path": "apps/api/app/platform/calendar/contracts.py",
+      "sha256": "dedc45c7fe11b47fc94d4d59cb0d0ef205462745306f4ee25a64bc6477e42120"
+    },
+    {
+      "path": "apps/api/app/platform/calendar/models.py",
+      "sha256": "0c605b1e147ddf4be0f5d1e72b5604f0af684e4dd7e8caacd87fc58c0416187a"
+    },
+    {
+      "path": "apps/api/app/platform/calendar/ports.py",
+      "sha256": "b9d9fc0bcdc2c4117bd42adafb75b5a231172259d976bd481703702e26462336"
+    },
+    {
+      "path": "apps/api/app/platform/calendar/repository.py",
+      "sha256": "f2a565efb7c9c91888133013403a74cdb8e4bb21f8f1b44125f99e9a09ab460e"
+    },
+    {
+      "path": "apps/api/app/platform/contracts.py",
+      "sha256": "8318ab4997a029862124854908b75de34838a075b2beb18f6b0e5dcd50a92adf"
+    },
+    {
+      "path": "apps/api/app/platform/directory/__init__.py",
+      "sha256": "a31c57b99ecd9a74f70bd276de784180998475037e68e0caa087db2b205fa99c"
+    },
+    {
+      "path": "apps/api/app/platform/directory/contracts.py",
+      "sha256": "6e8046663a997062019e1da43a6045d47845180689e16c75deba4edc9a380272"
+    },
+    {
+      "path": "apps/api/app/platform/directory/models.py",
+      "sha256": "b8d939703108baf59e50a7ac491e92ccbdcf007b7cf4fb655afc8818030fe96b"
+    },
+    {
+      "path": "apps/api/app/platform/directory/ports.py",
+      "sha256": "0709363f992253ed814e8fd65ae80ef01e8c037537f11e03fad7c91aeca11811"
+    },
+    {
+      "path": "apps/api/app/platform/directory/repository.py",
+      "sha256": "64286f37ce8f6904e9e25632ea9c6c03e15586bb3e63b70bd2f6ed196c431859"
+    },
+    {
+      "path": "apps/api/app/platform/governance/__init__.py",
+      "sha256": "04e67f3154c8ef13725030ca256577ef4f247e1bee1febb1a94a2cfc7e4d5cb1"
+    },
+    {
+      "path": "apps/api/app/platform/governance/application.py",
+      "sha256": "3c04cb46d7c79b69d5ebfa570f13ddad4fe067f09e96215a5cc42f17fd933153"
+    },
+    {
+      "path": "apps/api/app/platform/governance/basis.py",
+      "sha256": "3c3373ab6ff0a03bc702b596a94f55a2fe5e731bbe08414d15f8a945f3e04e6d"
+    },
+    {
+      "path": "apps/api/app/platform/governance/bootstrap.py",
+      "sha256": "a8329fb22311ae2bf3f9d0b9fd2b7a7e80b4fbe1b185179f50bc0596f127584c"
+    },
+    {
+      "path": "apps/api/app/platform/governance/contracts.py",
+      "sha256": "07dbda91919e0616a0f10d05992b71eda2a1b94649ad61117f23a23c2e748db7"
+    },
+    {
+      "path": "apps/api/app/platform/governance/models.py",
+      "sha256": "df81780388906fccbfbc8a1474fafe9208513ae01bfbf9237b19d93ba32cf7e1"
+    },
+    {
+      "path": "apps/api/app/platform/governance/ports.py",
+      "sha256": "536460ed95a828e9a0296a84542e6601ee2c6a57717e22c5ef0ac970a8711a01"
+    },
+    {
+      "path": "apps/api/app/platform/governance/reader.py",
+      "sha256": "a1365089650e48a0a433d4396c9ed6f2bb86ffac1f5bd42a1530b4c6bda43540"
+    },
+    {
+      "path": "apps/api/app/platform/governance/repository.py",
+      "sha256": "8da754ebbb2ee557c4bdeab647733b20223efb1e2e9ff1ffddcc2477b5fc9c99"
+    },
+    {
+      "path": "apps/api/app/platform/governance/uow.py",
+      "sha256": "6a6ff5f4d7a2ab0a4c6b16189fedb44c3957dff72b1263edf91d9f403fba8ca9"
+    },
+    {
+      "path": "apps/api/app/platform/idempotency/__init__.py",
+      "sha256": "66228a80be989d4a244234510e7e745c474de314ca6ebb490aecc1f21f98ce25"
+    },
+    {
+      "path": "apps/api/app/platform/idempotency/contracts.py",
+      "sha256": "fa2749c3c885f210924d7bb690cccb412527fc2ddc089b198946627100fd9a83"
+    },
+    {
+      "path": "apps/api/app/platform/idempotency/models.py",
+      "sha256": "d025f0325a3ad4621f46b127776e443115df915db4e83220ae514571768f7293"
+    },
+    {
+      "path": "apps/api/app/platform/idempotency/ports.py",
+      "sha256": "112fa84af238b247441b6efe34d22f9f54ac9fd0541868ce9878f569a8bb7847"
+    },
+    {
+      "path": "apps/api/app/platform/idempotency/repository.py",
+      "sha256": "303357dc07b3c0a2f2bdbeb16e7a8faf14107a153314a3120f5f9b8ccc4d78ab"
+    },
+    {
+      "path": "apps/api/app/platform/identity/__init__.py",
+      "sha256": "e4c800789a9e4889a7075bca358b3927b4ecc65c6fa3fd63b1418b02e2caf009"
+    },
+    {
+      "path": "apps/api/app/platform/identity/bootstrap_initial_admins.py",
+      "sha256": "5f349b623921d25b95c3fa65aa89b046efbf49e86833286967279e99c96238ae"
+    },
+    {
+      "path": "apps/api/app/platform/identity/context.py",
+      "sha256": "8c1fb32d7cc35353272e0aa1334721d7ebf646c083bba2faddd28e9b3e070e27"
+    },
+    {
+      "path": "apps/api/app/platform/identity/context_proof.py",
+      "sha256": "245787df53b9836b0b6a0295ef3f705ba5fe668ac6742198a9c8f45976f86665"
+    },
+    {
+      "path": "apps/api/app/platform/identity/execution_context.py",
+      "sha256": "55c7445d1b6133b6634df36957a3a8ce7e0779c744c777e1a5ba3f83d41fcab0"
+    },
+    {
+      "path": "apps/api/app/platform/identity/executor_context_codec.py",
+      "sha256": "4de1388f3a3463079e0d4f0fc3e5493d8720997f92ad7e175101e3a4e31a516f"
+    },
+    {
+      "path": "apps/api/app/platform/identity/login_guard.py",
+      "sha256": "635e4945189c4bea5bf0923fd8e681f90ec7ff349d5041ce7dbd1a8dbad5bdd0"
+    },
+    {
+      "path": "apps/api/app/platform/identity/login_maintenance.py",
+      "sha256": "a82d1a56dd7a9a52c00e630b8047f1ae2ade482d4ef3fc787d7b99bb770d4b57"
+    },
+    {
+      "path": "apps/api/app/platform/identity/manage_dingtalk_login.py",
+      "sha256": "563d0c7ee7f9488ab8d41cb7dd997906eb43b40913a7f63cf99b1db7f72703bd"
+    },
+    {
+      "path": "apps/api/app/platform/identity/models.py",
+      "sha256": "2e7e0a030dc3864db835f7ee8f1f27869a0e8d58eb870b6475d31c89907fe363"
+    },
+    {
+      "path": "apps/api/app/platform/identity/router.py",
+      "sha256": "fe7d827098dd224cc893730be3944cd94e2ee457934b5713a62753e361f00f18"
+    },
+    {
+      "path": "apps/api/app/platform/identity/schemas.py",
+      "sha256": "1352037ee04b9c56020b8755708be6246dcdaa32cfd4a0a71072e60a75649bd0"
+    },
+    {
+      "path": "apps/api/app/platform/identity/service.py",
+      "sha256": "6efe30eb1089b315fe459073406ef47c99ada0d493719024cc5409ada8763950"
+    },
+    {
+      "path": "apps/api/app/platform/identity/session.py",
+      "sha256": "660dd805f65c21a269a0c857eb5fa0dc2445df504117637f021625cbb1890c43"
+    },
+    {
+      "path": "apps/api/app/platform/identity/tuple_validator.py",
+      "sha256": "d2d94c8fcd015b539744426193e5335ce9b8564fc50fee7884ff8a075166dac2"
+    },
+    {
+      "path": "apps/api/app/platform/master_data_imports/__init__.py",
+      "sha256": "1c0ab7f64bbc7912a423fbbe4028093375cdfc5104f40c2e280c10dd25894899"
+    },
+    {
+      "path": "apps/api/app/platform/master_data_imports/application.py",
+      "sha256": "c57f3ea82e137e5cafa78c153c7c6c47f8102135e3d1b8597680e3859e47fd8c"
+    },
+    {
+      "path": "apps/api/app/platform/master_data_imports/contracts.py",
+      "sha256": "a104f8509e6f5e1a183a146a043862008202ef45b706d6bc7b5c2f2286f968fc"
+    },
+    {
+      "path": "apps/api/app/platform/master_data_imports/excel.py",
+      "sha256": "293116022c598f45d128ce5e37fde90e1ea526c13a414a89a78e63e6113aa7f7"
+    },
+    {
+      "path": "apps/api/app/platform/master_data_imports/models.py",
+      "sha256": "e04a9b5322725ff26db88d6461d76b42909563fc71503e11ed7726a65f21fb21"
+    },
+    {
+      "path": "apps/api/app/platform/master_data_imports/ports.py",
+      "sha256": "95b9f2ca4e3ed2205bab9151de9a5d2954e43b24b64f340b0fc42af96f13a38b"
+    },
+    {
+      "path": "apps/api/app/platform/master_data_imports/repository.py",
+      "sha256": "130782d99234b445d44b0ef13e59bf3da7ffe8ad1cd80d36b72418272f926d35"
+    },
+    {
+      "path": "apps/api/app/platform/master_data_imports/school_facts_excel.py",
+      "sha256": "373d9121c8ef2fa376dc6fc2314fcfb3fe509947d079a9e2c6453737f35819e9"
+    },
+    {
+      "path": "apps/api/app/platform/master_data_imports/school_facts_json.py",
+      "sha256": "a0f5dd0ccdc54b30a5406c89254cb642247386f6b984c1fbbde30c581bb5aaa9"
+    },
+    {
+      "path": "apps/api/app/platform/master_data_imports/school_facts_package.py",
+      "sha256": "c7bb46b0809fe33033cad4685af6a407e52d35ece3c05668bf77367c69e8de96"
+    },
+    {
+      "path": "apps/api/app/platform/master_data_imports/school_facts_replacement.py",
+      "sha256": "000fe7a142d8b094080ed55e68e843b8ded1f68296ed5a6801c7322ee253ea5e"
+    },
+    {
+      "path": "apps/api/app/platform/master_data_imports/source_mapping.py",
+      "sha256": "a6f8f3a1776d389aafbcc45f1feb351dc7738bc61895e35f592862eb97ad31b3"
+    },
+    {
+      "path": "apps/api/app/platform/master_data_imports/status_mappings.py",
+      "sha256": "7e494a96d7b95273b14c437d13beec2a994885b49b6297ce9517dd0602ebfbb7"
+    },
+    {
+      "path": "apps/api/app/platform/messaging/__init__.py",
+      "sha256": "407015145ac8fe1f9f00b4650017cb3c05a8ac38f74876408677ba71281ba33b"
+    },
+    {
+      "path": "apps/api/app/platform/messaging/contracts.py",
+      "sha256": "7284650914182d3716119b97efe90fed2b5fefd4775962148b3020d30ad538eb"
+    },
+    {
+      "path": "apps/api/app/platform/messaging/models.py",
+      "sha256": "c4cbce1bdfaf374797074fcca77c16267332d695dd724ab054cc4b8f90fe32da"
+    },
+    {
+      "path": "apps/api/app/platform/messaging/ports.py",
+      "sha256": "6b105b7172246c9cfccf54c378e06d603431b3da8cf553fa56bfb051bc564212"
+    },
+    {
+      "path": "apps/api/app/platform/messaging/repository.py",
+      "sha256": "814cbba058461d6fd26d74ea9d18d6a86a6df48997d3c4bbc81f688710382297"
+    },
+    {
+      "path": "apps/api/app/platform/organization/__init__.py",
+      "sha256": "cdfc6bd691fc931ff6f5fb21f9f0987fe38d37d706bba5637a78e6568a542ea3"
+    },
+    {
+      "path": "apps/api/app/platform/organization/application.py",
+      "sha256": "3904a10a3bf954c0827bb366ed0dfefa90e8f151bb08b1af9b3a7a14fef3be7c"
+    },
+    {
+      "path": "apps/api/app/platform/organization/contracts.py",
+      "sha256": "7e95d70fa581d5b165dd42d048c6e903accb196e60077b83620282fb4fec2f2f"
+    },
+    {
+      "path": "apps/api/app/platform/organization/models.py",
+      "sha256": "a38b4d4bd93db5adf9b7215663d5747d7cd37d9d34f9221e16265d7776155860"
+    },
+    {
+      "path": "apps/api/app/platform/organization/ports.py",
+      "sha256": "3532dbd5785feef1a2cd9bb29a06a78bdb7b02ca77d4546310d68d054322e4c5"
+    },
+    {
+      "path": "apps/api/app/platform/organization/repository.py",
+      "sha256": "e256cdab8008397ce83be85378d3b71bd126b78ef0d04d05cdde6d3a4dbbd1da"
+    },
+    {
+      "path": "apps/api/app/platform/policies/__init__.py",
+      "sha256": "4559114b92e94fe42e198345468df88387a88118e51d70d8777da736161b3605"
+    },
+    {
+      "path": "apps/api/app/platform/policies/contracts.py",
+      "sha256": "b583e80066a43032a53e16466a2ff8f8ba83f3ea4e0d8e7bfac57deabdf0c33e"
+    },
+    {
+      "path": "apps/api/app/platform/policies/models.py",
+      "sha256": "3989995c602398d8133e34b1a7a66ffdc33f9dfae6b910b571553fcc60f3e380"
+    },
+    {
+      "path": "apps/api/app/platform/policies/ports.py",
+      "sha256": "d03254d1bebf0c269e17975539c81073c013544af30df0a591b0aaf07dc209d8"
+    },
+    {
+      "path": "apps/api/app/platform/responsibility/__init__.py",
+      "sha256": "28efcdaa20bd3ab195e6abef899efc3f756183c61326d5dde2e0e5afd3ccac75"
+    },
+    {
+      "path": "apps/api/app/platform/responsibility/contracts.py",
+      "sha256": "468f1f5bb8fb25bc37a258e29282207a3fbaef3b094ddfa76c03f332c694e8a9"
+    },
+    {
+      "path": "apps/api/app/platform/responsibility/models.py",
+      "sha256": "19ca871920fd23bdb0c4f9dc9159502885352cb9ff0a9454acc43db4333fe7a2"
+    },
+    {
+      "path": "apps/api/app/platform/responsibility/ports.py",
+      "sha256": "44418afe4bee04c7e6508f6a1f4096aabfdbc1d4fb2592f8c208738ff9020343"
+    },
+    {
+      "path": "apps/api/app/platform/responsibility/repository.py",
+      "sha256": "3921078267a8edd3dad49fe49ea779407d46803ac9b20e412197e289edb8d51c"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/__init__.py",
+      "sha256": "9235722e6c25b7a2ac343495c685453571a8c13f9e241f68ab65199e6f99815c"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/application.py",
+      "sha256": "68e6f3556715f51a9dd6f950909a8cf7c04dd9292328f65161b08f0a6cc76c7d"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/change_boundary.py",
+      "sha256": "282af773a4703afde29d2aba15d7a7b0d03641e5d9fd329663597e01aa1c7b1c"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/contracts.py",
+      "sha256": "2da46f230987cadb5b2a518b21b147b2229246cfd1e41b388042b4dd1ab06daa"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/executor_contracts.py",
+      "sha256": "ad4bc576fbdd54931a1a25e87efaa2207264b81a6da0e96f3bdc44ea8ce2807a"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/f2_policy.py",
+      "sha256": "e7316f9681ab95f722ae22b7d72aa504a6a45014573afd02b1ec83a9f067ebd7"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/f2_quality.py",
+      "sha256": "47b433145b982506b678bcbf0bf52a824bcc29c80fa5167ad81eb9c17677e1ba"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/f2_read_authorization.py",
+      "sha256": "8de4cf951d37b04c793bddaaf8e54afe5bf76668fd6f41c9aa27bad4d47d33da"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/f3_policy.py",
+      "sha256": "7f8c271969007bdb4e642b4253b89baea599fa4b0c55b5a041be2672b7fced8d"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/f4_policy.py",
+      "sha256": "0f6ac4a06d240bf897852c029a45e5261559722b342b036d44362343107acb79"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/f5_policy.py",
+      "sha256": "ba1dd8747c3ba86614ceeedd55986db84095f5774333a08dee4a295da7379e95"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/f6_policy.py",
+      "sha256": "5ff26ef17b991ff473809abab842fed6fa62d3958bfbcf530ab45ad98cb23a1f"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/f7_coverage_basis.py",
+      "sha256": "6d7a2facd106d7163f5f17cd267e1300dba88e5ee7cf82f971546fe7d9393967"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/f7_own_terminal_authorization.py",
+      "sha256": "69e88b34167c757cee40000bf0bcb4acd32ead9296b2574a846b2a3e1e017e41"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/f7_receipt_contracts.py",
+      "sha256": "53f7d0c4d4972e757cdaad1c3bc304586218f08c14463d636d09c744eed5274f"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/family_leadership_policy.py",
+      "sha256": "41988e3d542b6cff3f8ba9f9b0640a1d3ab5735e3535b485050b6c609ea116ca"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/initialization_contracts.py",
+      "sha256": "9941cc712666c2880742671bf397daf5413e039b2adc198ef5a3e13c767d7dfc"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/models.py",
+      "sha256": "a7d57393a0ca89c4e6e0af0f5e685c15ca0be1d3032fd7cec45f8e507384444b"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/package_integrity.py",
+      "sha256": "e55cc394ded9cd8b231ecb41d6aabac18b39a7a6dd16c58c2f1fbaf12317ba3c"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/ports.py",
+      "sha256": "a59188e45b658d99e0c09f7d5f342fafb7e52fb183b188631624806e5571fe45"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/read_policy.py",
+      "sha256": "2816763960fa706807b7e9814f34bd6313a8c7037c9e38324174907367c29e03"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/replacement_contracts.py",
+      "sha256": "cff20a62446b2cf851c3ed8aed0ea686d45dee8d9cbacdeee86233219eb7042e"
+    },
+    {
+      "path": "apps/api/app/platform/school_facts/school_scope_reference.py",
+      "sha256": "339d5a1df37df570656fc4e47c0d75bfff9c142ca21286bef44f30b5c3700fd3"
+    },
+    {
+      "path": "apps/api/app/platform/tenancy/__init__.py",
+      "sha256": "b79a772b33037519c26ea662199619120185390713146553a179da106b419b3a"
+    },
+    {
+      "path": "apps/api/app/platform/tenancy/contracts.py",
+      "sha256": "1191ee38bacb3127d68dfb998006fc4a53f4c97d39f19f7d154d440409bbfe46"
+    },
+    {
+      "path": "apps/api/app/platform/tenancy/models.py",
+      "sha256": "d13be162e71630d2c194ad8e970fbb4a55139ca82ab5b0c6fe39f9b71a3b2b1d"
+    },
+    {
+      "path": "apps/api/app/platform/tenancy/ports.py",
+      "sha256": "24f301a8d16c883eeb349669f7f7f1c5a7a9907e9943d6467b1d68d4cfcb44d2"
+    },
+    {
+      "path": "apps/api/app/platform/tenancy/repository.py",
+      "sha256": "bc00742d2effe46e7e9a6ac9c70ecd3351477ca05db817970e2a5f81b587044f"
+    },
+    {
+      "path": "apps/api/pyproject.toml",
+      "sha256": "326a650ac6c374a224b387f3b34b7f66496176ab6793eb14efca9d708df7e494"
+    },
+    {
+      "path": "apps/api/pytest.ini",
+      "sha256": "2c837a0becf310b1bf2e7b07371066673ec6d12f77db9f2ed4597e5f5c7ffb01"
+    },
+    {
+      "path": "apps/api/tests/architecture/__init__.py",
+      "sha256": "eacdbd39448feafe6e5f144d736cd375f4ff05870d34246fb5935331daad22d9"
+    },
+    {
+      "path": "apps/api/tests/architecture/assistant_contract_guard.py",
+      "sha256": "48c2054912af02725a851b1bdabd22c7221296dd5c6b6e01b9a717aef838be90"
+    },
+    {
+      "path": "apps/api/tests/architecture/assistant_http_guard.py",
+      "sha256": "d4f0f6a8781498fa4d2c154959e03ab51a8cd8405b80841314caf73dfe91bcab"
+    },
+    {
+      "path": "apps/api/tests/architecture/test_assistant_ci_gate.py",
+      "sha256": "8fe3adc457f89ef50abf27e6765bee2d0a52834bd6cb792c9996988c80c7cc74"
+    },
+    {
+      "path": "apps/api/tests/architecture/test_assistant_contract_guard.py",
+      "sha256": "d9ca360da230dac829b4eaa7146adc05997ea6a547e29ff0bdf21c414a7d5b57"
+    },
+    {
+      "path": "apps/api/tests/architecture/test_assistant_http_boundary.py",
+      "sha256": "02c09de1138467d5071ac4b69d7d227599458477ac3da73d515ec864ad0a1d67"
+    },
+    {
+      "path": "apps/api/tests/architecture/test_http_error_contract.py",
+      "sha256": "4edbb02a43171a185d8008f2ee83577f3d5f2bc575ec16a229f64e0a35e73cfe"
+    },
+    {
+      "path": "apps/api/tests/architecture/test_master_data_boundaries.py",
+      "sha256": "1aa9df9e51bcd903e67a4516ac13c852b330b0cfd5b6b214863452b65d055bad"
+    },
+    {
+      "path": "apps/api/tests/architecture/test_master_data_ci_gate.py",
+      "sha256": "7e0dfc506089aefa407afa70cb61a46e729bed845cced33cc21b3cc18abaa5d3"
+    },
+    {
+      "path": "apps/api/tests/architecture/test_repair_ci_gate.py",
+      "sha256": "c9b5d7ce981662ef82248167b8762a15fa2cea3bbe033ec8847c73a1f19840ef"
+    },
+    {
+      "path": "apps/api/tests/architecture/test_repairs_boundaries.py",
+      "sha256": "28a58ed09d233ad5454c5789be75cf20750cea81939f4543c5d16e9e0ef2e365"
+    },
+    {
+      "path": "apps/api/tests/architecture/test_school_facts_boundaries.py",
+      "sha256": "778ab40124c11644727324209faf2af2b0bacf5022f509c9e1142f317841c8c8"
+    },
+    {
+      "path": "apps/api/tests/architecture/test_sf2_school_fact_boundaries.py",
+      "sha256": "772447022006bf5ef0ae77501734eaeb69437e24411ef25833b4168375b6bc9f"
+    },
+    {
+      "path": "apps/api/tests/architecture/test_sf3_school_fact_import_boundary.py",
+      "sha256": "89b669dc08fe8ff2a940a15159cb76ce898dd753538f5637d76caf8136dd2c2e"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_business_free_probe.py",
+      "sha256": "7a1ada1627e7a554adfc51eccd725340dcf090c65ec296c6096e2e2e2c584aff"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_contracts.py",
+      "sha256": "3e4d2a18c3a3233b776ff7e90fbff3ac04459595f66c8b344f63367dfce91b8c"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_control_http.py",
+      "sha256": "525dc3af6095b720c083fbc1f5d4b70722da0a7159c069a8dbbf9b3b06bdd877"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_control_redis_store.py",
+      "sha256": "734fd146003053970a2082f78e1562b058098540b176393c55d82fba3a43f351"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_control_review_fixes.py",
+      "sha256": "61b4336f5493927d06bdb412afd934a73a14cd4858b7088aacac0b126b9b0b87"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_control_service.py",
+      "sha256": "2670e34ff8514c0b5973c97717b60f2efaf488b577483d820943b5fcf48a64e2"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_credential_rotation_controls.py",
+      "sha256": "c4abeb480eb7217c9a72529ffa2dc7801e0ab9dce8cad0b793235a01f1359c69"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_deepseek_assistant_model.py",
+      "sha256": "ee560521f9e69b1bddf2d0369b5d0b5280d631cb36377e8d4ff4145c0a8937f4"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_f3_correction_http.py",
+      "sha256": "100932336c61c5630c574bccf105c7516cf9a203dcb97e3807268bdf20d4bc4d"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_f3_family_gateway.py",
+      "sha256": "f66ab93e8239d5b0c5140ffb199604b2773654b598d858cc4148914e8def8dbf"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_f3_family_http.py",
+      "sha256": "2da71e1b4943167d7a811ab89784f952ce3799fd5b951574c9bacec1cbeda7bf"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_f3_product_configuration.py",
+      "sha256": "b65e8336b4a2f7fad31ed523e2713d5360317440bb55e77016aaee196b96545f"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_f4_maintenance_contract.py",
+      "sha256": "fb7c11b46e34c336dc3f953cc9a79bf8b2d0eed47e657bf9c63d25b76796b11c"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_f4_product_configuration.py",
+      "sha256": "96a5c109c1ec917068c63e257f4d7744d5b839e82ce45c1c60bfa05fade24b4e"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_f4_schema30_consumers.py",
+      "sha256": "14ba2e2737316a3bf221f5718aace33e14cdda2d65c375e504f1f627a9b4cbaa"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_f5_native_history_refresh.py",
+      "sha256": "8d3bc0f5d23fd879352f3260fbb6c936c502e8217e333790b8f98b8d385327e6"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_history_material_retention.py",
+      "sha256": "51bb2cde1442411a97816c60fc974e76879d69418c2ec0a8cee90a71e0d1c8d5"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_history_preparation_batch.py",
+      "sha256": "8e3b539f1ac3921e8b6b98636a5cb38f8da2a05beb2ef1c2f7e23d9ca54980d8"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_http_boundary.py",
+      "sha256": "e803cd96dd3d6352b0a36bada023b36b6f7a70f15f6eb32da4c7d78cda2ba0ce"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_model_release_contract.py",
+      "sha256": "9838e99c3a2894c45bf8dc00c79813a1a545f09bf2b5173ee08833481987ba40"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_presentation_modes.py",
+      "sha256": "d791d8436d2fda1df1dd76b42051d9de64163bbb3de73613d7a29f99d68f6502"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_pydanticai_product_adapter.py",
+      "sha256": "43016050dd5933da0d3b042ec7aacf970732b5196e7baf4b47d32ced167966ea"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_pydanticai_tool_loading.py",
+      "sha256": "d73f468d648c228b253419e94cc456aea83f2199171427ccd3891a922ce820e4"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_release_boundary_scheduling.py",
+      "sha256": "bca09076d1a948a82bc7ddde0aa5ab92dd9eea91e4f8862741f9ed22541915c7"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_result_continuation.py",
+      "sha256": "e49b51cb6c71c964be75ddcb6f673a85fbf72bb2eede936ff7f4c25a9278add8"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_runtime.py",
+      "sha256": "82012249eaa2fa775290a8139c50148798136a484a44d4c16ca455b1519efead"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_school_fact_live_factory.py",
+      "sha256": "cd470cdf59d2c2340f609e986060706901abc86c611f297a6aa029d45ecde040"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_school_fact_live_image_contract.py",
+      "sha256": "16a1562d7dbf08ce1c9e53d9a9918e64e19289ea73905d5e4283379dcf560f7d"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_school_fact_live_settings.py",
+      "sha256": "1812d47f1ef52b4cde5ef96944f048beb1af4ea67da8a1414a0432674f16ba4d"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_school_fact_product_factory.py",
+      "sha256": "f2f8f249a49b960bf0e460e0005d91c49e8c9cce940ee6d1fcd06d19df5c939b"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_tool_loop.py",
+      "sha256": "f6012d48166388f77dfddf5231cff368c88c1a9d6a80ecf43fe97e7f2771f2d0"
+    },
+    {
+      "path": "apps/api/tests/assistant/test_turn_lifecycle.py",
+      "sha256": "880641bc0e9f0edc63ea7ff8c2094b179cd6f43545add1862611f964e4264743"
+    },
+    {
+      "path": "apps/api/tests/audited_skip_guard.py",
+      "sha256": "d66c08f1167561fa7b17b113d3943510351607dac45fc52f95e3b739a3553d1b"
+    },
+    {
+      "path": "apps/api/tests/conftest.py",
+      "sha256": "eb51eae32e49d97b9aeba7bfbb8f0dcc67f91c79e17b84420f5d2b98aa6ef889"
+    },
+    {
+      "path": "apps/api/tests/fixtures/f4_acceptance_fixed_v7.json",
+      "sha256": "02e75cefaccedf09f19ebad80d4dbcf39f1e59b29aeff0bc668fcc116f531fa9"
+    },
+    {
+      "path": "apps/api/tests/governance/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "apps/api/tests/governance/test_architecture_boundaries.py",
+      "sha256": "71f28e55644d01586929c6cc986c048a237bcae82bd2116dd175d0ee5a2c5623"
+    },
+    {
+      "path": "apps/api/tests/governance/test_authority_root_bundle.py",
+      "sha256": "014f0e4753cc19878af29e5791cc978718c8428576587aa949423b887c31b779"
+    },
+    {
+      "path": "apps/api/tests/governance/test_concurrency_persistence_performance.py",
+      "sha256": "a72d7bab24a6e3c5cd85f12871957b30db6cf8304a2f30762880617c72429fba"
+    },
+    {
+      "path": "apps/api/tests/governance/test_external_bootstrap.py",
+      "sha256": "824fbe67ab08ec7e639d01b19ce62e97dcc92cdd6e3a9ed68a0d140e0aa4b4b9"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f2_engineering.py",
+      "sha256": "c2457d034a269b8633db2a36e028a15d93c66e50150ac04f118fac53162aaff3"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f2_engineering_cli.py",
+      "sha256": "a2e6d2b79cf835d605115e003f8a708796604d08214bcf15e3e30903c95bb50f"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f2_quality_authorization.py",
+      "sha256": "02b21e82359fe2b899954791bdbce46dc7fb554d35d7709894312e3cdb968e81"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f2_quality_parallel_reads.py",
+      "sha256": "304e2caa2dd806a17f2dc81831ba3e7e50293877e52a2cfb0822cbc32d70d992"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f2_scope.py",
+      "sha256": "1735c17787cad6e4db9f8debcea4120462177ad1658a74ad98af09d106c86a73"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f2_scope_owner_lookup.py",
+      "sha256": "82fc658a112ca4d72097b28973f235f16aa939764cb6b5d1e05a16b19983516e"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f2_self_basis.py",
+      "sha256": "6939ffd44559b506eba4a23ed7465aa9c1fed681afedcbe4e2ba634daa22671f"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f3_engineering.py",
+      "sha256": "7c0be59015da3ef6a07d479309a91a50f87cef9683d4ea9337ac65703f7cac05"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f3_engineering_cli.py",
+      "sha256": "58d8e1781485ab52dd2e12ae62575b4dc04d5816fa95f396517c30bd1431bc1e"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f3_family_authority.py",
+      "sha256": "36e48f75b743457f9bd8d11c6bc68244b61a8e7fb1ccd86c2cbf791b77d9d529"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f3_formal_writer_adapter.py",
+      "sha256": "0a026b58901888cc487d7d6ed2c579308744a505d77fab97615abc64fa9bb48d"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f3_partition_execution.py",
+      "sha256": "8f4346d43a294fd7292611946747a770fc064c01fd91c3fbec239d924b8c4d60"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f3_policy.py",
+      "sha256": "1c63e274ceaa71fc15fc365283c6647751425fc06928895e67aaf4ca7ece41c2"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f3_runtime_handoff.py",
+      "sha256": "e0ac490719b3042dc3b24c60e83f7c67586185572264760f8e43457a04bae08d"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f3_writer_batch_executor.py",
+      "sha256": "32c05b155791321998db6d246b93c577d1c4c63c3f9ad702aa5e451b04ac389d"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_acceptance_runner.py",
+      "sha256": "4adb1abb218eeac18f0e097c5371279433e12b4e25de6f287add79952b79d1a0"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_authority.py",
+      "sha256": "193dba2c3aee628deba0e6e32553cd1030210e972948f3295549d944bedcc03c"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_authority_root_round.py",
+      "sha256": "94b4264e19a8502b3255fea8a02c42d162edfd7c57be6dae6fb7a935508fea6f"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_dependency_scopes.py",
+      "sha256": "4f46e6baf743eff2855f7746492e0c1bf671ff706db0b29e45d9bdf9dc375226"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_engineering.py",
+      "sha256": "8dfef9b8e2ad9148960c8de6c46460f24d0f626cf6d8241199ae2b426b866112"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_engineering_cli.py",
+      "sha256": "bf2aad0eb851b5d1215b1e09efa11fb1c304876171f9f9454ce521868930edac"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_policy.py",
+      "sha256": "6740b2165118ee3b5671a0cffe1d19a3478d2f1c3679444d8a75e1c09a467276"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_runtime_configuration.py",
+      "sha256": "1da7d6b0f9af75b001d467ab56a91551ab66fc46d97969d69224205eba58c098"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_runtime_dispatch.py",
+      "sha256": "5b18ddc79cb01b4966bea6209c2f47bb177389d36b306b4c0d23a69c4be8776d"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_runtime_governance.py",
+      "sha256": "7feb0fa8e438893907b2a7513eab5bfdd7ebbeb5a94c0a8c4833221c44c9e665"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_runtime_preparation.py",
+      "sha256": "afbc7ba1de8b75b2ca9e51357bf62fc255232b33c3b5cdb89e9a8cd75a62b4f5"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_runtime_safety_review.py",
+      "sha256": "381cc9e45c315ec427499c4276947204207f1e42ac3cde95c8f28e78dfdb0f05"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_runtime_seed.py",
+      "sha256": "73a9ef879981e7258d6d6be742c37dde523a210a0426ba4eb17bf3723a7d7624"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_runtime_update.py",
+      "sha256": "7da1e2eb8365a6d266239d579e985c80e36c5866fed86786b2c2a1d1265e98c8"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_seed_publication.py",
+      "sha256": "7d0f95678283a3c4e160aaf1362e520b15f11708c47299f5bdbf8f016cc37625"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_seed_recovery.py",
+      "sha256": "4c47837a86772a01a48f652ab55a55e6783534497730ac5ef27bd5ca5bd728b4"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f4_seed_worker.py",
+      "sha256": "1d06fb9a22d1dc64c4ccc02db52d02a9dfaaaa477165e059681de4407f7dfbb3"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f5_backup_transition.py",
+      "sha256": "dc3a43b7cf36e64d7f6602baf8b2fccff606059258e4774093b6124c3fe525b7"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f5_dispatch_validation.py",
+      "sha256": "3673ed4cdd10874fd024ba6f87c817240250726c5bcf3cee6722dc4a75ae5a08"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f5_engineering.py",
+      "sha256": "7619108eb1cd0fa40cf9957148a193d387e0f178dd0ee30ed30fd40c4f27426f"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f5_engineering_cli.py",
+      "sha256": "c7e7d9197175c783eae851bfa28c4f85f16e732733ba47fe0e42facd5e20ed68"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f5_migration_guards.py",
+      "sha256": "e34e995e692e08e8f484a7398e2fb803d22c5a397cf5a65cc0b7ff0a19770f25"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f5_publication.py",
+      "sha256": "1dc76ca51a4fed73ce6b6c521b2a84784afdac87f954affd1ec543818cb82677"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f5_release_runtime_update.py",
+      "sha256": "e688417691dadfa906c708657e1a403a98c411f1ee480f78be2371a4b92bdd63"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f5_runtime_configuration.py",
+      "sha256": "3264877bc7e00f1b6843b0b21818d379eba4bea5b3abb1f076b4f381d41d63a7"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f5_runtime_governance.py",
+      "sha256": "301983d2784de2e4dc98f18a12ebfd1ee7e51971d849b3e8af468285fa3636db"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f5_seed_worker.py",
+      "sha256": "dc0807800c5caed14217c29800c90349dd1bbe51b57c0ba912b8607c566c8db8"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f6_engineering.py",
+      "sha256": "9114abc5bc0428ea0e3d6fb602bf7c13ed1910ed127036042222db8a80d1c9d4"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f6_engineering_cli.py",
+      "sha256": "70b0c1e4f65ff9442ad6bc49de041dd6eac19b82d599c29ce151bb470c9cf594"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f6_migration_tools.py",
+      "sha256": "541a852ad330f9591798aa6848f6d2a6cd6f2ac220444ff85b3d8f38800dbb5c"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f6_publication.py",
+      "sha256": "f746f5f097f75e59f0e1a17935db3786f54597a27bf1f6d95a2078cf23e2501b"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f6_release_tools.py",
+      "sha256": "242f2412deee6f3da039599ce67d315779979a7bbbed4f7892d5260f1e3f72d3"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f6_runtime_configuration.py",
+      "sha256": "8b5223b67b7e2bfe7c8ed395f8452e6ddf7242c05a68896758470852693d3aac"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f6_runtime_update.py",
+      "sha256": "91c88a678fffe4b218e52536dad0dc202aae0b8fd2bd76bd0c22a97af7317609"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f6_schema45_engineering.py",
+      "sha256": "f607e8587b41b14d83518142f0b48f99cc2bf1b1a1e1c2a73051d7f5189e4a17"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f6_worker_diagnostics.py",
+      "sha256": "98312c15877d33033e08a13c1629c81ae80563da8e249e577b352635855e586a"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f7_acceptance.py",
+      "sha256": "7822d63da635f2842aff11c65ae9fdd553153455311c95aa3f95b206a6066fac"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f7_activation.py",
+      "sha256": "b89dceba4ae477e0821b0ea37e9c9ac8b3571eff63609e2078ae075b406156f6"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f7_engineering.py",
+      "sha256": "af70233cd8ae5128377755c65976e6eb32daddeae39456b3623ce84c1ff9f306"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f7_external_private_paths.py",
+      "sha256": "1e1fcfa96c8f40064a030ca107cd7929f0d4c00ba081d3d288b171a2088a2e20"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f7_family_quality_authorization.py",
+      "sha256": "2990c3d1b189209575ccb0e9b57cd1ebc8553224649f1aa30aad67807e0ddaf2"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f7_formal_execution.py",
+      "sha256": "93d0c525a78c45d4c5f8ce6ba880d680b3eebf04ab0bae78ef545b364b9e1d8b"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f7_migration_tools.py",
+      "sha256": "387251822cb819ea4f9bc77bca658b4986c1abb1ca3055c8bbb7c9067ded7d40"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f7_pregrant.py",
+      "sha256": "ac89c050dd95c528ab73c6c57b22cc8931210e5d6aa8e85649d88655bae30c09"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f7_release_snapshot.py",
+      "sha256": "8445fae8cdee0650636e33f49bc9fd6d213885a31c531a0105e9a83310ece15f"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f7_runtime_configuration.py",
+      "sha256": "ef2a55afe3e4ec4d3f577f0989be8966137b4101f29b49b02f6a0f3b5f963ef4"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f7_runtime_update.py",
+      "sha256": "173beb2e5bf83089c29e29c8e1c3303f87e7ab7eb2830d62533b123a98a71c66"
+    },
+    {
+      "path": "apps/api/tests/governance/test_f7_schema56_update.py",
+      "sha256": "8e1565c22640b30b7398603d3931397ba8b90b5fb31dabc6aa1503e60ff1e315"
+    },
+    {
+      "path": "apps/api/tests/governance/test_reader_basis.py",
+      "sha256": "69c095a700d847160eb960f925f38ef62a75766ef7912039c562c3a3d511647c"
+    },
+    {
+      "path": "apps/api/tests/governance/test_revision19_database_contract.py",
+      "sha256": "196fca0c4aeccc1b67c366f0577ccd2414de9ea481ce247606be308ac9eab381"
+    },
+    {
+      "path": "apps/api/tests/governance/test_revision19_migration.py",
+      "sha256": "59233a347327810d2142345deed1ffec274ba8763aa6bd3f3be6aefe4b4e1311"
+    },
+    {
+      "path": "apps/api/tests/governance/test_school_facts_dependency_adapter.py",
+      "sha256": "315bd3cfc87674f6845ba17e5e006b6980e8e03a96ea6104ceb807550a760ce6"
+    },
+    {
+      "path": "apps/api/tests/governance/test_stored_authority_queries.py",
+      "sha256": "127690e6da62b4999cf654f9f189cc38c13ac372956a5fdebc5e9dd4f18d57ca"
+    },
+    {
+      "path": "apps/api/tests/governance/test_thin_authorization.py",
+      "sha256": "ea5a3cc196e23ffe43fe75f7e81b7ce7976cf55f08e6f9e73e06964291146cd0"
+    },
+    {
+      "path": "apps/api/tests/governance/test_writer_lifecycle.py",
+      "sha256": "0851f07b065e21320519513b34f2cbe4524df273f8a752a1f7c2e6ae0bfb9623"
+    },
+    {
+      "path": "apps/api/tests/master_data/__init__.py",
+      "sha256": "98ea4326afe8ce445d46245bd6d7237b9ebd5a519b73876b7a322c83407f2d27"
+    },
+    {
+      "path": "apps/api/tests/master_data/conftest.py",
+      "sha256": "3372ab9e10ffd83afd9997f64c02f0c74805d04d1e7a0ac70298d9bdfbadab59"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_audit_service.py",
+      "sha256": "83b82387dc667aca5e3d22a23a81740c98d81f3b08b381666e546c1bf8143c1d"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_capacity.py",
+      "sha256": "f387704dc92229b467b8d21674ea45fff85b8d8564ee1cf8b85b84ad25ee09d2"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_contracts.py",
+      "sha256": "341b46f4eb832f51693d65f95be443b9af805c2749befd70dea7ffe69347e26f"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_core_schema.py",
+      "sha256": "13085dae2a68233e8183adbabdb1c9e0e583bdd63f2944d4f57490c592716999"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_cross_module_uow.py",
+      "sha256": "d7bd4a3fd680a9fbd4d100de22c9b8cc37e58343e6ef9c1637a33e0e67a2c7a9"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_execution_context.py",
+      "sha256": "49f96137e67445eb8d6e277692b91a4810c08b24b2bdd8443bf47b47fdc1c7d1"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_idempotency_concurrency.py",
+      "sha256": "92f4b1b0ca1f297a366a17ee3e5c51ce7c6702d3198b197aa496228f1b842222"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_identity_authorization_schema.py",
+      "sha256": "82c8cfdbeb3b74c3938109b81cb9d9c2cdb0f411a9b0750c47dc5ab4e92f8815"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_imports.py",
+      "sha256": "9b90246d9910aed7bd97ba2a6bcb1ad44aede8fe73fa4cb109f1594aff4c3f47"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_legacy_runtime_compatibility.py",
+      "sha256": "0055718cd7336887e3883c5e8b351a04bc0bbacdcdeb44252d7f4430d63918db"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_query_time_validity.py",
+      "sha256": "08508b74318f1859cbbdda77f7671ce16946382d8e179b09f31dc9ee049d3a3e"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_rls.py",
+      "sha256": "910e99e8e7d0db4d0e9daf0ffb8d12f200270beec9c6eb892d79eb39219fd15b"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_role_separation.py",
+      "sha256": "31a8dd98de5029e46f203b6f22d8874289139abd7d30fe6336041e3cdf2fbf5e"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_snapshot_readers.py",
+      "sha256": "7ee21b17c4a7a66ca3e6b55c8af79250f599de9358fdb1ecadb6621de4b1c8bd"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_student_campus_calendar_schema.py",
+      "sha256": "82498e7d06e4827ce944b9db33b661528ee12e480fc178d73108281d1c818212"
+    },
+    {
+      "path": "apps/api/tests/master_data/test_task5_transaction_records.py",
+      "sha256": "780801cd3ba7bcde1b594ca90abbdd3a182dbdcf809284580abc2e0dc2fdc0d8"
+    },
+    {
+      "path": "apps/api/tests/postgres_guard_probe.py",
+      "sha256": "e0c54558da4f7eb4297c17a7456da48c581682126649b43a9baafbb236512a47"
+    },
+    {
+      "path": "apps/api/tests/repairs/__init__.py",
+      "sha256": "9586531e92666448b970be316444c3a98cd5da1dcb019a4b368605a214680dee"
+    },
+    {
+      "path": "apps/api/tests/repairs/conftest.py",
+      "sha256": "e4e8c7d98eb4cd7eea3dd49bb0f520f55d92b500742fc0219f1be923e56c84bd"
+    },
+    {
+      "path": "apps/api/tests/repairs/test_audit_database_contract.py",
+      "sha256": "0b6b8e7fdd1d0979b8638f49ca0d074cc8f67e16f236858b91e450a8e390e930"
+    },
+    {
+      "path": "apps/api/tests/repairs/test_model_boundaries.py",
+      "sha256": "3f31190e0a0ce25f4b16c6a2487d50f7b1aca2acebe01ecbb07d765b27923658"
+    },
+    {
+      "path": "apps/api/tests/repairs/test_phone_optional_migration.py",
+      "sha256": "07a9f11ad0bbd0294dcacbc18ff48e8651fea1ff78ef140ac7de167330acbe84"
+    },
+    {
+      "path": "apps/api/tests/repairs/test_schema_rls_acl.py",
+      "sha256": "a0e9db4ccca98936ec044b609af1fabff7b68d80a95799af0b654738abd9fee2"
+    },
+    {
+      "path": "apps/api/tests/school_facts/__init__.py",
+      "sha256": "b405998a425a1c6f8029bf1e904f252c3b9b8df29432f894716370e553946592"
+    },
+    {
+      "path": "apps/api/tests/school_facts/conftest.py",
+      "sha256": "f2c80fc0532fa1fd1323c751a5debf4a89eb1fe59a695dd3f90fea4c461045a0"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_answer_evidence_material.py",
+      "sha256": "87223e3d00011d9e6db9698bf58750644b26584cedacf88f6b22ead9ba2997e3"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_checkpoint2_campus_policy_postgres.py",
+      "sha256": "aee5631037f48a809f5cb1ef7a06d121ec482b058ecdf2dcd15c5ea55987a0ca"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_checkpoint2_campus_policy_semantics.py",
+      "sha256": "a86e7a57c1a11d07b5c1fa0983c3adbab922b0fb9156e4255db7706ec1d4987e"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_checkpoint2_lifecycle_red.py",
+      "sha256": "09c898c8438af1451d3fbdc5315dff448fb3f19f0138a399b7335af11c0bd954"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_checkpoint2_location_lifecycle_red.py",
+      "sha256": "81ba566f4462b0dfdc6e45b4bf091ed48a2ffa2dfc24687be4e8b857eb5a0902"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_checkpoint2_residence_red.py",
+      "sha256": "8233037b03c958521028998c5c83b90552a237f9e792fb8cb601b0ad1f1873d5"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_checkpoint2_version_and_scenario_governance.py",
+      "sha256": "00faeccc6e7375521db1bfd4bc2e29bdf61901c70ce4345333e555b87fc1bd57"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f1_independent_acceptance.py",
+      "sha256": "5af88041595efa16d6f63d47f24199d22858ebdd19b0c1f53eca402825448ee8"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f1_initialization_contract.py",
+      "sha256": "e324063568bfc285944ae0866497a6b1e9a65bf34052578405672ec1dbae104a"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f1_product_postgres.py",
+      "sha256": "f771169d5664807dc56044ca67e9f1bbde79e4e58134ba7d518a13f09c4cd1bc"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f2_domain_contracts.py",
+      "sha256": "6c914fb6421cbc5d822ef7963ca085a9a926f288ae870d833f0e70ab023a3657"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f2_domain_storage.py",
+      "sha256": "048cc09f070af14baf15a2e62b9ea9ea318984bf862f44e2dcc2787c45de4553"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f2_json_input.py",
+      "sha256": "78ee95e830965da2c69ac01508dd393b2b5f9f0e096c04d982dc1ebff073b160"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f2_own_result_executor.py",
+      "sha256": "35907662e350dc90b09fa3615961de3130ae98bb57af5ae3a0ce8ac7f888cb98"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f2_person_reader_migration.py",
+      "sha256": "f376bffab129c2ada51b17e85c5f7c539b5c0682d54224feb7bf5ce2de65e6cf"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f2_policy_revision_period.py",
+      "sha256": "16da1dab2fbcaf1741df2a8dbfe1d82681d51c741e798964cc58f12e78818be5"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f2_quality_consumer.py",
+      "sha256": "d40060a93d8edd7e53b3bcd7eeac81507133befa3287b3a4e98cce67e391aa95"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f2_synthetic_sample.py",
+      "sha256": "f24024c3c573ed1f95d4e5947880d8b67e3c12fef01de397594e8750d0293383"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f2_temporal_persistence.py",
+      "sha256": "8e71dc1615ac539071baf9910d03d40c8565a02c3f94d6174712c186e70af4f9"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f3_correction_postgres.py",
+      "sha256": "a20682d8136ab62543bd11c7468ee94e8a83d32f59223cf8219a3f21e78d2236"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f3_family_correction_executor.py",
+      "sha256": "f8d19b0a81b4c7985be346a878cb4433affbebfa8648ca119849442c92ba6f16"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f3_family_correction_migration.py",
+      "sha256": "4e431344f2876237eb1b8df757d23c452e40855c9993b7e4e6863cc316452b17"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f3_family_correction_writer.py",
+      "sha256": "366a627a41d7d79952f6e9a25b514973fdfbc6f774d40973040299465793259f"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f3_family_migration.py",
+      "sha256": "c021bc2ce8c1f8556ea08c8acc9bad72b8f54e955fa0842ddee18c9bcfc15d81"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f3_family_postgres.py",
+      "sha256": "e7e8ab211c297df2f0ce8539eb98f472dbe234aa336e0e75d6ba0d61b645cdb9"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f3_writer_composition.py",
+      "sha256": "6d17ffa618f17d483a3f9563459477dd6002e823ec9147aa05e8b7598acac1c9"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f3_writer_postgres.py",
+      "sha256": "23de4b420c61477b356a3276a281a5f4d15e192c4edd67fa36a5578a3ecae75e"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_a09_a11_postgres.py",
+      "sha256": "c3e6cad6541cc8bf9a5be9730076bc8bb0b4a3284ed4017f1b845a05a6720446"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_authority_release_postgres.py",
+      "sha256": "fa69ccbccdfc1009a4d6d48b84c54bfee2feb6668d08d5aa89968a572b01b75c"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_education_change_planner.py",
+      "sha256": "4fb9cb034d9f8db0946b07b8a7008b03bbca3c250efed1e9ee7dc91d36b3a891"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_education_contracts.py",
+      "sha256": "0d34101ff1f05115ae657ceb62832c9919b9b9866c816d43f8e0e4944a2a28e5"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_education_gateway.py",
+      "sha256": "9fba701177d0827d151b169fe366fc715f367ae4d177365c9d8ecd9590d4377b"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_education_maintenance.py",
+      "sha256": "d963e0177cf01ef7b306ec2c37db65fca13994b918d211552433ebca82229f33"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_education_persistence.py",
+      "sha256": "b24527dc3b29b352d9a42c1b2245468e69efa1f91cd79b413d8deb121b59d6cc"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_education_quality.py",
+      "sha256": "75e13239f6305c15e490055076ffb56312ad645966c73761f45306a0c8b604e2"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_education_query.py",
+      "sha256": "2a0f2ce31b207b46470870b8f9a33674fb3daeecf8dc011bd98f3818d7e61b39"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_education_read_migration.py",
+      "sha256": "77257b0f6975277c77df5b7c3ae161bc0fe3ee8853d2c2dde9501614a804c1e1"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_education_reader.py",
+      "sha256": "714f924cc0d58dfdab8a0f79b4ac1574471a7f903e33229f70be79a22393fda2"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_education_time.py",
+      "sha256": "78e7d1ee0bba94186419bcf08290e6c574d298889f83731069d35c350b68dc4f"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_education_validation.py",
+      "sha256": "ede9b5963911b6dc259a64e83732cbfb57f03ac3e6cb99f78476d52ecc88f64c"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_family_correction.py",
+      "sha256": "4378896510ee5a1a503e829dfb5afad5c2630d66d3bcf578cd8ba211b6e6f0d2"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_family_education.py",
+      "sha256": "bbdc25086de4196a25624f2e98e1f9a9f716f2c91e1e42ab85ba434d17630f96"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_family_grade_postgres.py",
+      "sha256": "ec50b6ee79a5b0d5411e3e9f355c03abd424910bc558bf4c7911adc9d34d63aa"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_family_quality.py",
+      "sha256": "e561e2dafa3e438673e6b3f265dc915739d6eb44449dd774d320a6c51b3dba6e"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_family_quality_postgres.py",
+      "sha256": "ede19ae3c2a4d9ab9d35f71f88efde80c22f797f2dd4376a38d8c6978dc87c83"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_production_metadata.py",
+      "sha256": "9d88ada1e039498107c163efa7a84a4557b40b0f9422efb5ac4745d3c9c45784"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_reader_postgres.py",
+      "sha256": "b6d9902ac2b8b4505c6cfa2decd69680c20227bdbe64df418903557481c797d3"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_receipt_metadata_postgres.py",
+      "sha256": "9f648cf7edb881cf4574de75fe2d5be73f7aa61ce1b4b683701c9db4523b865f"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_regroup_summary.py",
+      "sha256": "9a97c533560f0ebdce886f5877fee889b953f68ed3f47f43bd3fc009d2d948ee"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_segmented_planner.py",
+      "sha256": "81fa3deb83f8091cdc1245c17f0fce4e1482088cbcde315a5730ab7e3cfe63e6"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_student_grade_postgres.py",
+      "sha256": "2b0e5dddef02c09ae7c03b1eddd36f7b1e5c6b12053e957a5298402d79861f00"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_temporal_cohort_postgres.py",
+      "sha256": "78c025764909dc2a6ee3dbfc2db6df33557e59d14d250d022dec3a839089e019"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f4_writer_postgres.py",
+      "sha256": "2f699b39fc155547bb3693eaa0428aa1ba819e0889d37c1ee16f391e23fc9d4c"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_authority.py",
+      "sha256": "c00b5641b0f3795001ec9f56159563d21d0b6b2432cd0e5b4d120abd4306bb0b"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_batch_cancellation.py",
+      "sha256": "79e285d290d484f45888694b36e97f14d252efc32b8663438fe933ad5d2c75ac"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_batch_cancellation_postgres.py",
+      "sha256": "eaea202c6fc0daad7292ecfe11b0910dc131946a2e4ace676af3fdaf5d1754c3"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_batch_creation.py",
+      "sha256": "e1c7eac4c18cb0d197cca02c0bfe950d85ec962ac153651eabac0ff48008ef8b"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_batch_creation_postgres.py",
+      "sha256": "20e301bbcb5910dd700af2fefdcb0796bf78f3bac2b217f42d5e27cdd45756e5"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_channel_sources.py",
+      "sha256": "8e48247d0a8d22b3e53f8ffe998abca99b2a27eb56856ef35c83087ccad18ce5"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_channel_sources_postgres.py",
+      "sha256": "c31efa56227043c20f7253a088c16ede9493185eba15121acb62be4014b6bc7b"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_concurrency_postgres.py",
+      "sha256": "ced0f8132c45a2f962134e4bb035ed9b292f062c584afc283deae7fc83d8116b"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_correction_labels_postgres.py",
+      "sha256": "99d9ce83a93a9b9ba327656d6af0a9730ada0f3625ad8109897cac3cf2d81308"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_correction_receipt_postgres.py",
+      "sha256": "6f7afdf30bc80f587d2e5429f7d5e46e42122d8e4428f59af1a0d380c97220f8"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_correction_review.py",
+      "sha256": "1ee14c27093577c63bc511420aabc49c8d1b4da48cd835ca82e7e63d229d4906"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_correction_review_postgres.py",
+      "sha256": "e848d82812a87b01f0cbe104e4002984b7364aa512cc3b631de1801c028d65c1"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_creation_receipts.py",
+      "sha256": "b70deea7ae4e846230ff5bc8ff0bf6eeef1048b0a53b780c267a46e75d7f09f9"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_creation_receipts_postgres.py",
+      "sha256": "f496f03007a4d1236015b1bc788caf52f2ff40c8853345c711d08947c27fd7fc"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_current_relationship_postgres.py",
+      "sha256": "7852b18396195e602ca596bda895a54ccb58624f23e46db97013026c48ff1644"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_education_dependencies_postgres.py",
+      "sha256": "029e017e5d383b0c6dbf112ab4a9e192ea89922fe383c6276d53359a526fbc00"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_education_quality.py",
+      "sha256": "583b33bdc328443b9527b4ba9d73734f1d450db1d51cac6736cea9994ed51f63"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_exact_cancellation.py",
+      "sha256": "1c74e2d09cdf0f23b0b15d8453b9830e6b2cf6175bf64b3a2afb63c251145f4c"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_exact_cancellation_postgres.py",
+      "sha256": "33d2220c04253c5d4e932ba6cdeef2849b0dfce1133e9a4979c6f1fc96c25b3c"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_extended_maintenance_postgres.py",
+      "sha256": "41758cbb9478704259631bb0eeb16141de58901a49c6e58bd91eec44ae5ac7cc"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_family_correction_gateway.py",
+      "sha256": "6ec01c2b260a644cf5154cf13427f45936c41763ce6cc606ccddedc51be93e92"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_family_corrections.py",
+      "sha256": "9306424e63529ecb0ed79213f53375cc3723dbc95044abdc1b1998b2165e747e"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_family_leadership.py",
+      "sha256": "43ac59815dac1dd11abbb93bf0000d4e86d6d66b80391d37b4a7425f2febc2dd"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_family_leadership_postgres.py",
+      "sha256": "0291298e0dff2b61c64a47edfe5596f3ead9f977979584b62660cbbd4d9d3337"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_family_release_batch.py",
+      "sha256": "102d3cd8b5c2f04a78f3e5a7a664511eb9faf1112c3ef7dd2fa91b027fd0831f"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_family_teaching.py",
+      "sha256": "b0b16d79dab39e98a7689b54c0755e34d38813fa2878613400b42ae3e691e7f7"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_family_teaching_assembly_postgres.py",
+      "sha256": "bfb6c9bf574d37f45784c321f7d958ce1a247cca4b8eadbc67bb38841841eacc"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_family_teaching_postgres.py",
+      "sha256": "2ab866f818b6408090aa3771e45ee2ac4f1f10f2046ea38e2d5975c2960836e8"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_maintenance_gateway.py",
+      "sha256": "de3947a94d3740c21eb2089747e24c7f3e6e126b6124f953e704c330ae3c3eb7"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_product_assembly.py",
+      "sha256": "3a6e0e7721922fcd822ae0815f21a14ed92d91322571f90b72ac623c26b2dd10"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_product_rollback.py",
+      "sha256": "5ca6dd8bda0727881f51963ce36983a4f4787660d024d7994c72d39afb0710cc"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_readonly_continuity_pool_postgres.py",
+      "sha256": "77d62c28da1ae26f45915dbf26149e96dfd5d0cd6a787b1f3f38638d87286eda"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_reference_choices.py",
+      "sha256": "85bfacbe2b81266d0d61b57c39f769b078aa7718bad5dce53b7f98155646e966"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_staff_quality_authorization.py",
+      "sha256": "76bdeb6a7f0d0a8b7efa02bb1b202cfdf50828ce84ede85f67954a2ea0152768"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_staff_teaching_query.py",
+      "sha256": "c4759256bb5380cd7b08a72abcfa05e680ac0bee84a3a7fbec16b5f03093c617"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_startup_contract.py",
+      "sha256": "c9acbf6bd3dadd87135e18d450db912dc3280e8923f7da27b1feaf6f73a2d8b6"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_teaching_changes.py",
+      "sha256": "4916d245a2f4f9b574130689d35ee389ef110dffd9bf7213de506bccc371232b"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_teaching_contracts.py",
+      "sha256": "771983cdd023c66dee9523641728ee77607fe9134201786fb2a0f08b8ca3c4b9"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_teaching_gateway.py",
+      "sha256": "402b86ecd165a95683218221e75bea82d05a344e4e3f6508c0ff4fb74356799f"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_teaching_imports.py",
+      "sha256": "a2df9997d6b5d00ee081c8fb507372e7c65ce35cfa7e9b0f8c9fb510b1b8fa0d"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_teaching_json_inputs.py",
+      "sha256": "ee18dea2da1465d23817449f3b320adaabf3ca4b1153e5219c3c969d73eeb00f"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_teaching_postgres.py",
+      "sha256": "e9e9f3e1a2c0cf7cc91166f7c8c9e9df61594606deeb65be83b2b23822a741fb"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_teaching_query.py",
+      "sha256": "a4281cbc0925425f756a35834a350c31f0bd571cff6d4a970d9695a6d7a504f3"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_teaching_release_batch.py",
+      "sha256": "c782428a6af11d4fbc6fe8f2c91048fdd171d0a74120ccd85b75f47d8a942b47"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_temporal_linkage_postgres.py",
+      "sha256": "d055a711650abbb84cbd9c41b9226425e983ef60398d282bb3669269b592a7b8"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_test_database_guard.py",
+      "sha256": "f042c5205d21f8094bc0d4be72e2e4b0f9712c8cf6beba84a97ddc54643bc609"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f5_writer_reader_postgres.py",
+      "sha256": "015ba1aede14162e2d057d70eacd6edd530ab1a1a00d764cfdb0fb9571481a2d"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_corrections_postgres.py",
+      "sha256": "89a938f62226650254c37849e0209749634fd1cd5dda9a7e4b64e29d08d4cb84"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_dependency_product.py",
+      "sha256": "0d6efdf19f4ff7e548d75309c22b6dbc68560466fde365373a936a2cfbe4e3d8"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_factory_lifespan.py",
+      "sha256": "bee91f1c568191668fcc08f0731a774cbf2e58df9903a57ae08bd830b8dd6ea3"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_family_corrections.py",
+      "sha256": "906d374e3e53c12c76f9eea893dfec42c95399886af1827a214e330d795de1c2"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_preflight_feedback.py",
+      "sha256": "273015e21f02cf2d9aac16099f0f033d2217f6b9dedc29e1bc574cf4f141c512"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_product_maintenance.py",
+      "sha256": "193472b86353d455fd8a05d74396bccbe297f3a09495f6d243163a08bf45bf8c"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_product_routes.py",
+      "sha256": "a9773844fd67e904003bfe5e3fceeb6e9e445ecdfe5ebfb8c8eb51e928ab1265"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_quality_product.py",
+      "sha256": "1587c1a6bd0a2c7c6c8cb2f589d4f5ccd5b11b9f1b766a900c7c693f8ff8ff2d"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_reader_postgres.py",
+      "sha256": "6a11d5ebfe26f3b9130a82b001fe4718751041499a2d5db66f88d9be5d964de6"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_residence_authorization.py",
+      "sha256": "69faf827fd4781a0eecec56e95627153b99bf8c935fbbfe0c210f05a670222e1"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_residence_changes.py",
+      "sha256": "bab3b5fa236935c8f14b362a14f3020ac676592813fe2d5a0cb27311a29b5ce5"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_residence_contracts.py",
+      "sha256": "9a2408ae0c9d51af49bbab9cbe6540c78bc0fdb681e53b3a576b2ad4fd4822b6"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_residence_imports.py",
+      "sha256": "135366252a1301b92d73cd3f98e9b5503d92f69fcd4b4d4ae831f725a72c349c"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_residence_postgres.py",
+      "sha256": "387be0751c34b542f6f61b85c2ff663e89f8b7b1abc9db3a37fe414dd32ece3b"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_residence_read.py",
+      "sha256": "85b5f6dcf944369bad68383c663953b391a2f7decb891c13b818889bb77cc2b4"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_residential_area.py",
+      "sha256": "cc6b1020e7828aae249c945d827248f86ad3def84f0ec7662aa3f5b4430f11e3"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_sample_publication_postgres.py",
+      "sha256": "b15b9fc51e4c8ebdf178dd2fc8c0172c0821c537f27f5ef292833cf04cb737ec"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_startup_contract.py",
+      "sha256": "7490ba3a341fe1578c91158995b4c5b6f24e4b7f08ee84c284a314f8f6242fb3"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_time_context.py",
+      "sha256": "910d742b8a229f67f0df1e6802fbf906fb2bf40c90537cabb7afec4c3693ec10"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f6_tool_selection.py",
+      "sha256": "55ce2b4a5fdb16b508a6b6b34acd9331341af956010f8424a1b8f50f26788498"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_coverage_basis.py",
+      "sha256": "4863a970e0130fc9eccb95f49a683efea35008ec6a5f3b57c003020d3316a345"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_education_coverage_product.py",
+      "sha256": "622af83272d08458dc1501d72ec14c466cd915fbf83f96fd6e84560dc7b3619a"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_education_coverage_projection_postgres.py",
+      "sha256": "947f87135add204371234f736f6a121d523814c53de05c12203b11a25382c606"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_education_quality_formal_postgres.py",
+      "sha256": "0606ff7884771c4755789f5ed1bcbf705c95d502ac044756077f08465a2273dc"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_education_residence_coverage_writer.py",
+      "sha256": "e606d94933ee56e138e4f51ea2d8f2ee972f8597bb800c6ca42ecb9522d371f7"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_education_teaching_coverage_consumers.py",
+      "sha256": "e67c5bf8ef3eb9c146dc84fd7946d11ed4b5e42465a39c316f72ac4e6d027dba"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_family_education_coverage_consumer.py",
+      "sha256": "6a38f476d2f587b88974df2bd1605171dee130e9752b7cd670efcbe5ee7f06b9"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_family_education_coverage_projection.py",
+      "sha256": "7a1727f00f1b30808ac5ba8c42000f3e102cef08308e3baa22b4aeb5fcae77e8"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_family_education_coverage_projection_postgres.py",
+      "sha256": "47b2b4d25f64ad273118cdb3a37a3e31d58fc2c0e9b9b7ce763d819584f66a29"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_family_profile_quality_postgres.py",
+      "sha256": "8e20572a7834e7feb48efd3e5474679b39ead555aec1d6d547ef877efb48aacf"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_family_quality.py",
+      "sha256": "46246ffd66b1d7db755d96ec6c37b97e5b684e79a6cf4441ef51401d9b73aa2c"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_family_quality_item_ownership.py",
+      "sha256": "b00f974ba38c240e357135b70c573de3be930ef606624801b07fe11d6eef4944"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_family_quality_postgres.py",
+      "sha256": "2c62e14e27458d23c00b44b70484ae3d83f2df8b95bcf6ef942f4f61c53b5449"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_family_quality_product.py",
+      "sha256": "ab088366718f4b9952ad20b1e19e802a3cdf807ee18e1f8c0798ac47c164428a"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_family_relation_quality_migration.py",
+      "sha256": "94b476d7ee88fdba75880dab8673e35f5307d80b9995145400ae139d85b62a92"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_family_relation_quality_postgres.py",
+      "sha256": "55e12061d193d58f213b57dc135ec2e1bff9ca5388a5d651d57a7daa6df95169"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_family_teaching_exact_coverage.py",
+      "sha256": "0f7a16fd318f1084c6e565289aab5bf3b164c18f231d451b06d1fc0807e47528"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_forward_backout.py",
+      "sha256": "7c931c476ac1b9bbf152a3053ba0e8048bac3ace80e25ebfdf7fca862d728d6a"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_full_scope_import.py",
+      "sha256": "fcc0d044f32a995f8782781f4a599a8065d7c9e3642f8a8fdd62053ddd8ae4d4"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_identity_wrapper_postgres.py",
+      "sha256": "2a62fa7566aa69bdbd19723d7910e74fc0b4032d6eccf0237c97cf5c5ff6b708"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_large_own_receipt.py",
+      "sha256": "189870582e1a9fbee71e2615e13d47dd25c8db2429013d5afd6af0adb71e5097"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_large_own_receipt_postgres.py",
+      "sha256": "5ccffe11e690244a17797760936227210245f7c78bb7002264b15ffdc087637b"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_large_receipt_capacity_postgres.py",
+      "sha256": "5ed360773a5d6b6e4c28c7921df914d8ef27c80c8eea23bbc74d1cdc0799504a"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_migration_preservation_postgres.py",
+      "sha256": "044dafe312e42a76060d5c95cf26ea049ea817e65eebf6d2213d8995e2b5f4e1"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_off_actual_http_postgres.py",
+      "sha256": "029c8b71fae5502c0ef9e362301a156cfd004b89dce5051b6ab00d9fbff3e816"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_off_education_quality_product_postgres.py",
+      "sha256": "aceac43c03835938f3a32326d4688180293417646b89fea752f9edc64ec1c843"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_off_quality_product_postgres.py",
+      "sha256": "762e96ba734f434b69765d4e67af597254bf20905eace48325432aecd122b6e0"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_own_terminal_duty.py",
+      "sha256": "a3843483a28447843a19c1c5e9f6715b67f5731931df8b74fbb3a0d17e3e9afa"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_package_authorization.py",
+      "sha256": "220595b48bd544048e2c8bad4dfd9bb2ede9c4a1a67ed1e02db24c760dc568ab"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_package_domain_sources.py",
+      "sha256": "2381d90b152001e57b63927f490d22afbbcc712c2904c8ba8b4f8852969c568e"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_package_http.py",
+      "sha256": "f2c1daed8e623428d08a6ec955631b2ed411dd51b2f72974225ac8cf1949b754"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_package_preview.py",
+      "sha256": "6723d03b9763f396a5da56790fcb12f6cb91f7590fc9448822de8ec724850a9f"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_package_product_boundary.py",
+      "sha256": "015fe3bc0612d6c59666362d96a4aa4f6d146d0394b0d8180324fe97484288c8"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_package_provenance.py",
+      "sha256": "a462b99b79f97a1a2391d49bc0137c9f1f4820112c5ad2c08d79f23d80cce047"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_package_replacement.py",
+      "sha256": "699bb6c55c3eac13bc28eaece0592db26c9ff28280eec51911198243a4e30237"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_package_replacement_postgres.py",
+      "sha256": "885e4e3067075ab6675d9e6c5b0d7d60961d5474b1e1ed076e26acc8136dca4a"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_quality_full_catalog_formal_postgres.py",
+      "sha256": "4bd3f660c8e2bd13350de1b317d270d2f45652523abc186f959d4d7b61e9ad82"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_quality_full_catalog_postgres.py",
+      "sha256": "6a4a9c547802b268e1c4075b7f6cc572a738e19199901ef706b99a060ba6ebc8"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_quality_kind_matrix.py",
+      "sha256": "caebdc883bbfcb81110e400c3131f94151b3f1423031f7a05f9847e888ec0928"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_quality_scoped_summary.py",
+      "sha256": "d46feb153b2dcf38e4b70867436483428073455aa046733e94d6b14bff59e930"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_residence_exact_coverage.py",
+      "sha256": "068ff94c8be7a4b802fa034ae2613b32fede49b236d5ed8684af155cc7e85821"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_residence_exact_coverage_postgres.py",
+      "sha256": "a163dde3a04aacc8e5591f9e9e6e319ea88d99e95cda290a89b3a6c2ca6b8193"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_residence_quality_formal_postgres.py",
+      "sha256": "d663161c621331a298eef181bcb5de042f7a59baf711d78dbed294aea0467d8e"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_schema_contract.py",
+      "sha256": "6711dd9228b7f4753be88b13262c8ae36f35f3523684ffd7583f163eb7fd435e"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_f7_startup_contract.py",
+      "sha256": "4dbd4194f7c0e3e8d60ba9874a2db9db848cb095f182f2f6ac2e9a54fc838d28"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_family_writer.py",
+      "sha256": "27639df7e87f3c5daac89931e6b108aac8396e1cd6c7c92c52999dc0a26f43b5"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_live_education_quality_scope.py",
+      "sha256": "fdfec06dd24eae16d45936ffa46c52f070815c02c34cb6fa6e7daff94e253cdb"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_live_model_policy.py",
+      "sha256": "4f12254d8b1c9ce1ae70850b396dedb42ec36f7866d7a2badfe8685b901f35e5"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_live_residence_scope.py",
+      "sha256": "6f96c0f29c0d315ed9a6695e3956d6b5e2261709cb0b9613722e103a353078c7"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_live_scope_migration.py",
+      "sha256": "7f29798c4f38492e75493c7816f5d590249e6085cd838048ec8bcce1066f01da"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_school_scope_reference.py",
+      "sha256": "99cdb5e002cd66d4338a6a51f05924f2f7b02db687aeba43c08f34d9f99b345e"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf1_migration.py",
+      "sha256": "ab2e13da0f4ea9f429e3b823cbe50eec225d0746a3f9b1e3cf383d5dfce3eea8"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf1_postgres_constraints.py",
+      "sha256": "8299f7569eb78c73615133c1f5aa3b9645eb42d40ef857bab243663cec7351bb"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf1_schema_contract.py",
+      "sha256": "c9f813bf997f2f78f14a0ced5b3b8f48ffc2c709e4de10d7d5ed7517408d3309"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf2_change_contracts.py",
+      "sha256": "2016eaf6d7b5d42541c657ab9a2e84dd3e313c2b002414319147ed2df3e2faa4"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf2_concurrency.py",
+      "sha256": "8c3717a5d6a8f4c2038342cdb4db021b79b48033d18b46295e0d9dcb3c9720e9"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf2_confirmation.py",
+      "sha256": "6f1bdc73cbcf2170e75d1d333faefd871e27376d747015e895ad665ebfcb64e8"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf2_migration.py",
+      "sha256": "86658d93878828e427f91fb2a10bf243a4eb876da285c8d23c0fe70c23225af6"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf2_preflight.py",
+      "sha256": "2be63098d73859eb7d54363d7884b447f86795db20d8817493755ef8995a852e"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf2_transaction.py",
+      "sha256": "fdb0f5064382199255ab25add3d2f80101b03270d7438f51647c0b1108fbc2f2"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf3_capacity_migration.py",
+      "sha256": "2425f8b8d3a19b9b3b330261467645e3afea57284668ec415816af7095d29527"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf3_excel_security.py",
+      "sha256": "68acce8a1088a103648559a8a24afdd53b4465f17bb409173ba6f5da844a2402"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf3_http.py",
+      "sha256": "75680afa554a31f159587c7e34d0a0bbd6015a0d91b7c9aebf050ed7fccfdaa6"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf3_source_mapping.py",
+      "sha256": "dbd52e4735dc1ffbff7cf821700ad5ba3e90eb387313c225d9554d59b6590a4e"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf3_standard_workbook.py",
+      "sha256": "3d63b7146e95c866498f75e2ca72a3b60cf1e43e96e38fac70ab6260ac4051b9"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf3_status_mapping.py",
+      "sha256": "4a3809e86926c996a0ba1e781dee6ece0be5f76812353bdabf8e00c6d75ec4f7"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf4_simulated_import.py",
+      "sha256": "1479819b6a3adc639dd41a7c9ff093d1ec013769fd8cdbdbc5210b824373b811"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf4_simulated_workbook.py",
+      "sha256": "4daa27f7187ef7e3183ad322ff364fe5234911999bed2b6910e7dfcfcf0ed326"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf5b_container_boundary.py",
+      "sha256": "b1de4c53e6916e1f3102a9d3c8eb1f54c81002d67a11544ea6b3431cdd0fb1f4"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf5b_revision20_contract.py",
+      "sha256": "bbe7d35b3e91a7ba4f5813a03745db6712958c3bf5e4d058122ae5795fe99af3"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf5b_writer_executor.py",
+      "sha256": "ac48b1a680f43f6978c58c1c59e023abb939eb660c650352840bbad51fe11c53"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf5b_writer_executor_boundary.py",
+      "sha256": "c240af762c7dc3e63a125b29df2c5787d711f9a203271397986ab43f475dd3e0"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf5b_writer_executor_capacity_postgres.py",
+      "sha256": "27cc43c89838135b5984f20b2fbe00c657db6cf1e625b6e7b00ad570ea1fb750"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf5b_writer_executor_postgres.py",
+      "sha256": "98ae665c8263d86156ce945a37afcaf5f0419e760f181e74f7c990c4c9c97751"
+    },
+    {
+      "path": "apps/api/tests/school_facts/test_sf5b_writer_executor_school_gate.py",
+      "sha256": "b59171e83200240e54b3d5f61a49dc9f3e06e3fe68cd0578af3803a4ef3b0020"
+    },
+    {
+      "path": "apps/api/tests/test_authorization_admin_api.py",
+      "sha256": "b284f5547d4481cf57c1875d0f2c036cece3a62d19e1ebd0bcdeb3b6a6532d37"
+    },
+    {
+      "path": "apps/api/tests/test_authorization_service.py",
+      "sha256": "dc1069d0ca426cc764ae88d0e127e7cfac7ca667e809af032bc2783cd01db415"
+    },
+    {
+      "path": "apps/api/tests/test_connection.py",
+      "sha256": "4f5e993491f4a599601e88f677dd3e0ce2d32351f8ae171d5ef215ac1922c7c7"
+    },
+    {
+      "path": "apps/api/tests/test_dingtalk_auth_api.py",
+      "sha256": "5e46ac3614ade0f5b363bb1f2ed653871475f61f9dabfafc9c7b4b4be1caaaca"
+    },
+    {
+      "path": "apps/api/tests/test_dingtalk_capacity_app.py",
+      "sha256": "899f1d00d0292db14019a5ab720ba9fee89db88ba9f4a641273d86e697fd65e2"
+    },
+    {
+      "path": "apps/api/tests/test_dingtalk_capacity_deployment_assets.py",
+      "sha256": "9792ddf6dd8f5956009489ad26cbf512ce21ac5f179a1e7d08f23a8915c7bc34"
+    },
+    {
+      "path": "apps/api/tests/test_dingtalk_capacity_orchestrator.py",
+      "sha256": "6e7e9ce70c1ce89b73ff650d959d9e18be9902fb84fc66632cacde001e186d68"
+    },
+    {
+      "path": "apps/api/tests/test_dingtalk_capacity_runner.py",
+      "sha256": "7063f3ac80449f635def23ce344e07de80d35345f797206d9df86b092184a0d6"
+    },
+    {
+      "path": "apps/api/tests/test_dingtalk_client.py",
+      "sha256": "ec4b972bdcc77ef43c1e115c42c12a46051e8db14c6f032774fb219b6595b1f7"
+    },
+    {
+      "path": "apps/api/tests/test_dingtalk_deployment_preflight.py",
+      "sha256": "337195de8eb3d6b2129ac32fb8311d49b485629633baa8f1a82f81c480636907"
+    },
+    {
+      "path": "apps/api/tests/test_dingtalk_login_guard.py",
+      "sha256": "79a762cb820cf205aa6c14bed868e7293116722822aba0c02b16d4ae31975c9e"
+    },
+    {
+      "path": "apps/api/tests/test_dingtalk_product_identity.py",
+      "sha256": "80cabbc51b1dd9db12c9300c90e7ff44081692318a9a67189ad8981235836835"
+    },
+    {
+      "path": "apps/api/tests/test_dingtalk_product_identity_postgres.py",
+      "sha256": "67b5c54ae1a2b3644ff203f43a0095c0d7bbdddc867a1a1bcb3fad5230aefede"
+    },
+    {
+      "path": "apps/api/tests/test_dingtalk_test_deployment_assets.py",
+      "sha256": "19da306545404de252e75a3fba43bcfce76c9e355562cf0acf639dc0bd90c0d6"
+    },
+    {
+      "path": "apps/api/tests/test_dingtalk_token_provider.py",
+      "sha256": "0bd09f4ae39185b7e2081f9b773ef8f889582941144483b34b63b144b116c4ab"
+    },
+    {
+      "path": "apps/api/tests/test_f1_contact_product.py",
+      "sha256": "6fe6a7d9c24eb0765788325120860d087afb99992eb8a8fd43c5365ebae57d78"
+    },
+    {
+      "path": "apps/api/tests/test_f1_initial_publication.py",
+      "sha256": "7084ab22c8246bd23a2139ddec33db26ac57c74a18abfd7f54fdfdad13823c35"
+    },
+    {
+      "path": "apps/api/tests/test_f1_model_budget.py",
+      "sha256": "9efc9c4ed91daf0200a4c7e059be30b5a03c2b7b4ad200d54b4f0715c3c95a5e"
+    },
+    {
+      "path": "apps/api/tests/test_f1_official_contact_query.py",
+      "sha256": "b180ac4f06ee4961e8291b0417297c4b6fdd6c791f7e3e3ca9c11a32ea052e8b"
+    },
+    {
+      "path": "apps/api/tests/test_f1_product_identity.py",
+      "sha256": "d2ba9305e495484322b83a940d2802ea2207281c43aeffceac80fbcd40e5b810"
+    },
+    {
+      "path": "apps/api/tests/test_f2_authority_connection.py",
+      "sha256": "88af3b6ad8be3b9033af1e9678ab0df660cf5bd7733665e32b3632819eac85f5"
+    },
+    {
+      "path": "apps/api/tests/test_f2_bounded_material.py",
+      "sha256": "e06f3b9ed61dbf59346f361fd0e5935c67e840895a22fe7e4bc6e03cd885cca8"
+    },
+    {
+      "path": "apps/api/tests/test_f2_candidate_model_budget.py",
+      "sha256": "41f66637daafb42fff8894acf2279710226265570462d19f14620359412b2987"
+    },
+    {
+      "path": "apps/api/tests/test_f2_connection_lifecycle.py",
+      "sha256": "abc676436baf7040796c27df4d14f481bf0413ec6023c4ca12f312322bdfd3b8"
+    },
+    {
+      "path": "apps/api/tests/test_f2_current_model_budget.py",
+      "sha256": "f27b67ec9bd97f6e33c32e5d102b0ec8681cbcadb96ad45fe60140fbded5af05"
+    },
+    {
+      "path": "apps/api/tests/test_f2_directory_gateway.py",
+      "sha256": "f22a804fa8639bac540c81bfc90589fd0729730277ccbc8ccd1cc93540677f5e"
+    },
+    {
+      "path": "apps/api/tests/test_f2_directory_http.py",
+      "sha256": "5951abe7757dc9181f4572e72f71aa4209a4e9eb98f9785bf884bb3e07d11f56"
+    },
+    {
+      "path": "apps/api/tests/test_f2_directory_lookup.py",
+      "sha256": "3b53f4ba7027997b949585d6694b2672ea6a1fc5331bd7ef1828df036b945a67"
+    },
+    {
+      "path": "apps/api/tests/test_f2_directory_product.py",
+      "sha256": "df08a21a17586b3d3b8eee1b186002a3f571ee7f476df7b5bf602047f71303ad"
+    },
+    {
+      "path": "apps/api/tests/test_f2_factory_boundary.py",
+      "sha256": "db8c04b87fe0a76cccb68653ee255d9266004a9df5e682c1d2c2a7695cd519fe"
+    },
+    {
+      "path": "apps/api/tests/test_f2_own_receipt_gateway.py",
+      "sha256": "1baad850680ec5c05aca77bcf814b5427c4b477c15c12f462ef7d649c7b3b6db"
+    },
+    {
+      "path": "apps/api/tests/test_f2_own_receipt_optional_locator.py",
+      "sha256": "9412866f2a0f9fb8eabe5a5c3fe8b337f33fccd2e56aaac59aed4818de4d32ec"
+    },
+    {
+      "path": "apps/api/tests/test_f2_own_receipt_product.py",
+      "sha256": "db7e7669a31b629dca8a750a6c653ea12aef850019caac9e1dffe0ff48fa4592"
+    },
+    {
+      "path": "apps/api/tests/test_f2_own_receipt_visibility.py",
+      "sha256": "61f90fdff1dd612ee2044bd8353ada77e168f7d4bf6d63c91c519c0929982236"
+    },
+    {
+      "path": "apps/api/tests/test_f2_own_receipts.py",
+      "sha256": "e6a39274bacd414c6e1ccc78ba3a963d8a2eef57ebbe22fc4f5935e441d45a73"
+    },
+    {
+      "path": "apps/api/tests/test_f2_read_evidence.py",
+      "sha256": "d8204f829b5fe8f01d88a9769f098970f2462552f6cbd6a9f31c154ee3b2a8e4"
+    },
+    {
+      "path": "apps/api/tests/test_f2_reader_temporal_metadata.py",
+      "sha256": "7eec7840239337f0c79034e71018cae336a7552130dcc5f004fe4e1c6c468998"
+    },
+    {
+      "path": "apps/api/tests/test_f2_request_identity.py",
+      "sha256": "3d1372cb6669d58bf0ff851db58a08bde3663fba89e3914abe47fb4f886770e8"
+    },
+    {
+      "path": "apps/api/tests/test_f2_secure_reader.py",
+      "sha256": "3e909397a61535c08164d4a11611db08be54d457e81f6d0b04f6dbad12014800"
+    },
+    {
+      "path": "apps/api/tests/test_f2_service_evidence.py",
+      "sha256": "ab65e635b51a41b5eca589166f918e63bfbafc5cf857a4a91816db5db1059224"
+    },
+    {
+      "path": "apps/api/tests/test_f2_upgrade_runner.py",
+      "sha256": "a0293d8f18743fb3983c78cff5dfb37942c4df38a2eb12d4cff558af1cbd07b2"
+    },
+    {
+      "path": "apps/api/tests/test_f3_family_corrections.py",
+      "sha256": "4239be2957c8f637bb533f9a4be922f374fc5b7db2e6b0fef3828b12f5f87d28"
+    },
+    {
+      "path": "apps/api/tests/test_f3_family_maintenance_adapter.py",
+      "sha256": "d3c916db77fa1c2c307611b30cf9f178cffcb67953a33cd1d170833056b4782a"
+    },
+    {
+      "path": "apps/api/tests/test_f3_family_read.py",
+      "sha256": "5e5725db90ea82b1c384d9207bd2fcb716b2b8b8b8f9c694162ebff11b04a50b"
+    },
+    {
+      "path": "apps/api/tests/test_f3_family_staff_gateway.py",
+      "sha256": "394056069e53c3a14d941a98c76dab15e19394ed4f00ff1fe4499a43eaad33e6"
+    },
+    {
+      "path": "apps/api/tests/test_f3_family_staff_http.py",
+      "sha256": "7c46ac37511e0aa135c7519ca25d453997cea5989bc709d1ba4bda9665c4c8ed"
+    },
+    {
+      "path": "apps/api/tests/test_f3_family_staff_reader.py",
+      "sha256": "692f2ed0064b5552d039fdce866aa4d3fe728c3dcacf46d8bbb6a32fb402e8ae"
+    },
+    {
+      "path": "apps/api/tests/test_f3_model_budget.py",
+      "sha256": "7eb23233a9e526aaf94982ace3acde1f9f17dafdf6e4b34441bcf3de780a33ca"
+    },
+    {
+      "path": "apps/api/tests/test_f3_product_identity.py",
+      "sha256": "84b4fac1248aee0a76b25e2a8d0f70f707429c39447631da8c75cc70388eb2fd"
+    },
+    {
+      "path": "apps/api/tests/test_f4_action_owner.py",
+      "sha256": "1256cbc3f7d4a12b6a997a5cdc562a5a1362686bab9ac0414b4e2770b34f208f"
+    },
+    {
+      "path": "apps/api/tests/test_f4_batch_adapter.py",
+      "sha256": "d00099d4132c92c9f9bec43a4eb3ee52a14b67c5274cd3f8b1c0745c10d70f25"
+    },
+    {
+      "path": "apps/api/tests/test_f4_education_labels.py",
+      "sha256": "a566d66b2d8cad76e699ae9d1e381fa052ef08926b65c0d022d6f00381d56030"
+    },
+    {
+      "path": "apps/api/tests/test_f4_education_product_adapter.py",
+      "sha256": "c8ac9d87aa71c1b2380c68f4f6c395e81cf53d882287e3e2775de8fc396febf5"
+    },
+    {
+      "path": "apps/api/tests/test_f4_external_reader.py",
+      "sha256": "236d6d400cb1dd5e73aca177a6f3f39258d398184ee3f0c62d6fde1201c6e576"
+    },
+    {
+      "path": "apps/api/tests/test_f4_family_correction_labels.py",
+      "sha256": "f4468f1603dff8bcba1c2113aac76a2a3a2ab50c980407b8ca2850828862db99"
+    },
+    {
+      "path": "apps/api/tests/test_f4_family_education_http.py",
+      "sha256": "16462dc1be4e3e0d3dc7e08a2329eebcbe3f2280c4f25bc1d9827fb6d0f12356"
+    },
+    {
+      "path": "apps/api/tests/test_f4_http_contract.py",
+      "sha256": "18b35d95ff1aa1ddd1f3a3f52f13f76b507bb813af21eb3dd3f258bc6c1ff01f"
+    },
+    {
+      "path": "apps/api/tests/test_f4_http_probe.py",
+      "sha256": "f5f5a224b23b462052b347bb42e2af30494af16da1be5d5a94f61da1b06336f7"
+    },
+    {
+      "path": "apps/api/tests/test_f4_own_receipt_metadata.py",
+      "sha256": "53cd3179ec6b404152be7d0e4c4f6f367a7b3a9b805669dd7b7ca505da72efa8"
+    },
+    {
+      "path": "apps/api/tests/test_f4_related_projection.py",
+      "sha256": "5a22c78e79a646b284f2c99cb8c77df878a8844067a0552494b99be02c83ee23"
+    },
+    {
+      "path": "apps/api/tests/test_f4_writer_boundary.py",
+      "sha256": "4c6f39cda0b03694c995e427aefc0ff24d4a88dd7b274ed16c7b350c4dfa7840"
+    },
+    {
+      "path": "apps/api/tests/test_f5_directory_model_contract.py",
+      "sha256": "695618d207b953acf8dac31bd9148d60d6970d75c826104c3a806ae99e6ca184"
+    },
+    {
+      "path": "apps/api/tests/test_f6_family_children.py",
+      "sha256": "22ba032a53c9b2c3f58711c1cf42ee2a27cafd956107012b0ff3217d0f8b90b4"
+    },
+    {
+      "path": "apps/api/tests/test_health.py",
+      "sha256": "9c41a0bb28975bfd77928b3de487fe2cc1c23403aa09f7c0370fc0ecab6a9239"
+    },
+    {
+      "path": "apps/api/tests/test_identity_context.py",
+      "sha256": "b22503d8621442633be09f79dd39b6f1c0abd7cef8e26c69e5bca0466905e01a"
+    },
+    {
+      "path": "apps/api/tests/test_identity_exchange_metrics.py",
+      "sha256": "fc20d3b3e7bcf56ff1212177612f8e6758ec708d1d942b2c487a1d3bdf78e5a8"
+    },
+    {
+      "path": "apps/api/tests/test_identity_execution_context_api.py",
+      "sha256": "513bad2d7cf3ae205dfd6446ca09e5f4b84753277dc2229a7de77ffc94f491ce"
+    },
+    {
+      "path": "apps/api/tests/test_identity_legacy_claim.py",
+      "sha256": "cd46bc67451b1277a61cf51488a42fc5f24983bd935557b230e574697c70f203"
+    },
+    {
+      "path": "apps/api/tests/test_identity_legacy_claim_postgres.py",
+      "sha256": "40a997e70db34f7f48078a112a0f43e59ba2ffa8be4f66d0174c98c90105dbfa"
+    },
+    {
+      "path": "apps/api/tests/test_identity_session.py",
+      "sha256": "aed6e11d9fb51b6c13c26f7e93af9c231ee28f6cccde7c5208a45d1792abf0a2"
+    },
+    {
+      "path": "apps/api/tests/test_identity_test_deployment_assets.py",
+      "sha256": "ca225b0d80a5c19f4eefe78a74932aac7530ced8aa5aeea7b411f3d220638a07"
+    },
+    {
+      "path": "apps/api/tests/test_identity_tuple_validator.py",
+      "sha256": "3310eaf44f6afdc01ad6a4f3d3bf1fe0d3d5e3b2be7850b6091ec7378444c4e6"
+    },
+    {
+      "path": "apps/api/tests/test_initial_admin_bootstrap.py",
+      "sha256": "90d1d0fbcc1e7ef63633bc4cc98eeec517a08e26669791feb6917db45be097e9"
+    },
+    {
+      "path": "apps/api/tests/test_live_governance.py",
+      "sha256": "bf38baa9fc992aa9e1c4557ad37913b61a0b59119e0bd38087c6b69e62ec7307"
+    },
+    {
+      "path": "apps/api/tests/test_live_governance_postgres.py",
+      "sha256": "8a64d78603b1e050e5a7924b5e185a41383bfb08436218e39777d39dfd195df8"
+    },
+    {
+      "path": "apps/api/tests/test_live_initialization.py",
+      "sha256": "99509779798a4390ed78e079ece47c154d1c7c13a830b0b37293ea999c9fe79f"
+    },
+    {
+      "path": "apps/api/tests/test_live_initialization_postgres.py",
+      "sha256": "94df9892887d35df0695f2169066cc6fe764736328fefc35096548ea18f22190"
+    },
+    {
+      "path": "apps/api/tests/test_live_initialization_recovery.py",
+      "sha256": "cb91e6c79c707001e20b543b197923e714a01b95b9cf5b1b4ddad7dc959658f6"
+    },
+    {
+      "path": "apps/api/tests/test_live_initialization_recovery_postgres.py",
+      "sha256": "e2ebfd6c233cbea5bfa771b6503bbadce6bb407da024220075a2c11cb7147a41"
+    },
+    {
+      "path": "apps/api/tests/test_live_onboarding_contracts.py",
+      "sha256": "17745348b4bdf268b78da606de0e11597eb361a55152b70cfd0d2b25d8eee6d0"
+    },
+    {
+      "path": "apps/api/tests/test_live_school_scope_postgres.py",
+      "sha256": "4e341aa9718a1b65639df0574c00cd5ed03078d5e305bd972fccf4da6c885162"
+    },
+    {
+      "path": "apps/api/tests/test_live_school_scope_writer_postgres.py",
+      "sha256": "82de7fb938fd15d190bbc26d7786ee7e8eaf2ef87f8d5604c4e115f4ad7d1124"
+    },
+    {
+      "path": "apps/api/tests/test_live_school_startup.py",
+      "sha256": "3d4ed7390827cc024a9b914946434233832d4e502b358311789be947c1ca4c16"
+    },
+    {
+      "path": "apps/api/tests/test_live_session_handoff.py",
+      "sha256": "40755bc2a0ba5b600df44a06b66814cb88be4fcedc424f0b4894ee82b3024ff6"
+    },
+    {
+      "path": "apps/api/tests/test_manage_dingtalk_login.py",
+      "sha256": "48269ea8e962cde595fc45115c0773e5441871475e7c1c9950dee427d39e8ef2"
+    },
+    {
+      "path": "apps/api/tests/test_migration_baseline.py",
+      "sha256": "20b644a18c63a557430e46f04dee7c8a4f49e22ceb007698d1e1fcb7638af2d1"
+    },
+    {
+      "path": "apps/api/tests/test_postgres_integration_guard.py",
+      "sha256": "c4cdb3f183ca2cbba7d8601bd85bcf58b86358afea3597e43d47ec7f3c76ffcd"
+    },
+    {
+      "path": "apps/api/tests/test_redis_connection.py",
+      "sha256": "2c53defdd822e4352b4b5e96f147beb184cd932e9f26feb7a7ea78a26b7877df"
+    },
+    {
+      "path": "apps/api/tests/test_safe_logging.py",
+      "sha256": "7a10e7357e0282e196d2d367d8b36ddaf49ba884f79f4e5815df1254f59ab159"
+    },
+    {
+      "path": "apps/api/tests/test_school_fact_live_deployment_assets.py",
+      "sha256": "b8ad8a422e1656c7ae42dab14aaa9dfec03287a7b21106b52fc8f6999444f526"
+    },
+    {
+      "path": "apps/api/tests/test_school_fact_reader_checkout.py",
+      "sha256": "1ee05bd3219ebd493c4b03f127dc6230be4b5515f0a215a7ea8d7105c94854a5"
+    },
+    {
+      "path": "apps/api/tests/test_secure_reader_postgres.py",
+      "sha256": "4a4b102c22f5a27e5226c852d198ae578709c4d3e2294ab89bee61be7285044f"
+    },
+    {
+      "path": "apps/api/tests/test_secure_reader_production_boundary.py",
+      "sha256": "e1a7a5ffeaf11a301fc94fd40dd687ee32d7252077ab01877bcb7a87807be1c6"
+    },
+    {
+      "path": "apps/api/tests/test_secure_reader_projection.py",
+      "sha256": "b721aa410fe1ab7733905a60b44275f6b62d6e721bdf52d85e8e251bd8070439"
+    },
+    {
+      "path": "apps/api/tests/test_secure_reader_projection_adapters.py",
+      "sha256": "a40316dd2dc15e415a9918765228d015fb07e1604dd093881b43522c0f0b4eb7"
+    },
+    {
+      "path": "apps/api/tests/test_secure_reader_schema_boundary.py",
+      "sha256": "4e7311bb4b528db6266b7df6ecdb972e28360e87e256fcee30693763565f76f6"
+    },
+    {
+      "path": "apps/api/tests/test_settings.py",
+      "sha256": "ecf88ec83f19f28b95af3be6ab11b469a252917a03316c7783bb111f7e443df3"
+    },
+    {
+      "path": "apps/web/.env.example",
+      "sha256": "379f998b1b33ef661c94a918952189fb5a8269667b7b88dd6ade043197bb914b"
+    },
+    {
+      "path": "apps/web/dingtalk-initialization.html",
+      "sha256": "821faa7e4dda5344eb2a24bc074d693a6713a121de16383f69c8b634c9193111"
+    },
+    {
+      "path": "apps/web/dingtalk-school-facts.html",
+      "sha256": "8ce3b434864a6d9aceca176ed8563eaa567cf9e7fa5cf024bcfe5baf7c9f383e"
+    },
+    {
+      "path": "apps/web/index.html",
+      "sha256": "11dcee2af243c6eaf57417277db0c6b96bb7829a688e7fc93187695dd659b335"
+    },
+    {
+      "path": "apps/web/package-lock.json",
+      "sha256": "dc1cdd9aa1d3bb324f5bdba224f7cd1eab86f72d3cc2147a5e195b0eca63a8f2"
+    },
+    {
+      "path": "apps/web/package.json",
+      "sha256": "478700169b0de37022524fed86ba866ecada92bc835d1eccf88bdcc4f414b3d8"
+    },
+    {
+      "path": "apps/web/school-facts.html",
+      "sha256": "eef8e8fb5398362fb4cf0592662bcf3b994dcb7c9418fe413ea8246b0e700646"
+    },
+    {
+      "path": "apps/web/src/app/base.css",
+      "sha256": "8f3c07ac4709300f3c4ee7e6dc3e21b8eab7c1fbbe3122619da849f2a4ec93d9"
+    },
+    {
+      "path": "apps/web/src/app/dingtalk.ts",
+      "sha256": "77f830759fbd209d72907e2a4fdfff17df5541d1363fc0a503bcac7e02a7ffe3"
+    },
+    {
+      "path": "apps/web/src/app/DingTalkEntryApp.vue",
+      "sha256": "2e72edf825ac81c663cc94bf0f5bfa32bed132686335f815312c5ebb358c94f6"
+    },
+    {
+      "path": "apps/web/src/app/DingTalkInitializationApp.vue",
+      "sha256": "a9c6a6d94f71e7f09e7b104522ebddef86015cf82bfe531438c8f0fe51a85d7f"
+    },
+    {
+      "path": "apps/web/src/app/DingTalkSchoolFactsApp.vue",
+      "sha256": "d79351bb2f81d13725a60bfafbbc95a48bd6682944d47818e37f7a6a349a37aa"
+    },
+    {
+      "path": "apps/web/src/app/health.ts",
+      "sha256": "a2f6e585dade2842fb130bb578a11956d75b695565be5e7a37cc4023103ccea7"
+    },
+    {
+      "path": "apps/web/src/app/HealthApp.vue",
+      "sha256": "bf7894a871054b067142ce16b53c82a526095fb962b9315e4cc44e77be3c611b"
+    },
+    {
+      "path": "apps/web/src/app/identity_api.ts",
+      "sha256": "a9deca4af044381b5cfd7b2ce75bcc97cfbcb2f753b210aeff16c7e29339e15f"
+    },
+    {
+      "path": "apps/web/src/app/SchoolFactIcon.vue",
+      "sha256": "71a55091790e064b31045afd5c9ecd14079173d0ad5204a4169c7c41644d26a6"
+    },
+    {
+      "path": "apps/web/src/app/SchoolFactsApp.vue",
+      "sha256": "2b74e89f69e63e3bd8b24975d6be698c2c4d200767d8323be941be9e753b0684"
+    },
+    {
+      "path": "apps/web/src/app/SchoolFactsHome.vue",
+      "sha256": "86692106f17b08b52508a1d8c45bb58190315bf739adb79d00612dfb5f0b020f"
+    },
+    {
+      "path": "apps/web/src/app/XiaojingBrand.vue",
+      "sha256": "ae6089cd5ff3c8e1a65ee581bb155faba2b042641a07b9872a43d36a8a1c979d"
+    },
+    {
+      "path": "apps/web/src/dingtalk_initialization_main.ts",
+      "sha256": "2ba77852dc29eec8a7ba537aac0836ab1a49bf3fdde7e5fe11d77323c4218619"
+    },
+    {
+      "path": "apps/web/src/dingtalk_school_facts_main.ts",
+      "sha256": "3caf483e0ab7c95e9c22e15f8de81aa4e393bc12cd0c499753e206fe068d2f76"
+    },
+    {
+      "path": "apps/web/src/features/assistant/assistant_api.ts",
+      "sha256": "66f5ddd39afe8085c36605b2a8a85cab8aebebb9ed9d4208e374136c5a02466c"
+    },
+    {
+      "path": "apps/web/src/features/assistant/assistant_contracts.ts",
+      "sha256": "396e4f37333c754912110a6c2aaa2d6792ee202c81c06cd163518cbb97054424"
+    },
+    {
+      "path": "apps/web/src/features/assistant/assistant_session.ts",
+      "sha256": "3c52f817a570b80af33aa6ff87b23bf1a7bcbb89de11053dd82336b5d5487e1d"
+    },
+    {
+      "path": "apps/web/src/features/assistant/AssistantConversation.vue",
+      "sha256": "4242c7aa87a1818fcb2701d37bc2945c67abcbcdc9ff52999efa707305c85b40"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/AnswerText.vue",
+      "sha256": "edf95c0aa00eebc15c29c696fbc6d53723bc2c156d72fa1477845729109619f3"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/directory_api.ts",
+      "sha256": "4e0f9b3bfa3a9f3bc72c944cc46c9d343a273378b6774160ef1dd6bbec43a06a"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/directory_contracts.ts",
+      "sha256": "25972f68847f3c9ae0c3b15c40e147c084e51543078a51457b49e5f19bc5290a"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/directory_labels.ts",
+      "sha256": "f7e679533af71f5c404ae46be25b50b49b83545f1e962835c05593329dff847d"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/directory_presentation.ts",
+      "sha256": "7c86d2c6073f68677de58aa3537d5238c1ba873dd0dfdb8e59bb45722d4b9360"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/directory_session.ts",
+      "sha256": "187424aed4e466889e22cb8ed74ea77f1083e0ef16674bb5312eb2123b01b8d8"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/DirectoryProposal.vue",
+      "sha256": "3c6b4c3e499be439240fa494ce97a0bdb3254610b3b486bcbcc263b8470ed40b"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/DirectoryResult.vue",
+      "sha256": "6b0092a909727e7cd101a3f597b20e78abbc6ef9733786c1286adbc3c3e58a65"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/DirectoryWorkbench.vue",
+      "sha256": "8e6743ce76453b1f9bdade7875a2adb6725856dec45c01b265e8b25079f39f0f"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/family_contracts.ts",
+      "sha256": "357147ad55d46814187b54e92c64b22d47c56c5ee53e4eb1d74a305abc13b7ca"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/family_corrections.ts",
+      "sha256": "1e3c02243d89c148e8358be947a0f80714dd7d51b6c69bcffa151033eb1d133e"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/family_education_contracts.ts",
+      "sha256": "baf1d22426ffcd3b3d9e2828acd9cb43f53f47db5fe8e305e1f3d9f69a312f6a"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/FamilyCorrectionForm.vue",
+      "sha256": "6f5102b4ca42510ed24274c2c77a4a607b84e8a271fa84f7fbe117d1205bb705"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/FamilyCorrectionRecords.vue",
+      "sha256": "a20d3ca6e176202be3305306ee5d4f40d2b0101f2a00d8483f898b7d46b9c2d8"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/FamilyEducationResult.vue",
+      "sha256": "3b0ba3c9385a693aa43702181b02137f959aa75fffb1e1bdd628301030da64fb"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/FamilyProfilePanel.vue",
+      "sha256": "12bf1ebedf4dff86dd6c94bcf053fefaa7ff7776f71477f5b88378cf01996467"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/FamilyProfileResult.vue",
+      "sha256": "47ccc01bae26edd922661412ae4d23ccbf30beaf32b729854373e727e4485415"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/package_api.ts",
+      "sha256": "407b3ec92cbea0730cdec842b64ecb6aa2c569ad3c9e33f8e66a494313febd1a"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/package_contracts.ts",
+      "sha256": "41afa8c79ae9b03fd8cbf6d86060f9ce032cb922ce337ea7aaaf3c0f3cbc4dca"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/package_session.ts",
+      "sha256": "310b5448c74d86bd8e1a124f14758cee6fd8828cb892a8a273552a011de2df07"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/product_answer.vue",
+      "sha256": "dfd58464eaf95e972eea47e5cba34624b0b986e70d97474ebf647e05e027198b"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/product_api.ts",
+      "sha256": "841da0c51e1595864182c467111da3150ae2707789dba68b8df1067600202a44"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/product_contact_result.vue",
+      "sha256": "a9fbbb3a4e7ab1cd8b15590006d415d775f4ff92ceeacd9a6105c99885749d52"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/product_contracts.ts",
+      "sha256": "a4adbda6e30c2558e813fecd7b6f7acbad5786a669bc6635ae664c9e7c8653a5"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/product_session.ts",
+      "sha256": "c090742b64dd3d67ca3d4e08e0693b4d1a6d83b3fcec5fd420691afb8994a065"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/ResidenceResult.vue",
+      "sha256": "8d4b026568cb3a141ece1aa44186511628776c32eeb338eaa19c8f05d8664a65"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/school_fact_api.ts",
+      "sha256": "7eacff180b9e7695148dc36e4d5c2149d14853dd65430ebcbeb64fd93adcae34"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/school_fact_contracts.ts",
+      "sha256": "81524b2fafaf399ef998dcd42bde921f89b9898309097ac2c059986146f882c7"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/school_fact_session.ts",
+      "sha256": "c0fdbac3f425d987f4f83524d45a2f80ed4ca8c3b295aedae3f43cbee9fef2cb"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/SchoolFactAdmin.vue",
+      "sha256": "271466695f1f1dac8e424fd34532fc8f6f6d43b977f53f6c35afeeb042eef89c"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/SchoolFactPackageImport.vue",
+      "sha256": "e052644d04759578042e052e7f7a520b5fae2f2b4b6509b2b6b09c3f38367e5e"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/teaching_contracts.ts",
+      "sha256": "ccc1cb9eb206413648afd58073ffc39c311c4012932381d78dd18483d3cfc523"
+    },
+    {
+      "path": "apps/web/src/features/school_facts/TeachingResult.vue",
+      "sha256": "4d9bb5f30b5092e7aa6b63f992f1dbcc2e1ad9583cca86e75fa3fe44aac4c0a9"
+    },
+    {
+      "path": "apps/web/src/main.ts",
+      "sha256": "d023fd7515a5d5d1b9d7f4d4f4023a05f9b5a106debb424517f4e102dbd6389b"
+    },
+    {
+      "path": "apps/web/src/school_facts_main.ts",
+      "sha256": "ccfe5c097f37935634f4f61286143fb5c71309d1ed31310b255cc7683c037435"
+    },
+    {
+      "path": "apps/web/src/vite-env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "apps/web/tests/assistant_api.spec.ts",
+      "sha256": "c979188ef492a93a9e16818119c280e1f35c7fd60d74e94cbc2486088b613a3a"
+    },
+    {
+      "path": "apps/web/tests/assistant_contracts.spec.ts",
+      "sha256": "febddbc8d3a39ac947096c2eb2cf7474e620190bb08792c205f5d108ddce620e"
+    },
+    {
+      "path": "apps/web/tests/assistant_frontend_boundary.spec.ts",
+      "sha256": "dd8b42555598d007448ad63dadf5a765dab4848edaf59e95d29e6f85498327d2"
+    },
+    {
+      "path": "apps/web/tests/assistant_frontend_guard.ts",
+      "sha256": "48da4ca704e1ddcb6c5999d4481147268fd487ea45ae046971bf58729b5672ee"
+    },
+    {
+      "path": "apps/web/tests/assistant_session.spec.ts",
+      "sha256": "be97e7ee9c5af97531d892720037ddf68292d555d9e0818aa7902921495d6c09"
+    },
+    {
+      "path": "apps/web/tests/AssistantConversation.spec.ts",
+      "sha256": "82e6986b6c5eb4280e4fc0b4ccc1a2992942a584f10b1630457d9b32bea5cfd9"
+    },
+    {
+      "path": "apps/web/tests/AssistantConversationUi.spec.ts",
+      "sha256": "669b1631abfe0f683d862b9a9d725850beed69e568e2ef858a5f232f7c6ec387"
+    },
+    {
+      "path": "apps/web/tests/dingtalk.spec.ts",
+      "sha256": "7d1177313009a4406ced1b58cc5f2b28133f69a61cd4e6c68f33b7294dea3ce3"
+    },
+    {
+      "path": "apps/web/tests/DingTalkEntryApp.spec.ts",
+      "sha256": "e874f78517054f0af16bb30f4ff9cb7538a1c6be5b394dd490c1c75e2464f777"
+    },
+    {
+      "path": "apps/web/tests/DingTalkInitializationApp.spec.ts",
+      "sha256": "83245c5cb241487ae8e8c4c948eac94298bb3fe5697bc0ac8b7f3e3da2324a37"
+    },
+    {
+      "path": "apps/web/tests/DingTalkSchoolFactsApp.spec.ts",
+      "sha256": "cda6253fe089163d1f7a47c3035e91ab694e3b3961b78776bf6af445adb07318"
+    },
+    {
+      "path": "apps/web/tests/f3_family_corrections.spec.ts",
+      "sha256": "40c7f030d9261b4f990376d66908ea3428efc5205eadd12091749822a9c9abeb"
+    },
+    {
+      "path": "apps/web/tests/f3_family_profile.spec.ts",
+      "sha256": "717c36c9da29e816d55cb3666cf64fe2326b2d398bdb261c97405cb04330de40"
+    },
+    {
+      "path": "apps/web/tests/f4_family_correction_options.spec.ts",
+      "sha256": "3145552d64bb830fa1b266cdf0a839c8d0d412ff84a102eb31d48ecbd4fcdadd"
+    },
+    {
+      "path": "apps/web/tests/f4_family_correction_receipts.spec.ts",
+      "sha256": "b4848b23bf4373d84b620f1663affdba641acf01a48acfaee5cc88f134ec13d6"
+    },
+    {
+      "path": "apps/web/tests/f4_family_education_card.spec.ts",
+      "sha256": "9147f8daa91366eb8af7dd504482c2bd6e267164da059e3062867d0d4e1a6926"
+    },
+    {
+      "path": "apps/web/tests/f5_correction_review.spec.ts",
+      "sha256": "9cd611d4d204a8bf553d669c101903202db23b8281c0a0ebd0b13215ede91ec8"
+    },
+    {
+      "path": "apps/web/tests/f5_family_corrections.spec.ts",
+      "sha256": "62ed445b80e711f86e1edb96e42b157c181f778e6924d9b63e6141e27420832d"
+    },
+    {
+      "path": "apps/web/tests/f5_teaching_answer.spec.ts",
+      "sha256": "6c77d2d67d86f56ce3f9ab394eb2863f41d7eaaa11c4f9729fc00588a6672079"
+    },
+    {
+      "path": "apps/web/tests/f5_teaching_maintenance.spec.ts",
+      "sha256": "e9c6d2d1c755b020a6451ade5ca97778dcf5a0e42d1a6647f866cb3821e914d7"
+    },
+    {
+      "path": "apps/web/tests/f6_residence.spec.ts",
+      "sha256": "05ef7f7542604514dadc7f4975569a9674c1b287d324a05c29aad345be46731c"
+    },
+    {
+      "path": "apps/web/tests/health.spec.ts",
+      "sha256": "9427ff8fb4dedb2d2ff5d6f51e5e2ef189d0b64ccd7cb4a0d855087612f9794f"
+    },
+    {
+      "path": "apps/web/tests/HealthApp.spec.ts",
+      "sha256": "cd872d11a0600dbc93bcc0aef1fc3fa0c8cfa90010bec28b109f3a981a589edc"
+    },
+    {
+      "path": "apps/web/tests/package_api.spec.ts",
+      "sha256": "f044d74743b5d0e63f9f6d9ed332753f8aeee1c5f48e711b542ef016b798fcbf"
+    },
+    {
+      "path": "apps/web/tests/package_import.spec.ts",
+      "sha256": "ca6b02fc26bbb14ed06bef5a16642aa58c93f53898249ea225b47999cefb3603"
+    },
+    {
+      "path": "apps/web/tests/product_answer.spec.ts",
+      "sha256": "1d305308fedfc6e57d514579b3c45de19cd083d13e5f049713465a580098f346"
+    },
+    {
+      "path": "apps/web/tests/school_fact_api.spec.ts",
+      "sha256": "228ba5756eebc7ebd037c36eb2b857b124f81fae83b043234b032b1749b2bf75"
+    },
+    {
+      "path": "apps/web/tests/school_fact_contracts.spec.ts",
+      "sha256": "9a25a342ceb4954d8be4f94c8e406259a97d4767debab7deec47a8600421ed19"
+    },
+    {
+      "path": "apps/web/tests/school_fact_directory.spec.ts",
+      "sha256": "453a59987bb02ff069deb6ef787faef01b695515a285dfc2085a85f2fffa7269"
+    },
+    {
+      "path": "apps/web/tests/school_fact_education.spec.ts",
+      "sha256": "d2662deddcddd63df1eb9481a7e49ef933a78eca5de090f8a9084cc94cf0c010"
+    },
+    {
+      "path": "apps/web/tests/school_fact_product.spec.ts",
+      "sha256": "ff24555a649bb1f4d158690907d2e40ccbf8cd03c1234ba74e91f2335810e802"
+    },
+    {
+      "path": "apps/web/tests/school_fact_session.spec.ts",
+      "sha256": "244ddadd949844571fd3f95417a6da9d21040f7831b284ae2fceb55794c95645"
+    },
+    {
+      "path": "apps/web/tests/SchoolFactAdmin.spec.ts",
+      "sha256": "27a8a71944ab64c9e4e184a9830c810dee8597b96faf10cf9ee8e3de04eceb03"
+    },
+    {
+      "path": "apps/web/tests/SchoolFactPackageImport.spec.ts",
+      "sha256": "18dc5dadcf83417054e85f89d0e45b8c919a312426619a02ce86e0893982b1c6"
+    },
+    {
+      "path": "apps/web/tests/SchoolFactsShell.spec.ts",
+      "sha256": "a59b95c4a3f687c7e589e97a26c815aef3349c9982a24ce1109ba79047e9dc47"
+    },
+    {
+      "path": "apps/web/tsconfig.json",
+      "sha256": "916e7f523e06404954a4eba0706cdd7d608498269261b2307b9f4680009051ec"
+    },
+    {
+      "path": "apps/web/vite.config.ts",
+      "sha256": "4fe5918449232a86efdbd433bc4f93a1796673da299c5d4e3c006eb633634f87"
+    },
+    {
+      "path": "apps/web/vite.dingtalk-initialization.config.ts",
+      "sha256": "a3ed29dae4eaf6f889f7e5d2d33f9fda6aa5cd98c048bcb7aa4a3532330f3ea1"
+    },
+    {
+      "path": "apps/web/vite.dingtalk-school-facts.config.ts",
+      "sha256": "c5cca239e7bddb51ada935588f8da7182683cd2a5514c9fd1c95c361c610ec6f"
+    },
+    {
+      "path": "apps/web/vite.school-facts.config.ts",
+      "sha256": "168e7fd724574bb14ed7c913263ba0e89ccb136a89a8361adf3dfe7e6311ce54"
+    },
+    {
+      "path": "constraints-tested-windows.txt",
+      "sha256": "5be779c6017dfb34b7de99712002d736c59ff9ef6990ad9d6ee553604dc2d842"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "a299aee37c1a8cd24d90c7344eee57887ea9418f45608fc8a533816ca2bd8e01"
+    },
+    {
+      "path": "docs/design/archive/2026-07-28-校园综合智能体平台总体设计.md",
+      "sha256": "85ad125e6674c3536c83b70eb6a02c9aa319f12a4af9aa51dc2950cce28ff15d"
+    },
+    {
+      "path": "docs/design/archive/2026-07-28-第三阶段公共能力设计.md",
+      "sha256": "b593c5768b629335667fc64c8df75b602164afa4c0738126e22613d4e80c46b9"
+    },
+    {
+      "path": "docs/design/archive/2026-07-28-第二阶段最小应用骨架设计.md",
+      "sha256": "ed674217454a4a2d069ee9cc09ad71b9732fb062478d61ce7fc48d89f1ab1711"
+    },
+    {
+      "path": "docs/design/archive/2026-09-05-K12单校校园智能平台完整设计稿.md",
+      "sha256": "1627690b154dc88c8088024243d36cff8bfba44e0fcc9905d81a02ac4ed1ae01"
+    },
+    {
+      "path": "docs/design/archive/2026-09-13-F4学年班级班主任与学生职务完整设计.md",
+      "sha256": "c1687c57a4230297f8c1f13739ed3c557a9a6b3d26ed3261d736780101a724a4"
+    },
+    {
+      "path": "docs/design/archive/2026-09-14-F5正式教学持续任课与家长查询完整设计.md",
+      "sha256": "4372a3bb036b8c6f9e2750c9c3c848a16286d94df9325ab42f19afa83aef7dc0"
+    },
+    {
+      "path": "docs/design/archive/2026-09-22-F6正式寄宿事实完整设计.md",
+      "sha256": "18697db1116e4bbd0b01a2e594feaa34e78f3600811295b6ca37598d65e36771"
+    },
+    {
+      "path": "docs/design/archive/2026-09-24-F7全范围事实质量与维护完整设计.md",
+      "sha256": "a72d13808d0c17b746dae4a8c976ce0986d4fee9d972bfa5497bb8f3fbfcddf4"
+    },
+    {
+      "path": "docs/design/archive/2026-09-27-F8学校事实整体验收与工程交付设计.md",
+      "sha256": "1315de785fd00841bc8c3944f29dc18fdaef28356af3ad5d632551755fda93fa"
+    },
+    {
+      "path": "docs/design/archive/总体架构.md",
+      "sha256": "103a4c73c37cb6c66e82fa47bc704e7c2acdc1c40121c94c9723fd48b322e504"
+    },
+    {
+      "path": "docs/design/README.md",
+      "sha256": "7562878c8d7206a259075c81f0d3e55bd7be3fcc739287f063a80b29ab8925cb"
+    },
+    {
+      "path": "docs/INSTALL.md",
+      "sha256": "c40881ad5dfa40330ee5c891034e9a9d0710e2fcbf32b3dc7c289b2305c4f50b"
+    },
+    {
+      "path": "docs/MODEL_SETUP.md",
+      "sha256": "21faf965b73b730987935184230c54d480c0b425cb66bb00cf2a151093268619"
+    },
+    {
+      "path": "docs/STATUS.md",
+      "sha256": "e6cbe78b1170e68d7ccae5cf66ff322f0760e1d039a9d08bcd11ac137c583747"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "sha256": "fd3a43739fce9e2888493bd9f27b7fd142317e3be9007ef1fed7358adf17e20f"
+    },
+    {
+      "path": "fixtures/school_facts/f2_canonical_input_template.json",
+      "sha256": "2d708154f2c4030110a0bc731c3a77b9bdada8f49f44d1c4c390ae2ee545aaeb"
+    },
+    {
+      "path": "fixtures/school_facts/sf4_fictional_ground_truth.md",
+      "sha256": "005b9382bb4a068e3033884e542c4db8c5d93e4ccd78ce86535f70bdfd9f8e62"
+    },
+    {
+      "path": "fixtures/school_facts/sf4_simulated_boarding_school_base_school_facts_v2.xlsx",
+      "sha256": "318305791e8d7d1d56c34c0ce01742045137d48b5927ed02e6d892240c80c5b5"
+    },
+    {
+      "path": "fixtures/school_facts/sf4_simulated_boarding_school_lifecycle_school_facts_v2.xlsx",
+      "sha256": "cc59e5c9881677cf4cc5e40b9e4395c64ed44cd35ea876c3d168a335edac6b99"
+    },
+    {
+      "path": "infra/docker/api.school-fact-live.Dockerfile",
+      "sha256": "cf10bbaf7ecdb1d64e420f3b33e26a78ee1c0b19a01d3a42eaae2d6ccc1bc309"
+    },
+    {
+      "path": "infra/docker/compose.school-facts-production.yml",
+      "sha256": "9824e0d521b0fc442744a14b7d86580630173b23c272ea8cb039e24d69dc5bba"
+    },
+    {
+      "path": "infra/docker/school-facts-production.env.example",
+      "sha256": "3a4f1c7c8e504f9e7b5c0f5690f596ef7d072abf644619f78d44acedd97a5caa"
+    },
+    {
+      "path": "infra/docker/web.school-fact-live.Dockerfile",
+      "sha256": "f4be8b58604154c9e2ee3ab1137035af1a795c934563f43a7b741456ddfe09af"
+    },
+    {
+      "path": "infra/nginx/school-facts-production.conf.template",
+      "sha256": "6bcfc2c17123484e233695d8052facd631ded89b9a7df0935b939d5cca430b69"
+    },
+    {
+      "path": "infra/postgres/001-campus-ai-roles.sh",
+      "sha256": "4dfd4482bd0f513236ba012fd09341c82a3982ea5591efd23799aed05b4612db"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "35964279f753727394da6d23295858b77d63cf3c9c2af84e2e06f94a67662c62"
+    },
+    {
+      "path": "README.md",
+      "sha256": "52b5642cc87dd308174cb3b2aac1a993c66b1ba0b7cc7fb48440f7e25f3eabca"
+    },
+    {
+      "path": "scripts/generate_school_facts_f2_sample.py",
+      "sha256": "b005773374910bad473b05575126ff0c3966727ed52bdbf16e345af53e623076"
+    },
+    {
+      "path": "scripts/generate_simulated_boarding_school.py",
+      "sha256": "3764570bb365ee24a1100dd224ab1af444880054bfc1b6f89cb343e588a084c1"
+    },
+    {
+      "path": "scripts/school_facts_f1_init.py",
+      "sha256": "adc284cdf22272e60787dc99a299b522fec6011e39b500d905ceab5eeb5869ff"
+    },
+    {
+      "path": "scripts/school_facts_f3_governance.py",
+      "sha256": "e1b9a4133edbc32f1469cf402dbaab266d3dafc72f99836bcea4b51aff0defe3"
+    },
+    {
+      "path": "scripts/school_facts_live_governance.py",
+      "sha256": "d9f4fa68635f3ea607419ba79b0a0fa4235ae977fec65d6ea0b629a59f071a03"
+    },
+    {
+      "path": "scripts/verify_install.py",
+      "sha256": "d6752c70dc5206527c0f3b0ed03021afeb64064b5e8a5846af095e3727307f46"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "56926a6429b8608c5535a931e4294e11bbf5607217818a2a5af2a9ea3a77b167"
+    },
+    {
+      "path": "third-party/dependencies.json",
+      "sha256": "1f31cd036053c7f83ffb0b806e440947948349ddf10a6add8664668f9dd74673"
+    },
+    {
+      "path": "third-party/licenses/alembic/LICENSE",
+      "sha256": "6e68d94a03a0e3e327ddf3e86d1ebedc14eece3922022618fc246a36296fd0cc"
+    },
+    {
+      "path": "third-party/licenses/annotated-doc/LICENSE",
+      "sha256": "fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf"
+    },
+    {
+      "path": "third-party/licenses/annotated-types/LICENSE",
+      "sha256": "fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d"
+    },
+    {
+      "path": "third-party/licenses/anyio/LICENSE",
+      "sha256": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0"
+    },
+    {
+      "path": "third-party/licenses/build/LICENSE",
+      "sha256": "aaf9a29ca5907971ccf07de025375db34539a8d5eeebce20b46099805722106f"
+    },
+    {
+      "path": "third-party/licenses/certifi/LICENSE",
+      "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+    },
+    {
+      "path": "third-party/licenses/charset-normalizer/LICENSE",
+      "sha256": "18577485d3704f1a479ded8e573c0976cfed315fd2fd17983fa988da4c2f70d1"
+    },
+    {
+      "path": "third-party/licenses/click/LICENSE.txt",
+      "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
+    },
+    {
+      "path": "third-party/licenses/colorama/LICENSE.txt",
+      "sha256": "cac35c02686e5d04a5a7140bfb3b36e73aed496656e891102e428886d7930318"
+    },
+    {
+      "path": "third-party/licenses/fastapi/LICENSE",
+      "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e"
+    },
+    {
+      "path": "third-party/licenses/genai-prices/LICENSE",
+      "sha256": "ab47bf0bbd619cd73e16fd7873c7e0798e7aa62bcc9ae2fc79cbcb9799e609f6"
+    },
+    {
+      "path": "third-party/licenses/greenlet/LICENSE",
+      "sha256": "ab977b654605670319509481ece49198f405a129372ac38c96f51cd96c2f452e"
+    },
+    {
+      "path": "third-party/licenses/greenlet/LICENSE.PSF",
+      "sha256": "69efa689cc7aec7736236d3039c1d665e4b0c734a5bfea5abf633023abb2fff4"
+    },
+    {
+      "path": "third-party/licenses/griffelib/LICENSE",
+      "sha256": "2466f8a5d3c433c4d38e386bfae3423bba1792256bc06e4fcf425a99c8cd17fb"
+    },
+    {
+      "path": "third-party/licenses/h11/LICENSE.txt",
+      "sha256": "37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361"
+    },
+    {
+      "path": "third-party/licenses/httpcore/LICENSE.md",
+      "sha256": "fdcb59154c74cbaba16a11242f7740bea9f23d6feb5547917d8c5f94a80392a5"
+    },
+    {
+      "path": "third-party/licenses/httpcore2/LICENSE.md",
+      "sha256": "c4df125c807b0613501e943a5c92496dd11d2c16604ce396097a8dde396304d9"
+    },
+    {
+      "path": "third-party/licenses/httptools/LICENSE",
+      "sha256": "279012e02a10acfd59a3f2d8f13a497332535d871c2b27c89988985b06a3a438"
+    },
+    {
+      "path": "third-party/licenses/httptools/LICENSE-MIT",
+      "sha256": "5cd1b682c0ccbac0cb31b86a9a1104c3e2e7b1377a282b8169d2694b400db7c2"
+    },
+    {
+      "path": "third-party/licenses/httpx/LICENSE.md",
+      "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d"
+    },
+    {
+      "path": "third-party/licenses/httpx2/LICENSE.md",
+      "sha256": "7e7d6dbaf7fe160d39fd6e84fd02c33cab96bcbea34d36998d545bceb4a19c30"
+    },
+    {
+      "path": "third-party/licenses/idna/LICENSE.md",
+      "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+    },
+    {
+      "path": "third-party/licenses/iniconfig/LICENSE",
+      "sha256": "3409fa91f7ace557894632676656e32264fe5ef7581535725dc9a23774551bd4"
+    },
+    {
+      "path": "third-party/licenses/jiter/LICENSE",
+      "sha256": "e65c152aa65deaaa52019855bf1bbce4a0d592a048cb523b6ca691965741241e"
+    },
+    {
+      "path": "third-party/licenses/mako/LICENSE",
+      "sha256": "8c1d171bc5d341ad9cd33d5e2c39b96a82c7bd49b3ae89a470c37e5822232054"
+    },
+    {
+      "path": "third-party/licenses/markupsafe/LICENSE.txt",
+      "sha256": "4631ec0db5fd90a547e336817264c6798214338146f8ac94b4a57f96ee8c9ec4"
+    },
+    {
+      "path": "third-party/licenses/nodeenv/LICENSE",
+      "sha256": "606faf42d48b54d539dae99db6fecd48544535587e27275b319a3f36113cb6fa"
+    },
+    {
+      "path": "third-party/licenses/npm-@asamuzakjp-css-color/LICENSE",
+      "sha256": "1156c4bf9aa3982ff6157a4a8615906f225e4f46126dc41bf14df9aa7d74601b"
+    },
+    {
+      "path": "third-party/licenses/npm-@babel-helper-string-parser/LICENSE",
+      "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+    },
+    {
+      "path": "third-party/licenses/npm-@babel-helper-validator-identifier/LICENSE",
+      "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+    },
+    {
+      "path": "third-party/licenses/npm-@babel-parser/LICENSE",
+      "sha256": "2e97627cb278aa7556fb9e8817368302301a595b6c7582512b8d74c57b773652"
+    },
+    {
+      "path": "third-party/licenses/npm-@babel-types/LICENSE",
+      "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+    },
+    {
+      "path": "third-party/licenses/npm-@csstools-color-helpers/LICENSE.md",
+      "sha256": "947e32047a166cd05f04e45938d172b412c07cbee0b9735afd14bae30e02c2f6"
+    },
+    {
+      "path": "third-party/licenses/npm-@csstools-css-calc/LICENSE.md",
+      "sha256": "d00d032f517721b45c56c70c46bf904ebb71ad313df4d4db7722266b38069665"
+    },
+    {
+      "path": "third-party/licenses/npm-@csstools-css-color-parser/LICENSE.md",
+      "sha256": "d00d032f517721b45c56c70c46bf904ebb71ad313df4d4db7722266b38069665"
+    },
+    {
+      "path": "third-party/licenses/npm-@csstools-css-parser-algorithms/LICENSE.md",
+      "sha256": "d00d032f517721b45c56c70c46bf904ebb71ad313df4d4db7722266b38069665"
+    },
+    {
+      "path": "third-party/licenses/npm-@csstools-css-tokenizer/LICENSE.md",
+      "sha256": "d00d032f517721b45c56c70c46bf904ebb71ad313df4d4db7722266b38069665"
+    },
+    {
+      "path": "third-party/licenses/npm-@jridgewell-sourcemap-codec/LICENSE",
+      "sha256": "769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c"
+    },
+    {
+      "path": "third-party/licenses/npm-@oxc-project-types/LICENSE",
+      "sha256": "95ced5ecf1133fbf41d409b5555c86c344f83f3b019926057ddbc07cfdcc27b3"
+    },
+    {
+      "path": "third-party/licenses/npm-@rolldown-pluginutils/LICENSE",
+      "sha256": "e1919b3b98b8bf6c1b99fcc60a0ed46027c97ac947432e1278446c9606f50161"
+    },
+    {
+      "path": "third-party/licenses/npm-@standard-schema-spec/LICENSE",
+      "sha256": "653b779005a3a4d64a7288c940f7b9a0e8f0b1e0375f6aa6af9473caf131e564"
+    },
+    {
+      "path": "third-party/licenses/npm-@types-chai/LICENSE",
+      "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+    },
+    {
+      "path": "third-party/licenses/npm-@types-deep-eql/LICENSE",
+      "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+    },
+    {
+      "path": "third-party/licenses/npm-@types-estree/LICENSE",
+      "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+    },
+    {
+      "path": "third-party/licenses/npm-@vitejs-plugin-vue/LICENSE",
+      "sha256": "29b68325fe026047d13e187b44c33b2acacf7dc647dec4583702e59f235e13b5"
+    },
+    {
+      "path": "third-party/licenses/npm-@vitest-expect/LICENSE",
+      "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551"
+    },
+    {
+      "path": "third-party/licenses/npm-@vitest-mocker/LICENSE",
+      "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551"
+    },
+    {
+      "path": "third-party/licenses/npm-@vitest-pretty-format/LICENSE",
+      "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551"
+    },
+    {
+      "path": "third-party/licenses/npm-@vitest-runner/LICENSE",
+      "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551"
+    },
+    {
+      "path": "third-party/licenses/npm-@vitest-snapshot/LICENSE",
+      "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551"
+    },
+    {
+      "path": "third-party/licenses/npm-@vitest-spy/LICENSE",
+      "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551"
+    },
+    {
+      "path": "third-party/licenses/npm-@vitest-utils/LICENSE",
+      "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551"
+    },
+    {
+      "path": "third-party/licenses/npm-@volar-language-core/LICENSE",
+      "sha256": "a56351045b45475385a9479d7310208ff0be9489babdb4e635fcea5d7dc1fb02"
+    },
+    {
+      "path": "third-party/licenses/npm-@volar-source-map/LICENSE",
+      "sha256": "a56351045b45475385a9479d7310208ff0be9489babdb4e635fcea5d7dc1fb02"
+    },
+    {
+      "path": "third-party/licenses/npm-@volar-typescript/LICENSE",
+      "sha256": "a56351045b45475385a9479d7310208ff0be9489babdb4e635fcea5d7dc1fb02"
+    },
+    {
+      "path": "third-party/licenses/npm-@vue-compiler-core/LICENSE",
+      "sha256": "1bb85cc9b13b81ef41c81c51866172fc345e0503c86726a6755b796590b70175"
+    },
+    {
+      "path": "third-party/licenses/npm-@vue-compiler-dom/LICENSE",
+      "sha256": "1bb85cc9b13b81ef41c81c51866172fc345e0503c86726a6755b796590b70175"
+    },
+    {
+      "path": "third-party/licenses/npm-@vue-compiler-sfc/LICENSE",
+      "sha256": "1bb85cc9b13b81ef41c81c51866172fc345e0503c86726a6755b796590b70175"
+    },
+    {
+      "path": "third-party/licenses/npm-@vue-compiler-ssr/LICENSE",
+      "sha256": "1bb85cc9b13b81ef41c81c51866172fc345e0503c86726a6755b796590b70175"
+    },
+    {
+      "path": "third-party/licenses/npm-@vue-language-core/LICENSE",
+      "sha256": "a56351045b45475385a9479d7310208ff0be9489babdb4e635fcea5d7dc1fb02"
+    },
+    {
+      "path": "third-party/licenses/npm-@vue-reactivity/LICENSE",
+      "sha256": "1bb85cc9b13b81ef41c81c51866172fc345e0503c86726a6755b796590b70175"
+    },
+    {
+      "path": "third-party/licenses/npm-@vue-runtime-core/LICENSE",
+      "sha256": "1bb85cc9b13b81ef41c81c51866172fc345e0503c86726a6755b796590b70175"
+    },
+    {
+      "path": "third-party/licenses/npm-@vue-runtime-dom/LICENSE",
+      "sha256": "1bb85cc9b13b81ef41c81c51866172fc345e0503c86726a6755b796590b70175"
+    },
+    {
+      "path": "third-party/licenses/npm-@vue-server-renderer/LICENSE",
+      "sha256": "1bb85cc9b13b81ef41c81c51866172fc345e0503c86726a6755b796590b70175"
+    },
+    {
+      "path": "third-party/licenses/npm-@vue-shared/LICENSE",
+      "sha256": "1bb85cc9b13b81ef41c81c51866172fc345e0503c86726a6755b796590b70175"
+    },
+    {
+      "path": "third-party/licenses/npm-agent-base/LICENSE",
+      "sha256": "8d8c55319c7729d57be811c747452636688d54f19701ee0752b6b15ad3771d9a"
+    },
+    {
+      "path": "third-party/licenses/npm-alien-signals/LICENSE",
+      "sha256": "75863f712f8f0603b0dba33edf4b725bab80fc858a51756e5905a3c4c8087169"
+    },
+    {
+      "path": "third-party/licenses/npm-assertion-error/LICENSE",
+      "sha256": "2130216d5ab4c02134f8247f32999feda0abe1eaf028218baeac445c19ce4cea"
+    },
+    {
+      "path": "third-party/licenses/npm-asynckit/LICENSE",
+      "sha256": "1953150d5d4b10c7542cee6f6e0c613b2682545233f069d75cfff1936386ce10"
+    },
+    {
+      "path": "third-party/licenses/npm-call-bind-apply-helpers/LICENSE",
+      "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+    },
+    {
+      "path": "third-party/licenses/npm-chai/LICENSE",
+      "sha256": "b181da80336ff9dd1043fc8be1a764d7382363433319aa872e4d2cb5ce2a3066"
+    },
+    {
+      "path": "third-party/licenses/npm-combined-stream/License",
+      "sha256": "47eb8ca82c798246774946d1be0f9aa08f025fa8325ced0947aeeb4c05fe5547"
+    },
+    {
+      "path": "third-party/licenses/npm-convert-source-map/LICENSE",
+      "sha256": "1fa6ee8bb95a81ae3d73a5bd074a3ac380ffec13697051063ca1a601921b91db"
+    },
+    {
+      "path": "third-party/licenses/npm-cssstyle/LICENSE",
+      "sha256": "768faff9f6908c78d848b18770b2a93e3361d6e2ee35edf45c6a5ddf1f7cb185"
+    },
+    {
+      "path": "third-party/licenses/npm-csstype/LICENSE",
+      "sha256": "11d55bd4541c75ee7879547ac49089c489163dae49551389713c3d026cab383e"
+    },
+    {
+      "path": "third-party/licenses/npm-data-urls/LICENSE.txt",
+      "sha256": "528eec83cb836a0adda9f8fc3d6a2a70a710d6cc0be9a155f92212c8df28acfa"
+    },
+    {
+      "path": "third-party/licenses/npm-debug/LICENSE",
+      "sha256": "3a61c6c96caf5c1d9b623fb9b04c822b783dfcb78aa7e49c76a3f643e6ed7f95"
+    },
+    {
+      "path": "third-party/licenses/npm-delayed-stream/License",
+      "sha256": "47eb8ca82c798246774946d1be0f9aa08f025fa8325ced0947aeeb4c05fe5547"
+    },
+    {
+      "path": "third-party/licenses/npm-detect-libc/LICENSE",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+    },
+    {
+      "path": "third-party/licenses/npm-dunder-proto/LICENSE",
+      "sha256": "2b770a704c15de238c3f622b01b0044ddd60b49ee30608ea6991ebf19db7a7a1"
+    },
+    {
+      "path": "third-party/licenses/npm-entities/LICENSE",
+      "sha256": "cb992345949ccd6e8394b2cd6c465f7b897c864f845937dbf64e8997f389e164"
+    },
+    {
+      "path": "third-party/licenses/npm-es-define-property/LICENSE",
+      "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+    },
+    {
+      "path": "third-party/licenses/npm-es-errors/LICENSE",
+      "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+    },
+    {
+      "path": "third-party/licenses/npm-es-module-lexer/LICENSE",
+      "sha256": "8a4b6c44eebfb026d23719a348145a661a555568dbfdc11618ff2d0dd9306b00"
+    },
+    {
+      "path": "third-party/licenses/npm-es-object-atoms/LICENSE",
+      "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+    },
+    {
+      "path": "third-party/licenses/npm-es-set-tostringtag/LICENSE",
+      "sha256": "1a3aeb1f1398bd697d57c3c585faadf59d825aca6e3162cd7eeb72ff76eb2466"
+    },
+    {
+      "path": "third-party/licenses/npm-estree-walker/LICENSE",
+      "sha256": "8a6dcbabe7179f9c8489c08a7d874d0f1e093ae7449e03756ccf87cb9d0e296e"
+    },
+    {
+      "path": "third-party/licenses/npm-expect-type/LICENSE",
+      "sha256": "7c6cc83c84eaa249a85bf12fe3eedd831bb50c696e8890b5248223ae68c7b408"
+    },
+    {
+      "path": "third-party/licenses/npm-fdir/LICENSE",
+      "sha256": "9a39f2aadab11a3697edd668ff2d8ad885b649737b7ab4d3bf12b34e5ada0c86"
+    },
+    {
+      "path": "third-party/licenses/npm-form-data/License",
+      "sha256": "e5b780d4f38d1d3328e3e53186c4e62d3fa149ea6f2bacd5de5ad0c30ac85343"
+    },
+    {
+      "path": "third-party/licenses/npm-function-bind/LICENSE",
+      "sha256": "773e131a7684726005a7e4688a80b4620033bc08499bc1404dd1a1eb3bca725e"
+    },
+    {
+      "path": "third-party/licenses/npm-get-intrinsic/LICENSE",
+      "sha256": "39c5ec504cf6bd5cd782a7c695828e09189df79f5d94840e4f08feb97b9fd416"
+    },
+    {
+      "path": "third-party/licenses/npm-get-proto/LICENSE",
+      "sha256": "be46ce1e3b0479af9ce82d22b465a6d7d2ff084fca0aaf3d54172da2b5eb5781"
+    },
+    {
+      "path": "third-party/licenses/npm-gopd/LICENSE",
+      "sha256": "d90bf0a089da4cf43d644ed240a0b3825dcdb705e64e38371d56995a4cc9e4c5"
+    },
+    {
+      "path": "third-party/licenses/npm-has-symbols/LICENSE",
+      "sha256": "206c1adcf206dc0031b11232f5b054ec5f1662407ab1ca415247921cab2068ab"
+    },
+    {
+      "path": "third-party/licenses/npm-has-tostringtag/LICENSE",
+      "sha256": "e2560e002e13281578c75c850061d9255c33d16d732939e8c2db64c2506642fa"
+    },
+    {
+      "path": "third-party/licenses/npm-hasown/LICENSE",
+      "sha256": "bf9b0d665be2a689851eea667ca9f42066ea1d903b38349c51e6a44b2577680a"
+    },
+    {
+      "path": "third-party/licenses/npm-html-encoding-sniffer/LICENSE.txt",
+      "sha256": "528eec83cb836a0adda9f8fc3d6a2a70a710d6cc0be9a155f92212c8df28acfa"
+    },
+    {
+      "path": "third-party/licenses/npm-http-proxy-agent/LICENSE",
+      "sha256": "71368fd0f5b4129191e9afcd1e1ef2dc89a9090d3e4d80bbab92dafd032b3bef"
+    },
+    {
+      "path": "third-party/licenses/npm-https-proxy-agent/LICENSE",
+      "sha256": "8d8c55319c7729d57be811c747452636688d54f19701ee0752b6b15ad3771d9a"
+    },
+    {
+      "path": "third-party/licenses/npm-iconv-lite/LICENSE",
+      "sha256": "ac779f7314c74f232ef847ea86e714abe25cf6eeb5cc97b69451b74e2af6492d"
+    },
+    {
+      "path": "third-party/licenses/npm-is-potential-custom-element-name/LICENSE-MIT.txt",
+      "sha256": "483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a"
+    },
+    {
+      "path": "third-party/licenses/npm-jsdom/LICENSE.txt",
+      "sha256": "242d37e7cab25cbafc36cc973ee88f9345fddf066afe4f72b7ac3d9ad4e24cce"
+    },
+    {
+      "path": "third-party/licenses/npm-lightningcss/LICENSE",
+      "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e"
+    },
+    {
+      "path": "third-party/licenses/npm-lightningcss-win32-x64-msvc/LICENSE",
+      "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e"
+    },
+    {
+      "path": "third-party/licenses/npm-lru-cache/LICENSE",
+      "sha256": "451ec07eeb9c4e1b86de9abdaa426462a8be48f887ec7421cf0bbb9c769555ab"
+    },
+    {
+      "path": "third-party/licenses/npm-magic-string/LICENSE",
+      "sha256": "1cbe51b907662f6cb1492b16c359384a595180bf0e4d101603ed525e75c4e484"
+    },
+    {
+      "path": "third-party/licenses/npm-math-intrinsics/LICENSE",
+      "sha256": "2b770a704c15de238c3f622b01b0044ddd60b49ee30608ea6991ebf19db7a7a1"
+    },
+    {
+      "path": "third-party/licenses/npm-mime-db/LICENSE",
+      "sha256": "cc1dfd4dafa27271e8212cd3b274eeb3f262e40a6fdab36ddc3f9696f706f58b"
+    },
+    {
+      "path": "third-party/licenses/npm-mime-types/LICENSE",
+      "sha256": "71f83c4c0621102a56d9853812777b85751bce7e9726f686f5b056c1f8a4b0e6"
+    },
+    {
+      "path": "third-party/licenses/npm-ms/license.md",
+      "sha256": "1662fae9b5314d11cf51284e2dcd1f006a354f7343f08712a730fcff9a359801"
+    },
+    {
+      "path": "third-party/licenses/npm-muggle-string/LICENSE",
+      "sha256": "df52411dcd3c8f5897bbbec8c94e971519e13e75818c263e9a99a86255dd301b"
+    },
+    {
+      "path": "third-party/licenses/npm-nanoid/LICENSE",
+      "sha256": "da4db1480d9beea3483a2eda5c53b22238d0827d57da162b48f122e04d2d9987"
+    },
+    {
+      "path": "third-party/licenses/npm-nwsapi/LICENSE",
+      "sha256": "2aebdf8ae67777ccb2fa66b32066c1a16bd71085011bb4085dc7408e2947d2c2"
+    },
+    {
+      "path": "third-party/licenses/npm-obug/LICENSE",
+      "sha256": "ee48679d379ca6b4493d5e231094d85f818dd9be40b1a4f234fb7ff657ee35d9"
+    },
+    {
+      "path": "third-party/licenses/npm-parse5/LICENSE",
+      "sha256": "8c535800331e1e4439835555b3f9edc7fe9dee2fab0d8bbbd5a982e8b8343d4d"
+    },
+    {
+      "path": "third-party/licenses/npm-path-browserify/LICENSE",
+      "sha256": "a22b9d5763f574e5db347c30acc0b33eaf4846767c03d2e27d012e864e79a824"
+    },
+    {
+      "path": "third-party/licenses/npm-pathe/LICENSE",
+      "sha256": "52e92576851154bad7737e90cc72818936f43665cb0e3f7428ed8edc8cc5709b"
+    },
+    {
+      "path": "third-party/licenses/npm-picocolors/LICENSE",
+      "sha256": "6582629e2979466878f6014313dcc2f3756c9616148682227ce3063dde310750"
+    },
+    {
+      "path": "third-party/licenses/npm-picomatch/LICENSE",
+      "sha256": "d0cd141b0c322fded5dfad1d4645bb2fedfc05b7321fe1009469638190d59ef9"
+    },
+    {
+      "path": "third-party/licenses/npm-postcss/LICENSE",
+      "sha256": "5be1f3465bba68a626777f984878814aaf35e7ef8e9fd314d469bcf887050fb8"
+    },
+    {
+      "path": "third-party/licenses/npm-promise-polyfill/LICENSE",
+      "sha256": "453a712c58161b74efa998578aaf10fd7ad8204120730de38ca04d7f47f3ea46"
+    },
+    {
+      "path": "third-party/licenses/npm-punycode/LICENSE-MIT.txt",
+      "sha256": "483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a"
+    },
+    {
+      "path": "third-party/licenses/npm-rolldown/LICENSE",
+      "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734"
+    },
+    {
+      "path": "third-party/licenses/npm-rrweb-cssom/LICENSE.txt",
+      "sha256": "e539937c489c4928ad7461669ec017f4d916fb3565fc26f5b8a0ce816d2ed23c"
+    },
+    {
+      "path": "third-party/licenses/npm-safer-buffer/LICENSE",
+      "sha256": "4bc935e71be198c67ddf3c2b5fddb195f6edc182bfc155a96a6db61b44b494b9"
+    },
+    {
+      "path": "third-party/licenses/npm-siginfo/LICENSE",
+      "sha256": "3bdddf0b9b08aaa2fe4365b803fc958ed32c0597ca0bd727be8d9fcb8b248d18"
+    },
+    {
+      "path": "third-party/licenses/npm-source-map-js/LICENSE",
+      "sha256": "6cb0631f71c7749763fd3dd1d5bee52dd1070ec17f2edc1710079ad070bd2fbd"
+    },
+    {
+      "path": "third-party/licenses/npm-symbol-tree/LICENSE",
+      "sha256": "9ea1eccdabe469767a9edb9249a840b2461cf91b2434bf8a3e2fc1f414311cb1"
+    },
+    {
+      "path": "third-party/licenses/npm-tinybench/LICENSE",
+      "sha256": "cebc084d54e6dd99e53292ddb4bc1cdb63d9bfcd9ce438fe3aa6eb106d79e2ea"
+    },
+    {
+      "path": "third-party/licenses/npm-tinyexec/LICENSE",
+      "sha256": "f95f668fe64081ddb4153b322e34fdd719b991285ed08177d5ad7133b7988d92"
+    },
+    {
+      "path": "third-party/licenses/npm-tinyglobby/LICENSE",
+      "sha256": "22c68811e174cbbfb3813d4135918df4f540959c14d872e601d9abe83d3cde8f"
+    },
+    {
+      "path": "third-party/licenses/npm-tldts/LICENSE",
+      "sha256": "c64182d48160db948b6aa97a984f1a32974ce4d2053900361264cd33853796cb"
+    },
+    {
+      "path": "third-party/licenses/npm-tldts-core/LICENSE",
+      "sha256": "c64182d48160db948b6aa97a984f1a32974ce4d2053900361264cd33853796cb"
+    },
+    {
+      "path": "third-party/licenses/npm-tough-cookie/LICENSE",
+      "sha256": "22ec6791c91ba42c0516a05f4cbdde019aae4687f8a38c5ca7e8a69ee68f851d"
+    },
+    {
+      "path": "third-party/licenses/npm-tr46/LICENSE.md",
+      "sha256": "499d6d466d064e0460427967a344e2a32fcb86ea8c6cd1a285ec4f1fa03fba67"
+    },
+    {
+      "path": "third-party/licenses/npm-typescript/LICENSE.txt",
+      "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47"
+    },
+    {
+      "path": "third-party/licenses/npm-vite/LICENSE.md",
+      "sha256": "b1d741c26b53de1bbc0d4d7d3365b79888f9fe511527544a8a7b8e24dec43147"
+    },
+    {
+      "path": "third-party/licenses/npm-vitest/LICENSE.md",
+      "sha256": "881d660c26831481b697e39724d4a35c9f86e07b67156d4aeb693a0b39910435"
+    },
+    {
+      "path": "third-party/licenses/npm-vscode-uri/LICENSE.md",
+      "sha256": "c669138cb1eb01fbb745e8e460b291e4f2869c14a40061390b6095d845ed4c82"
+    },
+    {
+      "path": "third-party/licenses/npm-vue/LICENSE",
+      "sha256": "1bb85cc9b13b81ef41c81c51866172fc345e0503c86726a6755b796590b70175"
+    },
+    {
+      "path": "third-party/licenses/npm-vue-tsc/LICENSE",
+      "sha256": "a56351045b45475385a9479d7310208ff0be9489babdb4e635fcea5d7dc1fb02"
+    },
+    {
+      "path": "third-party/licenses/npm-w3c-xmlserializer/LICENSE.md",
+      "sha256": "ab654de803cdaa9e2819ab2e934bdf7f757e308649ec231d78e80e92425cdc34"
+    },
+    {
+      "path": "third-party/licenses/npm-webidl-conversions/LICENSE.md",
+      "sha256": "a889cc4dbee2ae172c179856b25d75b0b7a5a136e1b97109b9b590b2ff1a879c"
+    },
+    {
+      "path": "third-party/licenses/npm-whatwg-encoding/LICENSE.txt",
+      "sha256": "528eec83cb836a0adda9f8fc3d6a2a70a710d6cc0be9a155f92212c8df28acfa"
+    },
+    {
+      "path": "third-party/licenses/npm-whatwg-mimetype/LICENSE.txt",
+      "sha256": "528eec83cb836a0adda9f8fc3d6a2a70a710d6cc0be9a155f92212c8df28acfa"
+    },
+    {
+      "path": "third-party/licenses/npm-whatwg-url/LICENSE.txt",
+      "sha256": "db480f236292a093e77a83c35431a8496624e1e664a3547768a9ce2bdde39877"
+    },
+    {
+      "path": "third-party/licenses/npm-why-is-node-running/LICENSE",
+      "sha256": "6a134e51aa31496c15a741592fc5d782b2dbf8d8b6b8524e15c8520ae0cd6374"
+    },
+    {
+      "path": "third-party/licenses/npm-ws/LICENSE",
+      "sha256": "2b29dcfe0d6471f7e8c92c5fb38c9f93edee10330937055440192f1832b1ecef"
+    },
+    {
+      "path": "third-party/licenses/npm-xml-name-validator/LICENSE.txt",
+      "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9"
+    },
+    {
+      "path": "third-party/licenses/npm-xmlchars/LICENSE",
+      "sha256": "45d196313c2647d313cc65ca9b093d2d6974b64d35ee7346f2c60c9d518dff2c"
+    },
+    {
+      "path": "third-party/licenses/openai/LICENSE",
+      "sha256": "636eb7d79da9bb6d515a4b3fd417aa26679eb3cf16396ddab4bc55fa74e616e4"
+    },
+    {
+      "path": "third-party/licenses/opentelemetry-api/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "third-party/licenses/packaging/LICENSE",
+      "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+    },
+    {
+      "path": "third-party/licenses/packaging/LICENSE.APACHE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "third-party/licenses/packaging/LICENSE.BSD",
+      "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+    },
+    {
+      "path": "third-party/licenses/pluggy/LICENSE",
+      "sha256": "d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606"
+    },
+    {
+      "path": "third-party/licenses/psycopg/LICENSE.txt",
+      "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+    },
+    {
+      "path": "third-party/licenses/psycopg-binary/LICENSE.txt",
+      "sha256": "7d3a95e5e06978064ed3f8e2b7c8f845e7fd8a405294727cc708f94cb83b8059"
+    },
+    {
+      "path": "third-party/licenses/pydantic/LICENSE",
+      "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3"
+    },
+    {
+      "path": "third-party/licenses/pydantic-ai-slim/LICENSE",
+      "sha256": "bc0e89738f36944c8106e1947c3d69631f9c33b8f1bcb60ec4f89d677d2dfcf4"
+    },
+    {
+      "path": "third-party/licenses/pydantic-core/LICENSE",
+      "sha256": "fbe7f615f18d135c07000e5a86325db27f42c7729699ef166ac1f7a3f4586bf4"
+    },
+    {
+      "path": "third-party/licenses/pydantic-graph/LICENSE",
+      "sha256": "bc0e89738f36944c8106e1947c3d69631f9c33b8f1bcb60ec4f89d677d2dfcf4"
+    },
+    {
+      "path": "third-party/licenses/pydantic-settings/LICENSE",
+      "sha256": "eb355a753e020346d33d83bf9769135b89fc610568ac531a01c295bcee7fd998"
+    },
+    {
+      "path": "third-party/licenses/pygments/LICENSE",
+      "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+    },
+    {
+      "path": "third-party/licenses/pyproject-hooks/LICENSE",
+      "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+    },
+    {
+      "path": "third-party/licenses/pyright/LICENSE",
+      "sha256": "7331115c6e3aaf687f6d0b43c567c83d132f3b2a0d01213af03180ad2d1eceb0"
+    },
+    {
+      "path": "third-party/licenses/pytest/LICENSE",
+      "sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b"
+    },
+    {
+      "path": "third-party/licenses/python-dotenv/LICENSE",
+      "sha256": "80619b7049f08c81683ad0e01f08f257a840652dd71ee83146d36658c7d2c2b9"
+    },
+    {
+      "path": "third-party/licenses/pyyaml/LICENSE",
+      "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4"
+    },
+    {
+      "path": "third-party/licenses/redis/LICENSE",
+      "sha256": "a57b250a5bf03d7afe55b74063313f2adb7b00d546c0ab149a89398333fe3cc8"
+    },
+    {
+      "path": "third-party/licenses/regex/LICENSE.txt",
+      "sha256": "3d220c06594b826bbabf110312f60f385f99e57e529fa4b9e536f79091f8b4c7"
+    },
+    {
+      "path": "third-party/licenses/requests/LICENSE",
+      "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+    },
+    {
+      "path": "third-party/licenses/requests/NOTICE",
+      "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc"
+    },
+    {
+      "path": "third-party/licenses/ruff/LICENSE",
+      "sha256": "2597d854122b77ddc71971564ca2350a37608575ce324adc5650a2b2051c8f18"
+    },
+    {
+      "path": "third-party/licenses/sniffio/LICENSE",
+      "sha256": "652c878488d1456361e08c3f8607fd7ba59892a14103d15cce4ff93c85b5cc8b"
+    },
+    {
+      "path": "third-party/licenses/sniffio/LICENSE.APACHE2",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "third-party/licenses/sniffio/LICENSE.MIT",
+      "sha256": "3e6dae555eb92787fc82d1d48355677f454c7f65aeb38d3f9e72bf9a3daf034b"
+    },
+    {
+      "path": "third-party/licenses/sqlalchemy/LICENSE",
+      "sha256": "9bb754071e711cf75728b9051b170bfb8f9e3b879c08386c96a36989c42cd5f1"
+    },
+    {
+      "path": "third-party/licenses/starlette/LICENSE.md",
+      "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf"
+    },
+    {
+      "path": "third-party/licenses/tiktoken/LICENSE",
+      "sha256": "258463fc3788f1f9b6a3f1820d8a87481ac24018d53167597e25d3e9031851ca"
+    },
+    {
+      "path": "third-party/licenses/truststore/LICENSE",
+      "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca"
+    },
+    {
+      "path": "third-party/licenses/typing-extensions/LICENSE",
+      "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+    },
+    {
+      "path": "third-party/licenses/typing-inspection/LICENSE",
+      "sha256": "804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3"
+    },
+    {
+      "path": "third-party/licenses/tzdata/LICENSE",
+      "sha256": "df58f69ea88683035d720b5375bcef0cf5aeaa98a1d098d572e0992c378deb46"
+    },
+    {
+      "path": "third-party/licenses/tzdata/LICENSE_APACHE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "third-party/licenses/urllib3/LICENSE.txt",
+      "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+    },
+    {
+      "path": "third-party/licenses/uvicorn/LICENSE.md",
+      "sha256": "efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371"
+    },
+    {
+      "path": "third-party/licenses/watchfiles/LICENSE",
+      "sha256": "2d40a03346bded8daa4bd22d23825a6f2568a0820fbef76ac05bae534421e189"
+    },
+    {
+      "path": "third-party/licenses/websockets/LICENSE",
+      "sha256": "0f44514998aca209d3482d10204a8adf2aa4296ff157a36a5c0922f2280632d3"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "ea0aae17eb1715316aa96cfeaab935763b9a21055421fe013fd93098ed0d6b2f"
+    }
+  ],
+  "release_adjustments": [
+    "Public documentation and Apache-2.0/third-party notices",
+    "Historical design copies with private locators removed",
+    "Two fixture display labels anonymized without changing assertions",
+    "Public installation test profile and disposable verification helper"
+  ]
+}

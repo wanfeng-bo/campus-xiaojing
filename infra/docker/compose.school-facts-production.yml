@@ -1,0 +1,186 @@
+# Independent school-facts instance. Provision schema22 -> closed initialization -> 56
+# with the reviewed external procedure before starting api/writer/web.
+# Use a dedicated Compose project and explicit local images; never attach old volumes.
+name: ${CAMPUS_AI_LIVE_PROJECT:?distinct live project name required}
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "4"
+
+services:
+  postgres:
+    image: ${CAMPUS_AI_LIVE_POSTGRES_IMAGE:?reviewed PostgreSQL 16 image required}
+    pull_policy: never
+    restart: unless-stopped
+    env_file: ["${CAMPUS_AI_LIVE_POSTGRES_ENV_FILE:?private PostgreSQL env required}"]
+    command: [postgres, -c, max_connections=40]
+    volumes: [postgres_data:/var/lib/postgresql/data]
+    networks: [runtime-db, reader-db, writer-db]
+    read_only: true
+    tmpfs: [/tmp, /var/run/postgresql]
+    cap_drop: [ALL]
+    cap_add: [CHOWN, DAC_OVERRIDE, FOWNER, SETGID, SETUID]
+    security_opt: ["no-new-privileges:true"]
+    logging: *logging
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -q -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
+  redis:
+    image: ${CAMPUS_AI_LIVE_REDIS_IMAGE:?reviewed Redis 7 image required}
+    pull_policy: never
+    restart: unless-stopped
+    env_file: ["${CAMPUS_AI_LIVE_REDIS_ENV_FILE:?private Redis env required}"]
+    entrypoint: [/bin/sh, -ec]
+    command:
+      - |
+        set -o pipefail
+        if [ -z "$${REDIS_PASSWORD+x}" ] || [ -z "$${REDIS_PASSWORD}" ]; then
+          echo 'REDIS_PASSWORD must be non-empty' >&2
+          exit 1
+        fi
+        command -v od >/dev/null 2>&1 || exit 1
+        command -v awk >/dev/null 2>&1 || exit 1
+        redis_password_escaped="$$(
+          printf '%s' "$${REDIS_PASSWORD}" |
+            od -An -v -tx1 |
+            awk '{ for (field = 1; field <= NF; field++) printf "\\x%s", $$field }'
+        )"
+        if [ -z "$${redis_password_escaped}" ]; then exit 1; fi
+        exec /usr/local/bin/docker-entrypoint.sh redis-server - <<EOF
+        appendonly yes
+        maxmemory 128mb
+        maxmemory-policy noeviction
+        requirepass "$${redis_password_escaped}"
+        EOF
+    volumes: [redis_data:/data]
+    networks: [identity-cache]
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    cap_add: [CHOWN, DAC_OVERRIDE, SETGID, SETUID]
+    security_opt: ["no-new-privileges:true"]
+    logging: *logging
+    healthcheck:
+      test: [CMD-SHELL, 'REDISCLI_AUTH="$${REDIS_PASSWORD}" redis-cli ping | grep -qx PONG']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
+  writer:
+    image: ${CAMPUS_AI_LIVE_API_IMAGE:?reviewed formal API image required}
+    pull_policy: never
+    restart: unless-stopped
+    user: "10001:10001"
+    environment:
+      SCHOOL_FACT_F1_WRITER_CONFIG_FILE: /run/school-facts-live/writer.json
+    command: [uvicorn, "app.composition.school_fact_product_writer:create_school_fact_product_writer_app", --factory, --host, "0.0.0.0", --port, "8001", --no-proxy-headers, --no-access-log]
+    volumes:
+      - "${CAMPUS_AI_LIVE_WRITER_CONFIG_FILE:?private reviewed Writer configuration required}:/run/school-facts-live/writer.json:ro"
+    networks: [writer-db, api-writer]
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    logging: *logging
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8001/internal/v1/school-facts/features', timeout=2).close()"]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+      start_period: 20s
+
+  api:
+    image: ${CAMPUS_AI_LIVE_API_IMAGE:?reviewed formal API image required}
+    pull_policy: never
+    restart: unless-stopped
+    user: "10001:10001"
+    environment:
+      SCHOOL_FACT_LIVE_CONFIG: /run/school-facts-live/product.json
+    volumes:
+      - "${CAMPUS_AI_LIVE_PRODUCT_CONFIG_FILE:?private reviewed product configuration required}:/run/school-facts-live/product.json:ro"
+      - "${CAMPUS_AI_LIVE_MODEL_KEY_DIR:?private empty or approved key directory required}:/run/school-facts-live/model-key:ro"
+      - "${CAMPUS_AI_LIVE_LEDGER_DIR:?independent live ledger directory required}:/var/lib/school-facts-live/model-ledger"
+    networks:
+      runtime-db: {}
+      reader-db: {}
+      identity-cache: {}
+      api-writer: {}
+      web-api: {}
+      api-outbound:
+        gw_priority: 1
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    logging: *logging
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      writer:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/school-fact-product/features', timeout=2).close()"]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+      start_period: 20s
+
+  web:
+    image: ${CAMPUS_AI_LIVE_WEB_IMAGE:?reviewed formal Web image required}
+    pull_policy: never
+    restart: unless-stopped
+    environment:
+      CAMPUS_AI_PUBLIC_HOST: ${CAMPUS_AI_LIVE_PUBLIC_HOST:?reviewed formal host required}
+      CAMPUS_AI_DINGTALK_LOGIN_IP_RATE: ${CAMPUS_AI_LIVE_LOGIN_IP_RATE:?login rate required}
+      CAMPUS_AI_DINGTALK_LOGIN_IP_BURST: ${CAMPUS_AI_LIVE_LOGIN_IP_BURST:?login burst required}
+      NGINX_ENVSUBST_FILTER: ^CAMPUS_AI_(PUBLIC_HOST|DINGTALK_LOGIN_IP_RATE|DINGTALK_LOGIN_IP_BURST)$$
+    ports:
+      - "127.0.0.1:${CAMPUS_AI_LIVE_HTTP_PORT:?free HTTP port required}:80"
+      - "127.0.0.1:${CAMPUS_AI_LIVE_HTTPS_PORT:?free HTTPS port required}:443"
+    volumes:
+      - "${CAMPUS_AI_LIVE_TLS_DIR:?separate live TLS directory required}:/etc/nginx/tls:ro"
+    networks: [web-api, edge]
+    read_only: true
+    tmpfs: [/tmp, /var/cache/nginx, /var/run, /etc/nginx/conf.d]
+    cap_drop: [ALL]
+    cap_add: [CHOWN, DAC_OVERRIDE, SETGID, SETUID, NET_BIND_SERVICE]
+    security_opt: ["no-new-privileges:true"]
+    logging: *logging
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, nginx, -t, -q]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+
+volumes:
+  postgres_data: {}
+  redis_data: {}
+
+networks:
+  runtime-db:
+    internal: true
+  reader-db:
+    internal: true
+  writer-db:
+    internal: true
+  identity-cache:
+    internal: true
+  api-writer:
+    internal: true
+  web-api:
+    internal: true
+  api-outbound: {}
+  edge: {}

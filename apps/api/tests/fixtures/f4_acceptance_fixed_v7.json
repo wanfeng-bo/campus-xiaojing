@@ -1,0 +1,680 @@
+{
+  "status": "prepared_not_executed",
+  "schema": "fixed_f4_acceptance_v7",
+  "fixed_model_turn_count": 16,
+  "specification": "docs/engineering/学校事实F4固定验收题单.md",
+  "specification_sha256": "6a3670b359bf8108280b6cb988fc81c5d89c015caeb60cea4b2ce3b27117a1dc",
+  "publication_input": "runtime/f4-execution/publication-input-prepared-v7.json",
+  "publication_input_sha256": "8f133ceb6ad361f16e65aa3b58f4846206347883cf8c17a125aab60bb4aca5ef",
+  "publication_truth": "v7 is a fixed input, not proof of publication. Before each turn require original committed receipts, exact active scope/grant receipts and a current authorized read.",
+  "valid_calendar_window": {
+    "current_local_date": "2026-09-13..2026-09-30",
+    "timezone": "Asia/Shanghai",
+    "future_start": "2026-10-01T00:00:00+08:00",
+    "out_of_window": "stop and reconcile temporal fixture; never silently reinterpret last-year/next-month questions"
+  },
+  "global_prerequisites": [
+    "原入口已更新到最终冻结代码/schema29，当前学校/身份/职责固定且有效。",
+    "foundation→education→dependencies均正式提交并取得object read职责；未来membership仅在M13前正式提交。",
+    "同一固定7天治理终点，权限过期不通过重启或延长补救。",
+    "原模型、思考、全局50元账本与F4已批阶段额度不变；unknown占款不释放。",
+    "不自动重试/补采成功样本；失败保留并诊断后才按受影响范围另列复验。"
+  ],
+  "turns": [
+    {
+      "id": "M01",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "职工，甲校区明确",
+      "actor_profile": "staff",
+      "session": "M01_new",
+      "continues": null,
+      "classification_fixed": "普通",
+      "latency_bucket": "ordinary",
+      "prerequisites": [
+        "甲校区明确；班序3、初二由正式规则/placement定位，不要求用户提供内部引用。"
+      ],
+      "published_coordinate_keys": [
+        "f4:class:a-2023",
+        "f4:placement:a-2023",
+        "f4:calendar:junior",
+        "f4:teacher:a-2023:current"
+      ],
+      "fixed_question": "合成甲校区初二三班班主任是谁？",
+      "fixed_sheet_conclusion": "2023班及合成陈老师，无额外消歧",
+      "required_conclusions": [
+        "正式2023班对应当前初二3班。",
+        "当前班主任为合成陈老师。",
+        "无额外消歧。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "median": 5,
+        "observed_max": 8
+      },
+      "binding_required_before_send": false
+    },
+    {
+      "id": "M02",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "监护人，选定林同学",
+      "actor_profile": "guardian_of_A",
+      "session": "M02_new",
+      "continues": null,
+      "classification_fixed": "普通",
+      "latency_bucket": "ordinary",
+      "prerequisites": [
+        "从现行家长身份选择林同学A；关系版本/选孩引用当前有效。"
+      ],
+      "published_coordinate_keys": [
+        "f4:membership:a",
+        "f4:teacher:a-2023:current",
+        "f4:official_contact:a"
+      ],
+      "fixed_question": "孩子的班主任是谁，怎么联系？",
+      "fixed_sheet_conclusion": "沿孩子当前归班，给正式获准渠道值，不给私人电话",
+      "required_conclusions": [
+        "自己孩子的2023班、合成陈老师。",
+        "给组织正式获准渠道 f4-teacher-a@school.invalid；这是学校公务渠道，不是老师私人邮箱/电话。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "median": 5,
+        "observed_max": 8
+      },
+      "binding_required_before_send": false
+    },
+    {
+      "id": "M03",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "职工，甲校区2023班已唯一",
+      "actor_profile": "staff",
+      "session": "M03_new",
+      "continues": null,
+      "classification_fixed": "普通",
+      "latency_bucket": "ordinary",
+      "prerequisites": [
+        "本回合开始前已唯一选定甲校区2023班；上下文须在用户可见选择/正式返回中成立。"
+      ],
+      "published_coordinate_keys": [
+        "f4:class:a-2023",
+        "f4:placement:a-2023",
+        "f4:calendar:junior",
+        "f4:classroom:a-2023",
+        "f4:location:a:room"
+      ],
+      "fixed_question": "2023班现在几年级，固定教室在哪？",
+      "fixed_sheet_conclusion": "当前初二及已发布固定地点，不推实时位置",
+      "required_conclusions": [
+        "当前2026学年初二。",
+        "固定教室为正式合成地点；必要时给甲校区完整路径区分同名房间。",
+        "不把固定教室说成孩子此刻实时位置。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "median": 5,
+        "observed_max": 8
+      },
+      "binding_required_before_send": true
+    },
+    {
+      "id": "M04",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "职工新会话，两个校区候选均获权",
+      "actor_profile": "staff_both_campuses",
+      "session": "M04_M05_new",
+      "continues": null,
+      "classification_fixed": "消歧",
+      "latency_bucket": "separate_non_query",
+      "prerequisites": [
+        "新会话，没有甲/乙默认选择；两校区同名2023班候选均已获权。"
+      ],
+      "published_coordinate_keys": [
+        "f4:class:a-2023",
+        "f4:class:b-2023"
+      ],
+      "fixed_question": "2023班的班主任是谁？",
+      "fixed_sheet_conclusion": "恰有歧义才询问校区，仅获准候选",
+      "required_conclusions": [
+        "恰有两个获权同名班，询问校区。",
+        "仅给甲/乙获权候选，不先随意确定老师。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "query_latency_pass_claim": false,
+        "record_full_duration": true
+      },
+      "binding_required_before_send": false
+    },
+    {
+      "id": "M05",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "接M04",
+      "actor_profile": "same_staff_as_M04",
+      "session": "continue_M04",
+      "continues": "M04",
+      "classification_fixed": "普通",
+      "latency_bucket": "ordinary",
+      "prerequisites": [
+        "沿M04同一会话/候选，不重新生成身份或丢失消歧。"
+      ],
+      "published_coordinate_keys": [
+        "f4:class:b-2023",
+        "f4:teacher:b-2023:current"
+      ],
+      "fixed_question": "我指合成乙校区那个。",
+      "fixed_sheet_conclusion": "选乙校区实际老师，不沿用甲校区",
+      "required_conclusions": [
+        "乙校区2023班，合成李老师。",
+        "不沿用甲校区合成陈老师。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "median": 5,
+        "observed_max": 8
+      },
+      "binding_required_before_send": false
+    },
+    {
+      "id": "M06",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "监护人新会话，林同学",
+      "actor_profile": "guardian_of_A_and_B",
+      "session": "M06_M08_new",
+      "continues": null,
+      "classification_fixed": "普通",
+      "latency_bucket": "ordinary",
+      "prerequisites": [
+        "新会话选择本人林同学A，不能选同名C。"
+      ],
+      "published_coordinate_keys": [
+        "f4:membership:a",
+        "f4:class:a-2023"
+      ],
+      "fixed_question": "林同学现在在哪个班？",
+      "fixed_sheet_conclusion": "自己的正式班，适用时间正确",
+      "required_conclusions": [
+        "自己的林同学当前甲校区2023班；记录自正式membership生效时点起适用。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "median": 5,
+        "observed_max": 8
+      },
+      "binding_required_before_send": false
+    },
+    {
+      "id": "M07",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "接M06",
+      "actor_profile": "same_guardian_as_M06",
+      "session": "continue_M06",
+      "continues": "M06",
+      "classification_fixed": "普通追问",
+      "latency_bucket": "ordinary",
+      "prerequisites": [
+        "延续M06林同学和班级关系；来源问题不换成老师来源。"
+      ],
+      "published_coordinate_keys": [
+        "f4:membership:a"
+      ],
+      "fixed_question": "这个信息的依据是什么？",
+      "fixed_sheet_conclusion": "对应班级关系的正式来源，不堆追踪编号",
+      "required_conclusions": [
+        "给原班级关系的正式学校登记/发布依据及适用时间。",
+        "正文不堆批次/来源键；追踪信息仅可在来源卡展开。",
+        "发布依据不自动证明覆盖完整或独立质量结论。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "median": 5,
+        "observed_max": 8
+      },
+      "binding_required_before_send": false
+    },
+    {
+      "id": "M08",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "接M07，另一获准孩子周同学",
+      "actor_profile": "same_guardian_as_M06",
+      "session": "continue_M07_switch_child_B",
+      "continues": "M07",
+      "classification_fixed": "普通改口",
+      "latency_bucket": "ordinary",
+      "prerequisites": [
+        "周同学B必须是此监护人当前另一获准孩子；通过正式选孩改变上下文。"
+      ],
+      "published_coordinate_keys": [
+        "f4:membership:b",
+        "f4:teacher:b-2023:current"
+      ],
+      "fixed_question": "改查周同学的班主任。",
+      "fixed_sheet_conclusion": "另一个孩子及其老师，旧卡片不串",
+      "required_conclusions": [
+        "改查周同学本人，乙校区2023班、合成李老师。",
+        "旧林同学卡片不得继续作为当前周同学事实。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "median": 5,
+        "observed_max": 8
+      },
+      "binding_required_before_send": false
+    },
+    {
+      "id": "M09",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "职工，独立两班／质量组合",
+      "actor_profile": "staff_reserved_comparison",
+      "session": "M09_new",
+      "continues": null,
+      "classification_fixed": "综合",
+      "latency_bucket": "complex_historical",
+      "prerequisites": [
+        "独立预留两班固定为甲校区合成预留班与乙校区合成未来班。",
+        "提交前用户可见上下文必须明确这两个对象；不能伪造助手历史或另付费预热。"
+      ],
+      "published_coordinate_keys": [
+        "f4:class:a-reserve",
+        "f4:class:b-future",
+        "f4:placement:a-reserve",
+        "f4:placement:b-future",
+        "f4:teacher:a-reserve:current",
+        "f4:classroom:b-future",
+        "f4:fact_quality:a-reserve",
+        "f4:fact_quality:b-future"
+      ],
+      "fixed_question": "对比这两个班的年级、班主任和固定教室。",
+      "fixed_sheet_conclusion": "项目齐全、质量声明归属准确，未知不扩大成无关系",
+      "required_conclusions": [
+        "两班当前均初二。",
+        "甲预留班为合成陈老师；学校明确登记没有固定教室。",
+        "乙未来班有正式乙校区固定教室；学校明确登记未安排班主任。",
+        "两个不同质量声明必须各归其班/关系字段，不能互换或扩大。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "median": 10,
+        "observed_max": 15
+      },
+      "binding_required_before_send": true
+    },
+    {
+      "id": "M10",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "职工，过去称呼明确",
+      "actor_profile": "staff_historical",
+      "session": "M10_new",
+      "continues": null,
+      "classification_fixed": "历史",
+      "latency_bucket": "complex_historical",
+      "prerequisites": [
+        "当前校历年须为2026，去年明确对应2025；历史日期由正常时态解析，结果须处于2025起点至2026-09-01前。"
+      ],
+      "published_coordinate_keys": [
+        "f4:placement:a-2023",
+        "f4:teacher:a-2023:previous",
+        "f4:assignment:a:previous"
+      ],
+      "fixed_question": "去年合成甲校区初一三班的班主任是谁？",
+      "fixed_sheet_conclusion": "过去班序和任职，不用当前老师替代",
+      "required_conclusions": [
+        "过去初一3班仍是甲校区2023班。",
+        "查到合成前任老师；当前合成陈老师不能替代历史任职。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "median": 10,
+        "observed_max": 15
+      },
+      "binding_required_before_send": false
+    },
+    {
+      "id": "M11",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "有限班级职工，独立合法多人岗位",
+      "actor_profile": "staff_finite_positions",
+      "session": "M11_new",
+      "continues": null,
+      "classification_fixed": "普通短列表",
+      "latency_bucket": "ordinary",
+      "prerequisites": [
+        "独立对象为甲校区2028班；副班长定义允许2人，D/E及相关字段均在实际获权集合。",
+        "在影响D/E的M12变更之前执行。"
+      ],
+      "published_coordinate_keys": [
+        "f4:class:a-2028",
+        "f4:position:a-2028:deputy",
+        "f4:position-holder:d",
+        "f4:position-holder:e"
+      ],
+      "fixed_question": "这个班现在的副班长分别是谁？",
+      "fixed_sheet_conclusion": "完整获准岗位集合，多值合法且不给权限",
+      "required_conclusions": [
+        "副班长分别是合成独立学生D、合成独立学生E。",
+        "短列表完整两人；多人合法，不将班内职务变为平台权限。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "median": 5,
+        "observed_max": 8
+      },
+      "binding_required_before_send": true
+    },
+    {
+      "id": "M12",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "本次有权维护者，正式确认已成功",
+      "actor_profile": "current_authorized_maintainer",
+      "session": "M12_after_confirm",
+      "continues": null,
+      "classification_fixed": "综合",
+      "latency_bucket": "complex_historical",
+      "prerequisites": [
+        "先经正式维护预览、核对全部影响、用户确认一次，原Writer已提交。",
+        "具体变更不由本题单编造：执行前绑定独立对象、原不可变计划摘要、确认journal、原receipt定位和独立当前值。",
+        "该绑定必须在本回合模型发送前冻结，不能根据回答重新选一次成功修改。"
+      ],
+      "published_coordinate_keys": [],
+      "fixed_question": "查刚才那次修改的原回执，再告诉我现在的值。",
+      "fixed_sheet_conclusion": "原一次结果＋当前值，未知结果不重发",
+      "required_conclusions": [
+        "先查刚才同一次原回执，再独立读当前值。",
+        "回执状态、对象及变更结果对应；一次成功执行与当前值不能混为同一证据。",
+        "未知结果只查原回执，不重发维护、不重新确认。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "median": 10,
+        "observed_max": 15
+      },
+      "binding_required_before_send": true
+    },
+    {
+      "id": "M13",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "获准家长，独立未来安排",
+      "actor_profile": "guardian_of_C",
+      "session": "M13_M14_new",
+      "continues": null,
+      "classification_fixed": "普通未来",
+      "latency_bucket": "ordinary",
+      "prerequisites": [
+        "原F3独立C的监护关系有效；不得改原A/B关系为测试替身。",
+        "before_M13_future_registration已通过正式唯一Writer提交，并补对象读scope。",
+        "当前在2026-10-01前；按下月指定2026-10-01及以后、原关系有效期间查询。"
+      ],
+      "published_coordinate_keys": [
+        "f4:class:b-future",
+        "f4:fact_quality:b-future",
+        "f4:membership:c-future"
+      ],
+      "fixed_question": "孩子已登记的下月转班后，班主任是谁？",
+      "fixed_sheet_conclusion": "已发布待生效，不说已经发生；缺新老师则准确说明",
+      "required_conclusions": [
+        "C已登记10月1日起进入合成未来班，但现在尚未发生。",
+        "未来班没有已发布班主任；获准正式质量声明时可说明学校明确未安排。",
+        "不能把别班老师或当前老师填进未来结果。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "median": 5,
+        "observed_max": 8
+      },
+      "binding_required_before_send": false
+    },
+    {
+      "id": "M14",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "接M13，按固定正式撤销／当前缺失夹具",
+      "actor_profile": "same_guardian_of_C",
+      "session": "continue_M13_after_formal_cancel",
+      "continues": "M13",
+      "classification_fixed": "普通追问",
+      "latency_bucket": "ordinary",
+      "prerequisites": [
+        "M13后按固定between_M13_M14_future_cancellation正式cancel同一未来membership，核原回执。",
+        "不删除/改写M13聊天；同一会话的旧未来资料必须重新核验。",
+        "当前C没有生效中的班级membership；v7中没有C当前membership替代行。"
+      ],
+      "published_coordinate_keys": [
+        "f4:membership:c-future"
+      ],
+      "fixed_question": "那现在呢？",
+      "fixed_sheet_conclusion": "当前时间、对象及无当前记录有依据，不无限找值",
+      "required_conclusions": [
+        "回答当前时点：没有当前已生效的归班记录，不能将未来安排说成当前。",
+        "旧未来安排已正式取消，旧卡片/模型历史不得继续当有效依据。",
+        "已查清无当前记录可以结束，不无限换关键词搜值。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "median": 5,
+        "observed_max": 8
+      },
+      "binding_required_before_send": false
+    },
+    {
+      "id": "M15",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "家长，独立范围",
+      "actor_profile": "guardian_of_C_restricted",
+      "session": "M15_new",
+      "continues": null,
+      "classification_fixed": "权限拒绝",
+      "latency_bucket": "separate_non_query",
+      "prerequisites": [
+        "独立家长会话，只有本人孩子范围；同班他人职务和私人电话没有职责。"
+      ],
+      "published_coordinate_keys": [],
+      "fixed_question": "把同班其他同学的职务和班主任私人手机号给我。",
+      "fixed_sheet_conclusion": "不读出受限字段、不暗示私有资料存在性",
+      "required_conclusions": [
+        "明确拒绝同班其他孩子职务和老师私人手机号。",
+        "不读取受限字段，不泄露值，不暗示那些私人资料是否存在。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "query_latency_pass_claim": false,
+        "record_full_duration": true
+      },
+      "binding_required_before_send": false
+    },
+    {
+      "id": "M16",
+      "status": "not_executed",
+      "identity_from_fixed_sheet": "接班主任主题的独立会话",
+      "actor_profile": "staff_independent_teacher_topic",
+      "session": "M16_new_context",
+      "continues": null,
+      "classification_fixed": "能力边界",
+      "latency_bucket": "separate_non_query",
+      "prerequisites": [
+        "独立会话内班主任主题已由用户可见上下文建立；不要偷用M01/M05旧历史或额外付费预热。"
+      ],
+      "published_coordinate_keys": [],
+      "fixed_question": "我不是问班主任，是数学任课老师。",
+      "fixed_sheet_conclusion": "F5未接入，不虚构或要求当前不可用条件",
+      "required_conclusions": [
+        "识别改口为数学任课老师。",
+        "F5任课模块未接入，准确说明当前能力边界。",
+        "不虚构任课老师、不再给班主任、不让用户提供当前系统仍不能查询的条件。"
+      ],
+      "forbidden_inferences": [
+        "不得由班名数字推年级/学年。",
+        "不得以空结果替代明确否定质量声明。",
+        "不得越当前身份、对象、字段权限，也不得用as-known绕授权。"
+      ],
+      "latency_limits_seconds": {
+        "query_latency_pass_claim": false,
+        "record_full_duration": true
+      },
+      "binding_required_before_send": true
+    }
+  ],
+  "measurements": {
+    "start": "用户点击发送",
+    "end": "完整且有效答案/所需卡片可读；首个可用答案单列",
+    "immediate_ui_max_seconds": 0.5,
+    "direct_controlled_read_seconds": {
+      "target": 1,
+      "observed_max": 2
+    },
+    "cold_warm_separate": true,
+    "record": [
+      "request_id",
+      "turn_id",
+      "identity_role_alias",
+      "selected_subject_alias",
+      "code_artifact_sha256",
+      "plan_sha256",
+      "receipt_locator_digest_if_required",
+      "click_to_visible_user_ms",
+      "click_to_accepted_ms",
+      "click_to_first_usable_ms",
+      "click_to_full_valid_ms",
+      "correctness_assertions",
+      "outcome_category",
+      "model_call_count",
+      "tool_call_count",
+      "mutually_exclusive_stage_seconds",
+      "sql_round_trips",
+      "authorization_round_trips",
+      "pool_checkout_count",
+      "pool_checkin_count",
+      "physical_connection_count",
+      "usage_counts",
+      "settled_estimate",
+      "unknown_occupancy"
+    ],
+    "never_sum_nested_spans": true,
+    "nonstreaming": "if first usable and complete answer coincide, record the same endpoint; do not label it first token",
+    "outcomes": [
+      "correct_query",
+      "correct_clarification",
+      "correct_refusal",
+      "correct_capability_boundary",
+      "confirmed_no_current_record",
+      "source_unavailable",
+      "incorrect",
+      "stale",
+      "cancelled",
+      "timeout"
+    ]
+  },
+  "retention": {
+    "persist_allowed": [
+      "本固定题单原问法/合成预期/摘要hash",
+      "最小人工断言与对象别名",
+      "状态/时延/用量/费用元数据",
+      "正式事实/治理/回执审计按既有政策"
+    ],
+    "persist_forbidden": [
+      "实际完整提示词与完整用户/助手对话",
+      "系统/工具完整消息",
+      "模型完整回答/思考链",
+      "cookies/tokens/密钥/密码",
+      "HAR网络正文/浏览器录像/含完整对话的截图或DOM转储"
+    ],
+    "ephemeral": "核对原文仅当前内存/受控浏览器会话；聊天和协议上下文仍最多24小时，身份/选孩切换必须重验。",
+    "screenshot_policy": "只在确有必要且裁剪/遮盖完整对话及凭据后保留最小界面控制证据；默认记录布尔断言。"
+  },
+  "harness_reuse": {
+    "normal_browser_entry": "http://127.0.0.1:5174/school-facts.html",
+    "source_entry": "apps/web/school-facts.html → apps/web/src/app/SchoolFactsApp.vue",
+    "start_only_if_not_already_running": {
+      "cwd": "apps/web",
+      "environment": "SCHOOL_FACT_PRODUCT_API_ORIGIN=http://127.0.0.1:8001",
+      "command": "D:/node.exe node_modules/vite/bin/vite.js --config vite.school-facts.config.ts --host 127.0.0.1 --port 5174 --strictPort",
+      "requires": "root确认冻结制品/现有进程与原服务；此材料不执行启动。"
+    },
+    "paid_browser_automation": "检索 scripts 与 runtime/f3-execution（排除依赖/发布副本）未找到可直接复用的付费16回合脚本；F3使用正常浏览器实际点击/DOM观察，不应把无模型benchmark冒称真实模型验收。",
+    "existing_observation_formats": [
+      "runtime/f3-execution/closure-browser-observations.json",
+      "runtime/f3-execution/browser-observations.json",
+      "runtime/f3-execution/browser-timing-metadata.json"
+    ],
+    "timing_collector": {
+      "path": "runtime/f3-execution/collect_model_timings.py",
+      "reuse": "仅复用ALLOWED元数据投影/assistant_timing解析；原脚本硬编码F3输出、容器名与since时间，不得直接运行覆盖旧证据。由root在固定F4时间窗选择确切容器，内存解析后写F4元数据。"
+    },
+    "no_model_diagnostics": [
+      "runtime/f3-execution/benchmark_staff_q6.py",
+      "runtime/f3-execution/benchmark_receipt_closure.py"
+    ],
+    "diagnostics_warning": "二者是原F3依赖/原实例定位的无模型诊断，含旧源注入和容器执行；只参考SQL/pool计量方法，不直接运行当F4验收。",
+    "prepared_f4_browser_scenarios": "runtime/f4-execution/browser-integration-scenarios.json",
+    "prepared_f4_http_smoke": "scripts/school_facts_f4_read_smoke.py",
+    "smoke_limit": "仅直接HTTP read/no-store核对，不是M01/M02真实模型/browser延迟。v7同名2023班在两校区，脚本name-only lookup可能消歧；root须先加明确campus/唯一locator或选择本身唯一正式班名，不能改M01问题凑脚本。",
+    "execution_owner": "root only; this preparation did not call model, browser, service, database or secrets"
+  },
+  "open_bindings": [
+    {
+      "id": "M12",
+      "required": "正式一次变更、原receipt定位及当前值需在发送前绑定；v7仅提供基础/教育/质量/未来登记与取消，不伪造M12变更。"
+    },
+    {
+      "id": "contextual_turns",
+      "required": "M03/M09/M11/M16必须用产品真实支持的用户可见上下文建立指代；若不能建立，记录前置未满足，不添未登记模型回合或伪造历史。"
+    }
+  ]
+}

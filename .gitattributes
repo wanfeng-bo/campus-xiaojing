@@ -1,0 +1,2 @@
+/infra/postgres/001-campus-ai-roles.sh text eol=lf
+/infra/school-facts-f1/*.sh text eol=lf

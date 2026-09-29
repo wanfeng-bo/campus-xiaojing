@@ -1,0 +1,67 @@
+# ruff: noqa: E501
+"""Frozen F4 education authority schema; forward-only data preserving migration."""
+from alembic import op
+
+revision = "20260913_28"
+down_revision = "20260913_27"
+branch_labels = None
+depends_on = None
+
+
+def upgrade():
+    op.execute("CREATE TABLE school_education_facts (\n\tid UUID NOT NULL, \n\tschool_id UUID NOT NULL, \n\tkind VARCHAR(80) NOT NULL, \n\tsource_key VARCHAR(255) NOT NULL, \n\tversion BIGINT NOT NULL, \n\tPRIMARY KEY (id), \n\tCONSTRAINT uq_education_fact_school_id UNIQUE (school_id, id), \n\tCONSTRAINT uq_education_fact_key UNIQUE (school_id, kind, source_key), \n\tFOREIGN KEY(school_id) REFERENCES schools (id) ON DELETE RESTRICT, \n\tCONSTRAINT ck_education_fact_version CHECK (version >= 1), \n\tCONSTRAINT ck_education_fact_kind CHECK (kind IN ('class_lineage','class_location','class_placement','class_position_definition','class_teacher_assignment','education_calendar_rule','education_class','education_cohort','education_grade','education_grade_group','education_offering','education_stage','education_term','student_class_membership','student_class_position','student_cohort_membership','student_grade_placement'))\n)")
+    op.execute("CREATE TABLE school_education_versions (\n\tid UUID NOT NULL, \n\tschool_id UUID NOT NULL, \n\tfact_id UUID NOT NULL, \n\trevision BIGINT NOT NULL, \n\tvalid_from TIMESTAMP WITH TIME ZONE NOT NULL, \n\tvalid_to TIMESTAMP WITH TIME ZONE, \n\trecorded_at TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL, \n\tsuperseded_at TIMESTAMP WITH TIME ZONE, \n\tpayload JSONB NOT NULL, \n\tsource_id UUID NOT NULL, \n\timport_batch_id UUID NOT NULL, \n\tcause_source_key VARCHAR(255), \n\tcause_version BIGINT, \n\tcorrection_reason VARCHAR(1000), \n\tPRIMARY KEY (id), \n\tCONSTRAINT uq_education_version_school_id UNIQUE (school_id, id), \n\tFOREIGN KEY(school_id, fact_id) REFERENCES school_education_facts (school_id, id) ON DELETE RESTRICT, \n\tFOREIGN KEY(school_id, source_id) REFERENCES school_fact_sources (school_id, id) ON DELETE RESTRICT, \n\tFOREIGN KEY(school_id, import_batch_id) REFERENCES master_data_import_batches (school_id, id) ON DELETE RESTRICT, \n\tCONSTRAINT ck_education_version_revision CHECK (revision >= 1), \n\tCONSTRAINT ck_education_version_interval CHECK (valid_to IS NULL OR valid_to > valid_from), \n\tCONSTRAINT ck_education_registration_interval CHECK (superseded_at IS NULL OR superseded_at >= recorded_at), \n\tCONSTRAINT ck_education_payload_object CHECK (jsonb_typeof(payload) = 'object'), \n\tCONSTRAINT ck_education_cause_pair CHECK ((cause_source_key IS NULL) = (cause_version IS NULL)), \n\tCONSTRAINT excl_education_current_interval EXCLUDE USING gist (school_id WITH =, fact_id WITH =, tstzrange(valid_from, valid_to, '[)') WITH &&) WHERE (superseded_at IS NULL)\n)")
+    op.execute('CREATE INDEX ix_education_version_current ON school_education_versions (school_id, fact_id, valid_from, valid_to) WHERE superseded_at IS NULL')
+    op.execute('CREATE TABLE school_education_references (\n\tschool_id UUID NOT NULL, \n\tversion_id UUID NOT NULL, \n\tfield_name VARCHAR(80) NOT NULL, \n\tordinal BIGINT NOT NULL, \n\teducation_id UUID, \n\tstudent_id UUID, \n\tassignment_id UUID, \n\torganization_id UUID, \n\tlocation_id UUID, \n\trelationship_id UUID, \n\tPRIMARY KEY (version_id, field_name, ordinal), \n\tFOREIGN KEY(school_id, version_id) REFERENCES school_education_versions (school_id, id) ON DELETE RESTRICT, \n\tFOREIGN KEY(school_id, education_id) REFERENCES school_education_facts (school_id, id) ON DELETE RESTRICT, \n\tFOREIGN KEY(school_id, student_id) REFERENCES students (school_id, id) ON DELETE RESTRICT, \n\tFOREIGN KEY(school_id, assignment_id) REFERENCES staff_assignments (school_id, id) ON DELETE RESTRICT, \n\tFOREIGN KEY(school_id, organization_id) REFERENCES organization_units (school_id, id) ON DELETE RESTRICT, \n\tFOREIGN KEY(school_id, location_id) REFERENCES campus_locations (school_id, id) ON DELETE RESTRICT, \n\tFOREIGN KEY(school_id, relationship_id) REFERENCES student_school_relationships (school_id, id) ON DELETE RESTRICT, \n\tCONSTRAINT ck_education_reference_one_target CHECK (num_nonnulls(education_id,student_id,assignment_id,organization_id,location_id,relationship_id)=1), \n\tCONSTRAINT ck_education_reference_ordinal CHECK (ordinal >= 0)\n)')
+    op.execute('ALTER TABLE public.school_policy_scopes ADD COLUMN education_target_id uuid')
+    op.execute('ALTER TABLE public.school_policy_scopes ADD COLUMN academic_year bigint')
+    op.execute('ALTER TABLE public.school_policy_scopes ADD CONSTRAINT fk_f4_school_policy_scopes_education_target_id FOREIGN KEY (school_id,education_target_id) REFERENCES public.school_education_facts(school_id,id) ON DELETE RESTRICT')
+    op.execute('ALTER TABLE public.school_fact_qualities ADD COLUMN education_target_id uuid')
+    op.execute('ALTER TABLE public.school_fact_qualities ADD COLUMN education_position_id uuid')
+    op.execute('ALTER TABLE public.school_fact_qualities ADD COLUMN field_name varchar(1000)')
+    op.execute('ALTER TABLE public.school_fact_qualities ADD COLUMN academic_year bigint')
+    op.execute('ALTER TABLE public.school_fact_qualities ADD CONSTRAINT fk_f4_school_fact_qualities_education_target_id FOREIGN KEY (school_id,education_target_id) REFERENCES public.school_education_facts(school_id,id) ON DELETE RESTRICT')
+    op.execute('ALTER TABLE public.school_fact_qualities ADD CONSTRAINT fk_f4_school_fact_qualities_education_position_id FOREIGN KEY (school_id,education_position_id) REFERENCES public.school_education_facts(school_id,id) ON DELETE RESTRICT')
+    op.execute('ALTER TABLE public.school_policy_scopes DROP CONSTRAINT ck_school_policy_scopes_exactly_one_target')
+    op.execute('ALTER TABLE school_policy_scopes ADD CONSTRAINT ck_school_policy_scopes_exactly_one_target CHECK ((education_target_id IS NULL AND num_nonnulls(organization_unit_id, campus_location_id) = 1 AND academic_year IS NULL) OR (education_target_id IS NOT NULL AND organization_unit_id IS NULL))')
+    op.execute('ALTER TABLE public.school_policy_scopes DROP CONSTRAINT excl_school_policy_scopes_campus_period')
+    op.execute("ALTER TABLE school_policy_scopes ADD CONSTRAINT excl_school_policy_scopes_campus_period EXCLUDE USING gist (school_id WITH =, policy_id WITH =, campus_location_id WITH =, tstzrange(valid_from, COALESCE(valid_to, 'infinity'::timestamptz), '[)') WITH &&) WHERE (campus_location_id IS NOT NULL AND education_target_id IS NULL)")
+    op.execute('ALTER TABLE public.school_fact_qualities DROP CONSTRAINT ck_school_fact_qualities_negative')
+    op.execute("ALTER TABLE school_fact_qualities ADD CONSTRAINT ck_school_fact_qualities_negative CHECK (negative_code IS NULL OR ((negative_code = 'no_office' AND target_fact_kind IN ('organization_location','person_workplace') AND purpose = 'office') OR (negative_code = 'no_reception' AND target_fact_kind IN ('organization_location','person_workplace') AND purpose = 'reception') OR (negative_code = 'no_official_channel' AND target_fact_kind = 'official_contact' AND contact_kind IN ('phone','email')) OR (negative_code = 'no_service' AND target_fact_kind = 'school_service') OR (negative_code = 'vacant_position' AND target_fact_kind = 'student_class_position' AND education_position_id IS NOT NULL) OR (negative_code = 'no_class_teacher' AND target_fact_kind = 'class_teacher_assignment') OR (negative_code = 'no_fixed_location' AND target_fact_kind = 'class_location')) IS TRUE)")
+    op.execute('ALTER TABLE public.school_fact_qualities DROP CONSTRAINT ck_school_fact_qualities_target')
+    op.execute("ALTER TABLE school_fact_qualities ADD CONSTRAINT ck_school_fact_qualities_target CHECK (target_fact_kind IN ('school','person','organization','assignment','organization_campus_relationship','location','location_alias','person_contact','official_contact','policy','policy_scope','policy_version','organization_profile','organization_membership','organization_location','person_workplace','school_service','class_lineage','class_location','class_placement','class_position_definition','class_teacher_assignment','education_calendar_rule','education_class','education_cohort','education_grade','education_grade_group','education_offering','education_stage','education_term','student_class_membership','student_class_position','student_cohort_membership','student_grade_placement'))")
+    op.execute('ALTER TABLE public.school_fact_qualities DROP CONSTRAINT ck_school_fact_qualities_owner')
+    op.execute("ALTER TABLE school_fact_qualities ADD CONSTRAINT ck_school_fact_qualities_owner CHECK ((owner_kind = 'school' AND organization_unit_id IS NULL AND person_id IS NULL AND location_id IS NULL) OR (owner_kind = 'organization' AND organization_unit_id IS NOT NULL AND person_id IS NULL AND location_id IS NULL) OR (owner_kind = 'person' AND person_id IS NOT NULL AND organization_unit_id IS NULL AND location_id IS NULL) OR (owner_kind = 'location' AND location_id IS NOT NULL AND organization_unit_id IS NULL AND person_id IS NULL) OR (owner_kind = 'education' AND education_target_id IS NOT NULL AND organization_unit_id IS NULL AND person_id IS NULL AND location_id IS NULL))")
+    op.execute('ALTER TABLE public.school_fact_change_lineage DROP CONSTRAINT ck_school_fact_change_lineage_operation')
+    op.execute("ALTER TABLE school_fact_change_lineage ADD CONSTRAINT ck_school_fact_change_lineage_operation CHECK (operation IN ('upsert', 'end', 'revoke', 'reactivate', 'correct', 'cancel'))")
+    op.execute('ALTER TABLE public.school_education_facts ENABLE ROW LEVEL SECURITY')
+    op.execute('ALTER TABLE public.school_education_facts FORCE ROW LEVEL SECURITY')
+    op.execute('REVOKE ALL ON public.school_education_facts FROM PUBLIC,campus_ai_runtime,campus_ai_school_fact_reader')
+    op.execute('GRANT SELECT,INSERT,UPDATE ON public.school_education_facts TO campus_ai_school_fact_writer')
+    op.execute('GRANT SELECT ON public.school_education_facts TO campus_ai_context_definer')
+    op.execute('CREATE POLICY f4_writer ON public.school_education_facts FOR ALL TO campus_ai_school_fact_writer USING (school_id=app.require_school_context()) WITH CHECK (school_id=app.require_school_context())')
+    op.execute('CREATE POLICY f4_owner ON public.school_education_facts FOR ALL TO campus_ai_db_owner,campus_ai_migration USING (true) WITH CHECK (true)')
+    op.execute('CREATE POLICY f4_context_read ON public.school_education_facts FOR SELECT TO campus_ai_context_definer USING (school_id=app.require_school_database_anchor())')
+    op.execute('CREATE POLICY f4_anchor ON public.school_education_facts AS RESTRICTIVE FOR ALL TO PUBLIC USING (school_id=app.require_school_database_anchor()) WITH CHECK (school_id=app.require_school_database_anchor())')
+    op.execute('ALTER TABLE public.school_education_versions ENABLE ROW LEVEL SECURITY')
+    op.execute('ALTER TABLE public.school_education_versions FORCE ROW LEVEL SECURITY')
+    op.execute('REVOKE ALL ON public.school_education_versions FROM PUBLIC,campus_ai_runtime,campus_ai_school_fact_reader')
+    op.execute('GRANT SELECT,INSERT,UPDATE ON public.school_education_versions TO campus_ai_school_fact_writer')
+    op.execute('GRANT SELECT ON public.school_education_versions TO campus_ai_context_definer')
+    op.execute('CREATE POLICY f4_writer ON public.school_education_versions FOR ALL TO campus_ai_school_fact_writer USING (school_id=app.require_school_context()) WITH CHECK (school_id=app.require_school_context())')
+    op.execute('CREATE POLICY f4_owner ON public.school_education_versions FOR ALL TO campus_ai_db_owner,campus_ai_migration USING (true) WITH CHECK (true)')
+    op.execute('CREATE POLICY f4_context_read ON public.school_education_versions FOR SELECT TO campus_ai_context_definer USING (school_id=app.require_school_database_anchor())')
+    op.execute('CREATE POLICY f4_anchor ON public.school_education_versions AS RESTRICTIVE FOR ALL TO PUBLIC USING (school_id=app.require_school_database_anchor()) WITH CHECK (school_id=app.require_school_database_anchor())')
+    op.execute('ALTER TABLE public.school_education_references ENABLE ROW LEVEL SECURITY')
+    op.execute('ALTER TABLE public.school_education_references FORCE ROW LEVEL SECURITY')
+    op.execute('REVOKE ALL ON public.school_education_references FROM PUBLIC,campus_ai_runtime,campus_ai_school_fact_reader')
+    op.execute('GRANT SELECT,INSERT,UPDATE ON public.school_education_references TO campus_ai_school_fact_writer')
+    op.execute('GRANT SELECT ON public.school_education_references TO campus_ai_context_definer')
+    op.execute('CREATE POLICY f4_writer ON public.school_education_references FOR ALL TO campus_ai_school_fact_writer USING (school_id=app.require_school_context()) WITH CHECK (school_id=app.require_school_context())')
+    op.execute('CREATE POLICY f4_owner ON public.school_education_references FOR ALL TO campus_ai_db_owner,campus_ai_migration USING (true) WITH CHECK (true)')
+    op.execute('CREATE POLICY f4_context_read ON public.school_education_references FOR SELECT TO campus_ai_context_definer USING (school_id=app.require_school_database_anchor())')
+    op.execute('CREATE POLICY f4_anchor ON public.school_education_references AS RESTRICTIVE FOR ALL TO PUBLIC USING (school_id=app.require_school_database_anchor()) WITH CHECK (school_id=app.require_school_database_anchor())')
+
+
+def downgrade():
+    raise RuntimeError("Education records require forward repair; destructive downgrade is disabled.")

@@ -1,0 +1,655 @@
+{
+  "template_version": "synthetic_f2_review_v1",
+  "status": "APPROVED_SYNTHETIC_CONTENT_TEMPLATE_NOT_EXECUTABLE",
+  "instructions": "Reader must provide existing school content/version/base_version and a school-effective history interval. Initial batch is 45 changes; correction is a separate third batch after the second batch formally ends service:f2-current. Never import this template directly.",
+  "canonical_input_template": {
+    "input_version": "admin_v3",
+    "base_version": "$existing.base_version",
+    "changes": [
+      {
+        "operation": "upsert",
+        "fact_kind": "school",
+        "source_key": "school:f1-engineering",
+        "expected_version": "$existing.school_version",
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": "$existing.school_content"
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "person",
+        "source_key": "person:f2-a",
+        "expected_version": 0,
+        "effective_at": "$existing.history_from",
+        "content": {
+          "display_name": "合成林同名",
+          "lifecycle_status": "active",
+          "person_kind": "staff"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "person",
+        "source_key": "person:f2-b",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "display_name": "合成林同名",
+          "lifecycle_status": "active",
+          "person_kind": "staff"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "person",
+        "source_key": "person:f2-missing",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "display_name": "合成缺录人员",
+          "lifecycle_status": "active",
+          "person_kind": "staff"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "organization",
+        "source_key": "org:f2-a",
+        "expected_version": 0,
+        "effective_at": "$existing.history_from",
+        "content": {
+          "display_name": "合成综合组",
+          "kind": "department",
+          "status": "active",
+          "display_path": "合成学校/合成a校区/综合组"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "organization",
+        "source_key": "org:f2-b",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "display_name": "合成综合组",
+          "parent_source_key": "org:f1-office",
+          "kind": "department",
+          "status": "active",
+          "display_path": "合成学校/合成b校区/综合组"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "location",
+        "source_key": "location:f2-campus",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "display_name": "合成第二校区",
+          "kind": "campus",
+          "status": "active",
+          "display_path": "合成学校/合成第二校区"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "location",
+        "source_key": "location:f2-office-a",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "display_name": "合成接待室",
+          "parent_source_key": "location:f1-main-campus",
+          "kind": "room",
+          "status": "active",
+          "display_path": "合成学校/a/合成接待室"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "organization_campus_relationship",
+        "source_key": "org-campus:f2-a",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "organization_source_key": "org:f2-a",
+          "campus_source_key": "location:f1-main-campus"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "location_alias",
+        "source_key": "location-alias:f2-a",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "location_source_key": "location:f2-office-a",
+          "alias": "合成服务室",
+          "alias_kind": "common"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "organization_profile",
+        "source_key": "org-profile:f2-a",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "organization_source_key": "org:f2-a",
+          "organization_type": "department",
+          "function_summary": "合成资料登记与问询；成员关系不授予权限。",
+          "basis_reference": "synthetic:f2-approved"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "organization_membership",
+        "source_key": "org-member:f2-a",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "person_source_key": "person:f1-maintainer",
+          "organization_source_key": "org:f2-a",
+          "basis_reference": "synthetic:f2-approved",
+          "membership_kind": "participant"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "organization_location",
+        "source_key": "org-location:f2-a",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "organization_source_key": "org:f2-a",
+          "location_source_key": "location:f2-office-a",
+          "is_primary": true,
+          "basis_reference": "synthetic:f2-approved",
+          "purpose": "office"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "person_workplace",
+        "source_key": "person-workplace:f2-a",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "location_source_key": "location:f2-office-a",
+          "is_primary": true,
+          "assignment_source_key": "assignment:f1-maintainer",
+          "basis_reference": "synthetic:f2-approved",
+          "purpose": "reception"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "location",
+        "source_key": "location:f2-office-b",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "display_name": "合成接待室",
+          "parent_source_key": "location:f2-campus",
+          "kind": "room",
+          "status": "active",
+          "display_path": "合成学校/b/合成接待室"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "organization_campus_relationship",
+        "source_key": "org-campus:f2-b",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "organization_source_key": "org:f2-b",
+          "campus_source_key": "location:f2-campus"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "location_alias",
+        "source_key": "location-alias:f2-b",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "location_source_key": "location:f2-office-b",
+          "alias": "合成服务室",
+          "alias_kind": "common"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "organization_profile",
+        "source_key": "org-profile:f2-b",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "organization_source_key": "org:f2-b",
+          "organization_type": "department",
+          "function_summary": "合成资料登记与问询；成员关系不授予权限。",
+          "basis_reference": "synthetic:f2-approved"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "organization_membership",
+        "source_key": "org-member:f2-b",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "person_source_key": "person:f1-maintainer",
+          "organization_source_key": "org:f2-b",
+          "basis_reference": "synthetic:f2-approved",
+          "membership_kind": "participant"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "organization_location",
+        "source_key": "org-location:f2-b",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "organization_source_key": "org:f2-a",
+          "location_source_key": "location:f2-office-b",
+          "is_primary": false,
+          "basis_reference": "synthetic:f2-approved",
+          "purpose": "office"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "person_workplace",
+        "source_key": "person-workplace:f2-b",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "location_source_key": "location:f2-office-b",
+          "is_primary": false,
+          "assignment_source_key": "assignment:f1-maintainer",
+          "basis_reference": "synthetic:f2-approved",
+          "purpose": "reception"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "assignment",
+        "source_key": "assignment:f2-history",
+        "expected_version": 0,
+        "effective_at": "$existing.history_from",
+        "content": {
+          "person_source_key": "person:f2-a",
+          "organization_source_key": "org:f2-a",
+          "status": "confirmed",
+          "position_title": "合成资料联络岗",
+          "semantic_role_code": "synthetic_liaison",
+          "assignment_kind": "part_time",
+          "appointment_source": "synthetic_engineering",
+          "approval_reference": "synthetic:f2-approved",
+          "valid_to": "$existing.history_to"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "assignment",
+        "source_key": "assignment:f2-current",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "person_source_key": "person:f2-a",
+          "organization_source_key": "org:f2-a",
+          "status": "confirmed",
+          "position_title": "合成资料联络岗",
+          "semantic_role_code": "synthetic_liaison",
+          "assignment_kind": "part_time",
+          "appointment_source": "synthetic_engineering",
+          "approval_reference": "synthetic:f2-approved",
+          "valid_to": "2027-01-01T00:00:00Z"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "assignment",
+        "source_key": "assignment:f2-future",
+        "expected_version": 0,
+        "effective_at": "2027-01-01T00:00:00Z",
+        "content": {
+          "person_source_key": "person:f2-a",
+          "organization_source_key": "org:f2-a",
+          "status": "confirmed",
+          "position_title": "合成资料联络岗",
+          "semantic_role_code": "synthetic_liaison",
+          "assignment_kind": "part_time",
+          "appointment_source": "synthetic_engineering",
+          "approval_reference": "synthetic:f2-approved"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "person_contact",
+        "source_key": "person-contact:f2-f2-a",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "person_source_key": "person:f2-a",
+          "contact_kind": "email",
+          "contact_value": "synthetic-private@example.invalid",
+          "is_primary": true,
+          "visibility_scope": "private"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "person_contact",
+        "source_key": "person-contact:f2-f1-maintainer",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "person_source_key": "person:f1-maintainer",
+          "contact_kind": "email",
+          "contact_value": "synthetic-private@example.invalid",
+          "is_primary": true,
+          "visibility_scope": "private"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "official_contact",
+        "source_key": "official-contact:f2-public",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "lifecycle_status": "active",
+          "organization_source_key": "org:f2-a",
+          "contact_kind": "email",
+          "contact_value": "synthetic-public@example.invalid",
+          "visibility_scope": "public",
+          "owner_kind": "organization"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "official_contact",
+        "source_key": "official-contact:f2-internal",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "lifecycle_status": "active",
+          "organization_source_key": "org:f2-a",
+          "contact_kind": "email",
+          "contact_value": "synthetic-internal@example.invalid",
+          "visibility_scope": "school_authenticated",
+          "owner_kind": "organization"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "policy",
+        "source_key": "policy:f2-public",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {}
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "policy_version",
+        "source_key": "policy-version:f2-public",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "business_code": "SYNTHETIC-F2-public",
+          "display_name": "合成public资料规则",
+          "publishing_organization_source_key": "org:f2-a",
+          "policy_source_key": "policy:f2-public",
+          "category_code": "general",
+          "classification": "public",
+          "published_at": "2026-09-06T00:00:00Z",
+          "effective_from": "2026-09-06T00:00:00Z",
+          "content_text": {
+            "generator": "synthetic_policy_text",
+            "length": 32768,
+            "end_marker": "\n【F2合成制度原文结束：不可用于真实学校】"
+          },
+          "version_note": "用户批准的合成工程资料"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "policy_scope",
+        "source_key": "policy-scope:f2-public",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "organization_source_key": "org:f2-a",
+          "policy_source_key": "policy:f2-public"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "policy",
+        "source_key": "policy:f2-internal",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {}
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "policy_version",
+        "source_key": "policy-version:f2-internal",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "business_code": "SYNTHETIC-F2-internal",
+          "display_name": "合成internal资料规则",
+          "publishing_organization_source_key": "org:f2-a",
+          "policy_source_key": "policy:f2-internal",
+          "category_code": "general",
+          "classification": "internal",
+          "published_at": "2026-09-06T00:00:00Z",
+          "effective_from": "2026-09-06T00:00:00Z",
+          "content_text": {
+            "generator": "synthetic_policy_text",
+            "length": 50000,
+            "end_marker": "\n【F2合成制度原文结束：不可用于真实学校】"
+          },
+          "version_note": "用户批准的合成工程资料"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "policy_scope",
+        "source_key": "policy-scope:f2-internal",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "organization_source_key": "org:f2-a",
+          "policy_source_key": "policy:f2-internal"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "policy",
+        "source_key": "policy:f2-restricted",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {}
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "policy_version",
+        "source_key": "policy-version:f2-restricted",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "business_code": "SYNTHETIC-F2-restricted",
+          "display_name": "合成restricted资料规则",
+          "publishing_organization_source_key": "org:f2-a",
+          "policy_source_key": "policy:f2-restricted",
+          "category_code": "general",
+          "classification": "restricted",
+          "published_at": "2026-09-06T00:00:00Z",
+          "effective_from": "2026-09-06T00:00:00Z",
+          "content_text": {
+            "generator": "synthetic_policy_text",
+            "length": 100000,
+            "end_marker": "\n【F2合成制度原文结束：不可用于真实学校】"
+          },
+          "version_note": "用户批准的合成工程资料"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "policy_scope",
+        "source_key": "policy-scope:f2-restricted",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "organization_source_key": "org:f2-a",
+          "policy_source_key": "policy:f2-restricted"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "policy_scope",
+        "source_key": "policy-scope:f2-campus",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "campus_source_key": "location:f2-campus",
+          "policy_source_key": "policy:f2-public"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "school_service",
+        "source_key": "service:f2-current",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "display_name": "合成资料问询",
+          "organization_source_key": "org:f2-a",
+          "policy_source_key": "policy:f2-public",
+          "official_contact_source_key": "official-contact:f2-internal",
+          "basis_reference": "synthetic:f2-approved",
+          "audience_description": "获权校内身份",
+          "service_summary": "说明服务窗口，不受理或自动完成业务。"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "school_service",
+        "source_key": "service:f2-missing-channel",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "display_name": "合成未登记渠道服务",
+          "organization_source_key": "org:f2-a",
+          "basis_reference": "synthetic:f2-approved",
+          "audience_description": "获权校内身份",
+          "service_summary": "渠道尚未登记，不能推断无服务。"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "fact_quality",
+        "source_key": "quality:f2-source",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "organization_source_key": "org:f2-a",
+          "owner_kind": "organization",
+          "basis_reference": "synthetic:f2-approved",
+          "quality_kind": "source",
+          "target_fact_kind": "school_service",
+          "responsibility": "合成资料维护责任岗",
+          "source_status": "unavailable",
+          "verified_at": "2026-09-06T00:00:00Z"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "fact_quality",
+        "source_key": "quality:f2-coverage",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "organization_source_key": "org:f2-a",
+          "owner_kind": "organization",
+          "basis_reference": "synthetic:f2-approved",
+          "quality_kind": "coverage",
+          "target_fact_kind": "school_service",
+          "responsibility": "合成资料维护责任岗",
+          "coverage_status": "partial",
+          "verified_at": "2026-09-06T00:00:00Z"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "fact_quality",
+        "source_key": "quality:f2-negative",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "organization_source_key": "org:f2-b",
+          "owner_kind": "organization",
+          "basis_reference": "synthetic:f2-approved",
+          "quality_kind": "negative",
+          "target_fact_kind": "school_service",
+          "responsibility": "合成资料维护责任岗",
+          "negative_code": "no_service",
+          "verified_at": "2026-09-06T00:00:00Z"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "fact_quality",
+        "source_key": "quality:f2-dispute",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "organization_source_key": "org:f2-a",
+          "owner_kind": "organization",
+          "basis_reference": "synthetic:f2-approved",
+          "quality_kind": "dispute",
+          "target_fact_kind": "school_service",
+          "responsibility": "合成资料维护责任岗",
+          "evidence_reference": "synthetic:evidence-dispute",
+          "dispute_status": "open",
+          "verified_at": "2026-09-06T00:00:00Z"
+        }
+      },
+      {
+        "operation": "upsert",
+        "fact_kind": "fact_quality",
+        "source_key": "quality:f2-review",
+        "expected_version": 0,
+        "effective_at": "2026-09-06T00:00:00Z",
+        "content": {
+          "organization_source_key": "org:f2-a",
+          "owner_kind": "organization",
+          "basis_reference": "synthetic:f2-approved",
+          "quality_kind": "review",
+          "target_fact_kind": "school_service",
+          "responsibility": "合成资料维护责任岗",
+          "verified_at": "2026-09-06T00:00:00Z",
+          "review_due_at": "2026-09-07T00:00:00Z"
+        }
+      }
+    ]
+  },
+  "follow_up_input_templates": [
+    {
+      "generator": "build_service_end",
+      "base_version": "$after_initial.base_version",
+      "target_version": "$current_service.version",
+      "effective_at": "$reviewed_end_at"
+    },
+    {
+      "generator": "build_correction",
+      "base_version": "$after_end.base_version",
+      "effective_at": "$reviewed_end_at",
+      "requires": "authoritative committed end receipt and effective replacement"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+log_format campus_ai_safe 'status=$status method=$request_method uri=$uri request_time=$request_time';
+error_log /var/log/nginx/error.log crit;
+limit_req_log_level error;
+
+limit_req_zone $binary_remote_addr zone=dingtalk_login_per_ip:10m rate=${CAMPUS_AI_DINGTALK_LOGIN_IP_RATE};
+
+server {
+    access_log /var/log/nginx/access.log campus_ai_safe;
+    listen 80 default_server;
+    server_name _;
+    server_tokens off;
+
+    return 444;
+}
+
+server {
+    access_log /var/log/nginx/access.log campus_ai_safe;
+    listen 80;
+    server_name ${CAMPUS_AI_PUBLIC_HOST};
+    server_tokens off;
+
+    return 308 https://${CAMPUS_AI_PUBLIC_HOST}$request_uri;
+}
+
+server {
+    access_log /var/log/nginx/access.log campus_ai_safe;
+    listen 443 ssl default_server;
+    server_name _;
+    server_tokens off;
+    ssl_reject_handshake on;
+
+    return 444;
+}
+
+server {
+    access_log /var/log/nginx/access.log campus_ai_safe;
+    listen 443 ssl;
+    http2 on;
+    server_name ${CAMPUS_AI_PUBLIC_HOST};
+    server_tokens off;
+    client_max_body_size 2m;
+
+    ssl_certificate /etc/nginx/tls/tls.crt;
+    ssl_certificate_key /etc/nginx/tls/tls.key;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_session_cache shared:TLS:10m;
+    ssl_session_timeout 10m;
+
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "DENY" always;
+    add_header Referrer-Policy "no-referrer" always;
+    add_header X-Robots-Tag "noindex, nofollow" always;
+    add_header Cache-Control "no-store" always;
+
+    root /usr/share/nginx/html;
+    index index.html;
+
+    error_page 429 = @dingtalk_login_rate_limited;
+
+    location = /api/v1/admin {
+        return 404;
+    }
+
+    location ^~ /api/v1/admin/ {
+        return 404;
+    }
+
+    location = /api/v1/health {
+        return 404;
+    }
+
+    location ^~ /internal/ {
+        return 404;
+    }
+
+    location = /internal {
+        return 404;
+    }
+
+    location = /api/v1/school-fact-product/dingtalk/exchange {
+        limit_req zone=dingtalk_login_per_ip burst=${CAMPUS_AI_DINGTALK_LOGIN_IP_BURST} nodelay;
+        limit_req_status 429;
+
+        proxy_pass http://api:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Host ${CAMPUS_AI_PUBLIC_HOST};
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_connect_timeout 5s;
+        proxy_read_timeout 15s;
+    }
+
+    location @dingtalk_login_rate_limited {
+        default_type application/json;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header X-Frame-Options "DENY" always;
+        add_header Referrer-Policy "no-referrer" always;
+        add_header X-Robots-Tag "noindex, nofollow" always;
+        add_header Cache-Control "no-store" always;
+        add_header Retry-After 2 always;
+        return 429 '{"detail":"当前登录人数较多，请稍后重新进入。"}';
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location = /api/v1/school-fact-product/imports/sources {
+        # 10 MiB raw source is about 13.34 MiB as base64 JSON.
+        # Product still validates its own exact source and request bounds.
+        client_max_body_size 15m;
+        proxy_pass http://api:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Host ${CAMPUS_AI_PUBLIC_HOST};
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_connect_timeout 5s;
+        proxy_read_timeout 15s;
+    }
+
+    location ^~ /api/v1/assistant/ {
+        # The existing assistant run has a 180s deadline and sends accepted,
+        # then completed/error; it does not emit intermediate heartbeats.
+        proxy_pass http://api:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Host ${CAMPUS_AI_PUBLIC_HOST};
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_connect_timeout 5s;
+        proxy_read_timeout 210s;
+        proxy_buffering off;
+    }
+
+    location ~ ^/api/v1/school-fact-product/(?:contacts/(?:prepare|proposals/[^/]+/confirm)|(?:facts|family-facts|education-facts|residence-facts)/(?:prepare|proposals/[^/]+/confirm)|(?:family|family-facts)/corrections(?:/.*)?|imports/plans/.*)$ {
+        # These synchronous maintenance routes may wait on the existing
+        # Writer client, whose configured request timeout is at most 60s.
+        proxy_pass http://api:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Host ${CAMPUS_AI_PUBLIC_HOST};
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_connect_timeout 5s;
+        proxy_read_timeout 75s;
+    }
+
+    location /api/ {
+        proxy_pass http://api:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Host ${CAMPUS_AI_PUBLIC_HOST};
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_connect_timeout 5s;
+        proxy_read_timeout 15s;
+    }
+
+    location ~ /\. {
+        deny all;
+    }
+}
